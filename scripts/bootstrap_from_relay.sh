@@ -9,6 +9,7 @@ REMOTE_TMP="${REMOTE_TMP:-/tmp/scp079-bootstrap}"
 INSTALL_RELAY="${INSTALL_RELAY:-1}"
 INSTALL_REMOTE="${INSTALL_REMOTE:-1}"
 SCP079_API_TOKEN="${SCP079_API_TOKEN:-}"
+SSH_KEY="${SSH_KEY:-$HOME/.ssh/scp079_cluster}"
 
 usage() {
   cat <<EOF
@@ -18,6 +19,7 @@ Environment overrides:
   PI_USER=pi
   DSAM_HOST=dsam
   LOGIC_HOST=logic
+  SSH_KEY=~/.ssh/scp079_cluster
   INSTALL_RELAY=1
   INSTALL_REMOTE=1
 
@@ -66,6 +68,14 @@ echo "Repo: $ROOT_DIR"
 echo "Targets: ${PI_USER}@${DSAM_HOST}, ${PI_USER}@${LOGIC_HOST}"
 echo "Bridge token: generated for this install"
 
+SSH_OPTS=()
+if [[ -f "$SSH_KEY" ]]; then
+  SSH_OPTS=(-i "$SSH_KEY")
+  echo "SSH key: $SSH_KEY"
+else
+  echo "SSH key not found at $SSH_KEY, falling back to default SSH auth"
+fi
+
 if [[ -d .git ]]; then
   git fetch origin --prune || true
 fi
@@ -78,7 +88,7 @@ install_remote_node() {
 
   echo
   echo "==> Preparing ${host} (${branch})"
-  ssh "${PI_USER}@${host}" "mkdir -p '${REMOTE_TMP}'"
+  ssh "${SSH_OPTS[@]}" "${PI_USER}@${host}" "mkdir -p '${REMOTE_TMP}'"
 
   tar \
     --exclude='.git/hooks' \
@@ -86,9 +96,9 @@ install_remote_node() {
     --exclude='.venv' \
     --exclude='runtime' \
     --exclude='models' \
-    -czf - . | ssh "${PI_USER}@${host}" "rm -rf '${REMOTE_TMP:?}'/* && tar -xzf - -C '${REMOTE_TMP}'"
+    -czf - . | ssh "${SSH_OPTS[@]}" "${PI_USER}@${host}" "rm -rf '${REMOTE_TMP:?}'/* && tar -xzf - -C '${REMOTE_TMP}'"
 
-  ssh -t "${PI_USER}@${host}" "
+  ssh -t "${SSH_OPTS[@]}" "${PI_USER}@${host}" "
     set -e
     cd '${REMOTE_TMP}'
     git checkout '${branch}'
