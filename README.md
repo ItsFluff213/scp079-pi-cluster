@@ -89,6 +89,10 @@ UI: `http://logic:7860/ui/`
 
 API: `http://logic:7860/api/audio`
 
+Das Dashboard nutzt einen SCP-079-artigen CRT-Terminal-Look: schwarzer
+Hintergrund, gruene Monospace-Schrift, Scanlines, Vignette, rote Warnakzente und
+kurze Maschinenlabels.
+
 ## Pi 3 oder Discord-PC: relay
 
 ```bash
