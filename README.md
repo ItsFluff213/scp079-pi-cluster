@@ -1,41 +1,83 @@
 # SCP-079 Pi Cluster
 
-Latenz-optimierte Rollen:
+Privates Drei-Pi-Setup fuer eine lokale SCP-079-Simulation mit niedriger Latenz.
 
-- `dsam` / Raspberry Pi 5: LLM-Server, bevorzugt Ollama oder optional llama.cpp.
-- `logic` / Raspberry Pi 4: Web/API, Speech-to-Text, Piper TTS, Stimmeffekte.
-- `relay` / Raspberry Pi 3B oder Discord-PC: Mikrofon/Discord-Audio aufnehmen und Antwort abspielen.
+## Zielarchitektur
 
-Das ist fuer Live-Discord sinnvoller als ein geteiltes Monster-Modell: Der Pi 5
-rechnet nur Tokens, der Pi 4 macht die Voice-Pipeline, der Pi 3 bleibt leicht.
-Siehe auch `docs/cluster-network.md` fuer die Head-Node/Compute-Node-
-Netzwerkidee aus dem Raspberry-Pi-Cluster-Tutorial.
+- `dsam` / Raspberry Pi 5: LLM-Server mit Ollama, Default `qwen3:4b-instruct`
+- `logic` / Raspberry Pi 4: Voice-Core, API, Dashboard, STT, Piper TTS, SCP-079-Stimme
+- `relay` / Raspberry Pi 3B oder Discord-PC: Audio aufnehmen, an `logic` senden, Antwort abspielen
+
+Das Dashboard zeigt nur das SCP-079-Bild aus `assets/scp079.png`. Im Idle ist es
+dunkel. Sobald das System arbeitet oder spricht, wird es heller und flackert.
 
 ## Branches
 
-- `main`: gemeinsame Dateien und Doku
-- `pi5-dsam`: LLM-Knoten
-- `pi4-logic`: Voice-Core und Web-Dashboard
-- `pi3-relay`: Audio-Bridge
+- `main`: gemeinsamer Stand
+- `pi5-dsam`: Branch fuer den LLM-Pi
+- `pi4-logic`: Branch fuer Voice-Core und Dashboard
+- `pi3-relay`: Branch fuer Audio-Bridge und Bootstrap
 
-Auf jedem Pi:
+## 1. Hostnamen und SSH vorbereiten
+
+Auf `dsam` und `logic` SSH aktivieren:
 
 ```bash
-git clone <DEIN-REPO-URL>
-cd scp079-pi-cluster
-git checkout <PASSENDER-BRANCH>
+sudo systemctl enable --now ssh
+sudo systemctl status ssh --no-pager
 ```
 
-## Ein-Kommando-Installation ab Pi 3
+Falls der SSH-Server fehlt:
 
-Am einfachsten: Repo einmal auf `relay` / Pi 3 klonen, dann installiert Pi 3
-per SSH die passenden Rollen auf `dsam` und `logic`.
+```bash
+sudo apt update
+sudo apt install -y openssh-server
+sudo systemctl enable --now ssh
+```
 
-Voraussetzungen:
+Auf allen Pis feste Hostnamen setzen:
 
-- Hostnamen `dsam`, `logic`, `relay` loesen im LAN auf.
-- Von `relay` aus funktioniert `ssh pi@dsam` und `ssh pi@logic`.
-- Der User `pi` darf auf allen Pis `sudo` verwenden.
+```bash
+sudo hostnamectl set-hostname dsam
+sudo hostnamectl set-hostname logic
+sudo hostnamectl set-hostname relay
+```
+
+Natuerlich jeweils nur den passenden Namen auf dem jeweiligen Pi ausfuehren.
+
+Wenn DNS/Router die Namen nicht aufloest, auf allen drei Pis `/etc/hosts`
+ergaenzen:
+
+```bash
+sudo nano /etc/hosts
+```
+
+Beispiel:
+
+```text
+192.168.50.10 dsam
+192.168.50.11 logic
+192.168.50.12 relay
+```
+
+Auf `relay` einen SSH-Key erzeugen und auf die anderen Pis verteilen:
+
+```bash
+ssh-keygen -t ed25519 -C "scp079-relay" -f ~/.ssh/scp079_cluster
+ssh-copy-id -i ~/.ssh/scp079_cluster.pub pi@dsam
+ssh-copy-id -i ~/.ssh/scp079_cluster.pub pi@logic
+```
+
+SSH testen:
+
+```bash
+ssh -i ~/.ssh/scp079_cluster pi@dsam hostname
+ssh -i ~/.ssh/scp079_cluster pi@logic hostname
+```
+
+Falls du einen anderen User nutzt, ersetze `pi`.
+
+## 2. Ein-Kommando-Installation ab Pi 3
 
 Auf `relay`:
 
@@ -48,36 +90,41 @@ git checkout pi3-relay
 bash scripts/bootstrap_from_relay.sh
 ```
 
-Falls deine SSH-User/Hostnamen anders sind:
+Mit anderem User oder festen IPs:
 
 ```bash
 PI_USER=deinuser DSAM_HOST=192.168.50.10 LOGIC_HOST=192.168.50.11 \
   bash scripts/bootstrap_from_relay.sh
 ```
 
-Weil das Repo privat ist, ist dieser Weg absichtlich so gebaut, dass nur `relay`
-GitHub-Zugriff braucht. Die anderen Pis bekommen den Repo-Stand per SSH-Kopie.
-
-## Pi 5: dsam
+Wenn du den oben erzeugten Key explizit angeben willst:
 
 ```bash
+SSH_KEY=~/.ssh/scp079_cluster bash scripts/bootstrap_from_relay.sh
+```
+
+Der Bootstrap installiert `relay` lokal, kopiert den Repo-Stand per SSH auf
+`dsam` und `logic`, checkt dort die passenden Branches aus, installiert die
+Dienste und erzeugt einen gemeinsamen `SCP079_API_TOKEN`.
+
+## 3. Manuelle Installation
+
+Auf `dsam`:
+
+```bash
+git clone https://github.com/ItsFluff213/scp079-pi-cluster.git
+cd scp079-pi-cluster
+git checkout pi5-dsam
 sudo bash scripts/install_pi5_dsam.sh
 sudo bash scripts/latency_tune.sh
 ```
 
-Default ist `qwen3:4b-instruct`, weil es auf 8 GB RAM deutlich live-tauglicher
-ist als ein groesseres 7B/8B-Modell. Wenn du lieber rohe Modellgroesse willst:
+Auf `logic`:
 
 ```bash
-ollama pull llama3.1:8b-instruct-q4_0
-sudo systemctl edit ollama
-```
-
-Setze dann im Service `OLLAMA_MODEL` bzw. im Voice-Core `.env` passend um.
-
-## Pi 4: logic
-
-```bash
+git clone https://github.com/ItsFluff213/scp079-pi-cluster.git
+cd scp079-pi-cluster
+git checkout pi4-logic
 sudo bash scripts/install_pi4_logic.sh
 sudo bash scripts/latency_tune.sh
 sudo cp env/pi4-logic.env.example /opt/scp079/.env
@@ -85,66 +132,148 @@ sudo nano /opt/scp079/.env
 sudo systemctl enable --now scp079-voice-core.service
 ```
 
-UI: `http://logic:7860/ui/`
-
-API: `http://logic:7860/api/audio`
-
-Das Dashboard nutzt einen SCP-079-artigen CRT-Terminal-Look: schwarzer
-Hintergrund, gruene Monospace-Schrift, Scanlines, Vignette, rote Warnakzente und
-kurze Maschinenlabels.
-
-## Pi 3 oder Discord-PC: relay
+Auf `relay`:
 
 ```bash
+git clone https://github.com/ItsFluff213/scp079-pi-cluster.git
+cd scp079-pi-cluster
+git checkout pi3-relay
 sudo bash scripts/install_pi3_relay.sh
 sudo bash scripts/latency_tune.sh
-cp env/pi3-relay.env.example /opt/scp079-relay/.env
-nano /opt/scp079-relay/.env
-python /opt/scp079-relay/app/relay_bridge.py --list-devices
+sudo cp env/pi3-relay.env.example /opt/scp079-relay/.env
+sudo nano /opt/scp079-relay/.env
 ```
 
-Fuer Discord mit virtuellen Audiogeraeten:
+## 4. Services pruefen
+
+Auf `dsam`:
 
 ```bash
-python /opt/scp079-relay/app/relay_bridge.py \
+systemctl status ollama --no-pager
+curl http://dsam:11434/api/tags
+```
+
+Auf `logic`:
+
+```bash
+systemctl status scp079-voice-core.service --no-pager
+curl http://logic:7860/health
+```
+
+Dashboard:
+
+```text
+http://logic:7860/ui/
+```
+
+## 5. Relay starten
+
+Audiogeraete anzeigen:
+
+```bash
+/opt/scp079-relay/.venv/bin/python /opt/scp079-relay/app/relay_bridge.py --list-devices
+```
+
+Live-Modus:
+
+```bash
+/opt/scp079-relay/.venv/bin/python /opt/scp079-relay/app/relay_bridge.py \
+  --continuous \
+  --sample-rate 16000 \
+  --silence 0.55 \
+  --max-seconds 8 \
+  --speaker discord
+```
+
+Mit virtuellem Discord-Mikrofon:
+
+```bash
+/opt/scp079-relay/.venv/bin/python /opt/scp079-relay/app/relay_bridge.py \
   --continuous \
   --sample-rate 16000 \
   --silence 0.55 \
   --max-seconds 8 \
   --input-device "Discord Monitor" \
-  --output-device "SCP079 Virtual Mic"
+  --output-device "SCP079 Virtual Mic" \
+  --speaker discord
 ```
 
-## Aktuelle Themen
+## 6. Laufenden Chat vom Pi 3 ansehen
 
-Lokale Modelle sind nicht tagesaktuell. Fuer aktuelle Themen nutze auf `logic`
-eine lokale oder LAN-SearXNG-Instanz:
+Einmal anzeigen:
+
+```bash
+/opt/scp079-relay/.venv/bin/python /opt/scp079-relay/app/scp079_chat_tail.py
+```
+
+Live mitlaufen lassen:
+
+```bash
+/opt/scp079-relay/.venv/bin/python /opt/scp079-relay/app/scp079_chat_tail.py --follow
+```
+
+Direkt per API:
+
+```bash
+curl -H "Authorization: Bearer DEIN_TOKEN" http://logic:7860/api/chatlog
+```
+
+## 7. Erinnerung an Personen
+
+Der Voice-Core speichert lokale Erinnerungen in:
+
+```text
+/var/lib/scp079/scp079.sqlite3
+```
+
+Aktiviert in `/opt/scp079/.env`:
+
+```env
+SCP079_MEMORY_ENABLED=1
+SCP079_MEMORY_MAX_ITEMS=8
+```
+
+Die Erinnerung nutzt den Sprecher aus `--speaker`. Beispiele:
+
+```bash
+--speaker fanny
+--speaker discord-max
+```
+
+Sinnvolle Saetze, die gespeichert werden:
+
+```text
+Ich heisse Fanny.
+Ich mag Retro-Horror.
+Merk dir: Ich will kurze Antworten.
+```
+
+## 8. Internet-Suche ohne Downloads
+
+Das Modell hat keinen freien Browser. Es bekommt nur kurze JSON-Suchtreffer aus
+einer SearXNG-Instanz. Treffer-URLs und Dateien werden nicht heruntergeladen.
+
+In `/opt/scp079/.env` auf `logic`:
 
 ```env
 WEB_CONTEXT=auto
 SEARXNG_URL=http://logic:8088
 ```
 
-## Performance-Regeln
+Modi:
 
-- Pi 5 aktiv kuehlen und `arm_freq`/Power stabil halten.
-- Erst `qwen3:4b-instruct` testen, dann groessere Modelle.
-- Fuer Live-Discord kurze Antworten nutzen: `num_predict`/`max_tokens` bleibt niedrig.
-- STT auf `tiny` oder `base` lassen; groessere Whisper-Modelle erhoehen Latenz stark.
-- Audio nicht ueber den LLM-Pi routen, damit Token-Ausgabe gleichmaessig bleibt.
+```env
+WEB_CONTEXT=off
+WEB_CONTEXT=auto
+WEB_CONTEXT=always
+```
 
-## SCP-079-Stimme
+`auto` sucht nur bei aktuellen Fragen wie "heute", "aktuell", "News" oder
+"derzeit".
 
-Der Voice-Core nutzt das Preset `SCP079_VOICE_PRESET=scp079`. Es kombiniert:
+## 9. SCP-079-Stimme
 
-- enge Bandbegrenzung wie ein alter Monitor/Lautsprecher
-- 6/7-bit Bitcrushing
-- Ringmodulation und harte Amplitudenmodulation
-- kurzen Flanger/Comb-Delay
-- kurzes Slapback-Echo
-- leichtes Netzbrummen und Rauschen
-
-Feintuning in `/opt/scp079/.env`:
+In `/opt/scp079/.env`:
 
 ```env
 PIPER_LENGTH_SCALE=1.18
@@ -153,6 +282,57 @@ PIPER_SENTENCE_SILENCE=0.09
 SCP079_VOICE_PRESET=scp079
 ```
 
-Mehr Verstaendlichkeit: `PIPER_NOISE_SCALE=0.55` und `SCP079_VOICE_PRESET=robot`.
-Mehr kaputte Computerstimme: `PIPER_NOISE_SCALE=0.85`, aber das kann Nuscheln
-verstaerken.
+Mehr Verstaendlichkeit:
+
+```env
+PIPER_NOISE_SCALE=0.55
+SCP079_VOICE_PRESET=robot
+```
+
+Haerter und kaputter:
+
+```env
+PIPER_NOISE_SCALE=0.85
+SCP079_VOICE_PRESET=scp079
+```
+
+## 10. Latenz-Regeln
+
+- Ethernet statt WLAN fuer Pi-zu-Pi-Traffic.
+- Pi 5 aktiv kuehlen.
+- `qwen3:4b-instruct` zuerst testen.
+- STT auf `tiny` lassen, wenn Discord moeglichst live sein soll.
+- Kurze Antworten erzwingen, nicht 1000 Tokens generieren lassen.
+- Kein Kubernetes als Default; systemd ist fuer dieses Live-Setup direkter.
+
+## 11. Nuetzliche Befehle
+
+Logs:
+
+```bash
+journalctl -u scp079-voice-core.service -f
+journalctl -u ollama -f
+```
+
+Restart:
+
+```bash
+sudo systemctl restart scp079-voice-core.service
+sudo systemctl restart ollama
+```
+
+Gesundheit:
+
+```bash
+curl http://logic:7860/health
+curl http://dsam:11434/api/tags
+```
+
+Test ohne Mikrofon:
+
+```bash
+curl -H "Authorization: Bearer DEIN_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"speaker":"fanny","text":"Wer bin ich?"}' \
+  http://logic:7860/api/text
+```
