@@ -234,7 +234,7 @@ cd scp079-pi-cluster
 py -m venv .venv
 .\.venv\Scripts\python -m pip install -U pip
 .\.venv\Scripts\python -m pip install -r requirements-pc.txt
-.\.venv\Scripts\python app\pc_virtual_discord_cable.py --list-devices
+.\.venv\Scripts\python app\pc_virtual_discord_cable.py --setup
 ```
 
 Empfohlenes Routing mit Voicemeeter Banana:
@@ -248,12 +248,19 @@ Python --output-device                       -> CABLE Input oder Voicemeeter AUX
 Discord Mikrofon                             -> CABLE Output oder Voicemeeter AUX Output
 ```
 
-Startbeispiel mit VB-CABLE als Rueckweg:
+Danach reicht zum Starten:
+
+```powershell
+.\.venv\Scripts\python app\pc_virtual_discord_cable.py
+```
+
+Die Auswahl wird unter `%APPDATA%\scp079\desktop_bridge.json` gespeichert.
+
+Startbeispiel ohne gespeicherte Config:
 
 ```powershell
 .\.venv\Scripts\python app\pc_virtual_discord_cable.py `
   --url http://logic:7860 `
-  --continuous `
   --input-device "Voicemeeter Output" `
   --output-device "CABLE Input" `
   --speaker discord
