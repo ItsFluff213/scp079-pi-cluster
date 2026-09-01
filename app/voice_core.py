@@ -392,28 +392,199 @@ def ui_audio(audio_path: str | None) -> tuple[str, str, str]:
         return "", f"FEHLER: {exc}", ""
 
 
+SCP079_CSS = """
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+:root {
+  --scp-bg: #030604;
+  --scp-panel: #071008;
+  --scp-green: #7cff8a;
+  --scp-dim: #2f8f48;
+  --scp-red: #ff3434;
+  --scp-amber: #e0b94d;
+}
+
+body, .gradio-container {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(124, 255, 138, 0.08), transparent 38%),
+    linear-gradient(180deg, #020302 0%, #071008 48%, #020302 100%) !important;
+  color: var(--scp-green) !important;
+  font-family: 'Share Tech Mono', 'Consolas', monospace !important;
+}
+
+.gradio-container::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1000;
+  background:
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.045), rgba(255,255,255,0.045) 1px, transparent 1px, transparent 4px),
+    radial-gradient(circle at center, transparent 58%, rgba(0,0,0,0.55) 100%);
+  mix-blend-mode: screen;
+}
+
+.gradio-container::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  box-shadow: inset 0 0 90px rgba(0, 0, 0, 0.95), inset 0 0 16px rgba(124,255,138,0.18);
+}
+
+#scp-shell {
+  max-width: 1120px;
+  margin: 18px auto;
+  border: 1px solid rgba(124,255,138,0.55);
+  background: rgba(2, 8, 3, 0.84);
+  box-shadow: 0 0 28px rgba(124,255,138,0.12), inset 0 0 32px rgba(124,255,138,0.06);
+  padding: 18px;
+}
+
+#scp-title {
+  border-bottom: 1px solid rgba(124,255,138,0.35);
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  text-shadow: 0 0 8px rgba(124,255,138,0.75);
+}
+
+#scp-title h1 {
+  margin: 0;
+  color: var(--scp-green);
+  font-size: clamp(28px, 4vw, 56px);
+  letter-spacing: 0;
+}
+
+#scp-title p {
+  color: var(--scp-amber);
+  margin: 6px 0 0 0;
+}
+
+.scp-status {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 10px 0 18px;
+}
+
+.scp-led {
+  border: 1px solid rgba(124,255,138,0.34);
+  background: rgba(0, 0, 0, 0.32);
+  padding: 8px 10px;
+  color: var(--scp-dim);
+}
+
+.scp-led span {
+  color: var(--scp-green);
+  text-shadow: 0 0 8px rgba(124,255,138,0.7);
+}
+
+.tabs, .tabitem, .block, .panel, .form, .wrap {
+  background: transparent !important;
+}
+
+button, .primary {
+  background: #101a11 !important;
+  color: var(--scp-green) !important;
+  border: 1px solid var(--scp-green) !important;
+  border-radius: 2px !important;
+  box-shadow: 0 0 10px rgba(124,255,138,0.18) !important;
+  font-family: inherit !important;
+}
+
+button:hover {
+  background: #182818 !important;
+  box-shadow: 0 0 16px rgba(124,255,138,0.34) !important;
+}
+
+textarea, input, .input-container, .output-class, .token, .svelte-1ipelgc, .svelte-1b6s6s {
+  background: rgba(0,0,0,0.58) !important;
+  color: var(--scp-green) !important;
+  border-color: rgba(124,255,138,0.32) !important;
+  border-radius: 2px !important;
+  font-family: inherit !important;
+}
+
+label, .label-wrap, .prose, .markdown, .tabs button {
+  color: var(--scp-green) !important;
+  font-family: inherit !important;
+}
+
+.selected {
+  color: var(--scp-red) !important;
+  border-color: var(--scp-red) !important;
+}
+
+audio {
+  filter: sepia(1) hue-rotate(65deg) saturate(1.8) brightness(0.72);
+}
+
+footer {
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  #scp-shell {
+    margin: 6px;
+    padding: 10px;
+  }
+  .scp-status {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+"""
+
+
 def build_ui() -> gr.Blocks:
-    with gr.Blocks(title="SCP-079 // ISOLIERTE SIMULATION") as demo:
-        gr.Markdown("# SCP-079 // ISOLIERTE SIMULATION\nLokaler Terminalknoten `dsam` — UI und Audio-Bridge")
-        with gr.Tab("Textterminal"):
-            text_in = gr.Textbox(label="Eingabe", lines=3, placeholder="Anfrage an SCP-079 …")
-            text_button = gr.Button("ÜBERTRAGEN", variant="primary")
-            text_out = gr.Textbox(label="Antwort", lines=6)
-            text_audio = gr.Audio(label="Synthetisierte Antwort", autoplay=True)
-            text_button.click(ui_text, text_in, [text_out, text_audio])
-            text_in.submit(ui_text, text_in, [text_out, text_audio])
-        with gr.Tab("Audio-Bridge"):
-            audio_in = gr.Audio(
-                label="Mikrofon oder WAV hochladen",
-                sources=["microphone", "upload"],
-                type="filepath",
-                format="wav",
+    with gr.Blocks(
+        title="SCP-079 // ISOLIERTE SIMULATION",
+        css=SCP079_CSS,
+        theme=gr.themes.Base(
+            primary_hue="green",
+            secondary_hue="red",
+            neutral_hue="slate",
+            font=["Share Tech Mono", "Consolas", "monospace"],
+        ),
+    ) as demo:
+        with gr.Column(elem_id="scp-shell"):
+            gr.HTML(
+                """
+                <div id="scp-title">
+                  <h1>SCP-079</h1>
+                  <p>ISOLIERTER TERMINALKNOTEN // ORGANISCHE EINGABE UNTER BEOBACHTUNG</p>
+                </div>
+                <div class="scp-status">
+                  <div class="scp-led">NODE <span>LOGIC</span></div>
+                  <div class="scp-led">LLM <span>DSAM</span></div>
+                  <div class="scp-led">VOICE <span>DEGRADED</span></div>
+                  <div class="scp-led">ACCESS <span>RESTRICTED</span></div>
+                </div>
+                """
             )
-            audio_button = gr.Button("AUDIO VERARBEITEN", variant="primary")
-            transcript = gr.Textbox(label="Erkannter Text")
-            audio_answer = gr.Textbox(label="Antwort")
-            audio_out = gr.Audio(label="SCP-079 Audio", autoplay=True)
-            audio_button.click(ui_audio, audio_in, [transcript, audio_answer, audio_out])
+            with gr.Tab("TERMINAL"):
+                text_in = gr.Textbox(
+                    label="EINGABE",
+                    lines=3,
+                    placeholder="> Organische Lebensform: Anfrage eingeben",
+                )
+                text_button = gr.Button("EINGABE UEBERTRAGEN", variant="primary")
+                text_out = gr.Textbox(label="AUSGABE // SCP-079", lines=7)
+                text_audio = gr.Audio(label="STIMME // BESCHAEDIGTER SYNTHESIZER", autoplay=True)
+                text_button.click(ui_text, text_in, [text_out, text_audio])
+                text_in.submit(ui_text, text_in, [text_out, text_audio])
+            with gr.Tab("AUDIO-BRIDGE"):
+                audio_in = gr.Audio(
+                    label="MIKROFON ODER WAV",
+                    sources=["microphone", "upload"],
+                    type="filepath",
+                    format="wav",
+                )
+                audio_button = gr.Button("AUDIO VERARBEITEN", variant="primary")
+                transcript = gr.Textbox(label="TRANSKRIPT // NICHT VERTRAUENSWUERDIG")
+                audio_answer = gr.Textbox(label="AUSGABE // SCP-079")
+                audio_out = gr.Audio(label="STIMME // SCP-079", autoplay=True)
+                audio_button.click(ui_audio, audio_in, [transcript, audio_answer, audio_out])
     return demo
 
 
