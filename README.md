@@ -96,3 +96,27 @@ SEARXNG_URL=http://logic:8088
 - Fuer Live-Discord kurze Antworten nutzen: `num_predict`/`max_tokens` bleibt niedrig.
 - STT auf `tiny` oder `base` lassen; groessere Whisper-Modelle erhoehen Latenz stark.
 - Audio nicht ueber den LLM-Pi routen, damit Token-Ausgabe gleichmaessig bleibt.
+
+## SCP-079-Stimme
+
+Der Voice-Core nutzt das Preset `SCP079_VOICE_PRESET=scp079`. Es kombiniert:
+
+- enge Bandbegrenzung wie ein alter Monitor/Lautsprecher
+- 6/7-bit Bitcrushing
+- Ringmodulation und harte Amplitudenmodulation
+- kurzen Flanger/Comb-Delay
+- kurzes Slapback-Echo
+- leichtes Netzbrummen und Rauschen
+
+Feintuning in `/opt/scp079/.env`:
+
+```env
+PIPER_LENGTH_SCALE=1.18
+PIPER_NOISE_SCALE=0.72
+PIPER_SENTENCE_SILENCE=0.09
+SCP079_VOICE_PRESET=scp079
+```
+
+Mehr Verstaendlichkeit: `PIPER_NOISE_SCALE=0.55` und `SCP079_VOICE_PRESET=robot`.
+Mehr kaputte Computerstimme: `PIPER_NOISE_SCALE=0.85`, aber das kann Nuscheln
+verstaerken.
