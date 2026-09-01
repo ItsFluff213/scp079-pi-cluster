@@ -226,6 +226,10 @@ weiterhin auf deinen Kopfhoerern hoeren, waehrend Python denselben Ton
 mithoert. Fuer den Rueckweg zu Discord kannst du entweder ein VB-CABLE oder den
 Voicemeeter-AUX-Ausgang verwenden.
 
+Wenn du nur VB-CABLE installiert hast, kann das Script das gehoerte Discord-
+Signal an deine Kopfhoerer durchschleifen. Fuer dauerhaft sauberes Routing ist
+Voicemeeter trotzdem komfortabler.
+
 Auf dem PC:
 
 ```powershell
