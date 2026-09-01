@@ -1,0 +1,74 @@
+version: "3.8"
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    environment:
+      OLLAMA_HOST: 0.0.0.0:11434
+    ports:
+      - target: 11434
+        published: 11434
+        protocol: tcp
+        mode: host
+    volumes:
+      - ollama_data:/root/.ollama
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.scp079.role == llm
+      restart_policy:
+        condition: any
+
+  voice-core:
+    image: scp079/voice-core:local
+    environment:
+      SCP079_NODE_NAME: logic
+      SCP079_HOST: 0.0.0.0
+      SCP079_PORT: 7860
+      PUBLIC_BASE_URL: http://logic:7860
+      SCP079_API_TOKEN: ${SCP079_API_TOKEN:-bitte-einen-langen-zufaelligen-wert-setzen}
+      SCP079_DATA_DIR: /data
+      SCP079_OUTPUT_DIR: /tmp/scp079-audio
+      SCP079_MEMORY_ENABLED: "1"
+      SCP079_MEMORY_MAX_ITEMS: "8"
+      CHAT_BACKEND: ollama
+      OLLAMA_URL: http://dsam:11434
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-qwen3:4b-instruct}
+      PIPER_BIN: /usr/local/bin/piper
+      PIPER_MODEL: /opt/piper/de_DE-thorsten-medium.onnx
+      PIPER_LENGTH_SCALE: "1.18"
+      PIPER_NOISE_SCALE: "0.72"
+      PIPER_SENTENCE_SILENCE: "0.09"
+      SCP079_VOICE_PRESET: scp079
+      STT_BACKEND: faster-whisper
+      WHISPER_MODEL: tiny
+      WEB_CONTEXT: ${WEB_CONTEXT:-auto}
+      SEARXNG_URL: ${SEARXNG_URL:-}
+    ports:
+      - target: 7860
+        published: 7860
+        protocol: tcp
+        mode: host
+    volumes:
+      - type: bind
+        source: /var/lib/scp079
+        target: /data
+      - type: bind
+        source: /opt/piper
+        target: /opt/piper
+        read_only: true
+      - type: bind
+        source: /usr/local/bin/piper
+        target: /usr/local/bin/piper
+        read_only: true
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.scp079.role == voice
+      restart_policy:
+        condition: any
+
+volumes:
+  ollama_data:
