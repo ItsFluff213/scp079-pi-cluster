@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import io
+import json
 import os
 import sys
 import threading
@@ -23,6 +24,8 @@ import sounddevice as sd
 
 DEFAULT_URL = os.getenv("SCP079_DASHBOARD_URL", "http://logic:7860").rstrip("/")
 DEFAULT_TOKEN = os.getenv("SCP079_API_TOKEN", "")
+CONFIG_DIR = Path(os.getenv("APPDATA", str(Path.home()))) / "scp079"
+CONFIG_PATH = CONFIG_DIR / "desktop_bridge.json"
 
 
 def audio_device(value: str | None) -> str | int | None:
@@ -41,6 +44,72 @@ def list_devices() -> None:
     print("  Script Input           -> Voicemeeter Output (VAIO)")
     print("  Script Output          -> CABLE Input or Voicemeeter AUX Input")
     print("  Discord Mic            -> CABLE Output or Voicemeeter AUX Output")
+
+
+def load_config() -> dict[str, str]:
+    if not CONFIG_PATH.is_file():
+        return {}
+    try:
+        return json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+
+
+def save_config(config: dict[str, str]) -> None:
+    CONFIG_DIR.mkdir(parents=True, exist_ok=True)
+    CONFIG_PATH.write_text(json.dumps(config, indent=2), encoding="utf-8")
+
+
+def show_numbered_devices() -> None:
+    devices = sd.query_devices()
+    for index, device in enumerate(devices):
+        inputs = int(device.get("max_input_channels", 0))
+        outputs = int(device.get("max_output_channels", 0))
+        name = device.get("name", "")
+        print(f"{index:>3}  in:{inputs:<2} out:{outputs:<2}  {name}")
+
+
+def ask(prompt: str, default: str = "") -> str:
+    suffix = f" [{default}]" if default else ""
+    value = input(f"{prompt}{suffix}: ").strip()
+    return value or default
+
+
+def setup_wizard(existing: dict[str, str]) -> dict[str, str]:
+    print("SCP-079 desktop setup")
+    print()
+    print("Set Discord output to Voicemeeter Input.")
+    print("Set Discord microphone to CABLE Output or Voicemeeter AUX Output.")
+    print()
+    show_numbered_devices()
+    print()
+    config = dict(existing)
+    config["url"] = ask("Voice-core URL", config.get("url", DEFAULT_URL)).rstrip("/")
+    config["token"] = ask("SCP079_API_TOKEN", config.get("token", DEFAULT_TOKEN))
+    config["speaker"] = ask("Speaker name", config.get("speaker", "discord"))
+    config["input_device"] = ask(
+        "Python input device index/name (usually Voicemeeter Output)",
+        config.get("input_device", ""),
+    )
+    config["output_device"] = ask(
+        "Python output device index/name (usually CABLE Input or Voicemeeter AUX Input)",
+        config.get("output_device", ""),
+    )
+    config["monitor_device"] = ask(
+        "Optional monitor device for SCP-079 voice, empty for none",
+        config.get("monitor_device", ""),
+    )
+    save_config(config)
+    print()
+    print(f"Saved config: {CONFIG_PATH}")
+    return config
+
+
+def apply_config(args: argparse.Namespace, config: dict[str, str]) -> argparse.Namespace:
+    for key in ("url", "token", "speaker", "input_device", "output_device", "monitor_device"):
+        if getattr(args, key) in (None, "") and config.get(key):
+            setattr(args, key, config[key])
+    return args
 
 
 def record_utterance(
@@ -185,7 +254,9 @@ def main() -> None:
     parser.add_argument("--output-device", help="playback device that feeds Discord microphone")
     parser.add_argument("--monitor-device", help="optional headphones/speakers to hear SCP-079 locally")
     parser.add_argument("--list-devices", action="store_true")
+    parser.add_argument("--setup", action="store_true", help="interactive setup and save config")
     parser.add_argument("--continuous", action="store_true")
+    parser.add_argument("--once", action="store_true", help="process one utterance and exit")
     parser.add_argument("--file", help="send a WAV file instead of listening")
     parser.add_argument("--save-answer", help="write returned SCP-079 WAV to this file")
     parser.add_argument("--no-play", action="store_true")
@@ -202,6 +273,14 @@ def main() -> None:
     if args.list_devices:
         list_devices()
         return
+
+    config = load_config()
+    if args.setup or (not config and not args.input_device and not args.output_device):
+        config = setup_wizard(config)
+    args = apply_config(args, config)
+
+    if not args.file and not args.once:
+        args.continuous = True
 
     while True:
         try:
