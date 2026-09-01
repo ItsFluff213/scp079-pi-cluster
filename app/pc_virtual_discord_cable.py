@@ -78,8 +78,9 @@ def ask(prompt: str, default: str = "") -> str:
 def setup_wizard(existing: dict[str, str]) -> dict[str, str]:
     print("SCP-079 desktop setup")
     print()
-    print("Set Discord output to Voicemeeter Input.")
-    print("Set Discord microphone to CABLE Output or Voicemeeter AUX Output.")
+    print("Set Discord output to Voicemeeter Input or CABLE Input.")
+    print("Set Discord microphone to CABLE Output, Voicemeeter AUX Output, or another return cable.")
+    print("Set monitor device to your headphones if you still want to hear Discord through this script.")
     print()
     show_numbered_devices()
     print()
@@ -96,7 +97,7 @@ def setup_wizard(existing: dict[str, str]) -> dict[str, str]:
         config.get("output_device", ""),
     )
     config["monitor_device"] = ask(
-        "Optional monitor device for SCP-079 voice, empty for none",
+        "Optional headphones/monitor device, empty for none",
         config.get("monitor_device", ""),
     )
     save_config(config)
@@ -114,6 +115,7 @@ def apply_config(args: argparse.Namespace, config: dict[str, str]) -> argparse.N
 
 def record_utterance(
     input_device: str | int | None,
+    monitor_device: str | int | None,
     sample_rate: int,
     block_ms: int,
     threshold: float,
@@ -131,6 +133,7 @@ def record_utterance(
     silent_blocks = 0
 
     print("listening...", flush=True)
+    monitor_stream = None
     with sd.InputStream(
         samplerate=sample_rate,
         channels=1,
@@ -138,24 +141,41 @@ def record_utterance(
         blocksize=block_size,
         device=input_device,
     ) as stream:
-        for _ in range(max_blocks):
-            block, overflowed = stream.read(block_size)
-            if overflowed:
-                print("warning: input overflow", file=sys.stderr)
-            mono = block[:, 0].copy()
-            rms = float(np.sqrt(np.mean((mono.astype(np.float32) / 32768.0) ** 2)))
-            if not speech_started:
-                preroll.append(mono)
-                preroll = preroll[-preroll_limit:]
-                if rms >= threshold:
-                    speech_started = True
-                    blocks.extend(preroll)
-                    print("speech detected", flush=True)
-            else:
-                blocks.append(mono)
-                silent_blocks = silent_blocks + 1 if rms < threshold else 0
-                if silent_blocks >= silent_limit:
-                    break
+        try:
+            if monitor_device is not None:
+                monitor_stream = sd.OutputStream(
+                    samplerate=sample_rate,
+                    channels=2,
+                    dtype="int16",
+                    blocksize=block_size,
+                    device=monitor_device,
+                )
+                monitor_stream.start()
+
+            for _ in range(max_blocks):
+                block, overflowed = stream.read(block_size)
+                if overflowed:
+                    print("warning: input overflow", file=sys.stderr)
+                mono = block[:, 0].copy()
+                if monitor_stream is not None:
+                    monitor_stream.write(np.column_stack((mono, mono)))
+                rms = float(np.sqrt(np.mean((mono.astype(np.float32) / 32768.0) ** 2)))
+                if not speech_started:
+                    preroll.append(mono)
+                    preroll = preroll[-preroll_limit:]
+                    if rms >= threshold:
+                        speech_started = True
+                        blocks.extend(preroll)
+                        print("speech detected", flush=True)
+                else:
+                    blocks.append(mono)
+                    silent_blocks = silent_blocks + 1 if rms < threshold else 0
+                    if silent_blocks >= silent_limit:
+                        break
+        finally:
+            if monitor_stream is not None:
+                monitor_stream.stop()
+                monitor_stream.close()
 
     if not speech_started or not blocks:
         raise RuntimeError("no speech detected")
@@ -227,6 +247,7 @@ def one_turn(args: argparse.Namespace) -> None:
     else:
         wav_bytes = record_utterance(
             input_device=audio_device(args.input_device),
+            monitor_device=audio_device(args.monitor_device),
             sample_rate=args.sample_rate,
             block_ms=args.block_ms,
             threshold=args.threshold,
