@@ -26,6 +26,38 @@ cd scp079-pi-cluster
 git checkout <PASSENDER-BRANCH>
 ```
 
+## Ein-Kommando-Installation ab Pi 3
+
+Am einfachsten: Repo einmal auf `relay` / Pi 3 klonen, dann installiert Pi 3
+per SSH die passenden Rollen auf `dsam` und `logic`.
+
+Voraussetzungen:
+
+- Hostnamen `dsam`, `logic`, `relay` loesen im LAN auf.
+- Von `relay` aus funktioniert `ssh pi@dsam` und `ssh pi@logic`.
+- Der User `pi` darf auf allen Pis `sudo` verwenden.
+
+Auf `relay`:
+
+```bash
+sudo apt update
+sudo apt install -y git openssh-client
+git clone https://github.com/ItsFluff213/scp079-pi-cluster.git
+cd scp079-pi-cluster
+git checkout pi3-relay
+bash scripts/bootstrap_from_relay.sh
+```
+
+Falls deine SSH-User/Hostnamen anders sind:
+
+```bash
+PI_USER=deinuser DSAM_HOST=192.168.50.10 LOGIC_HOST=192.168.50.11 \
+  bash scripts/bootstrap_from_relay.sh
+```
+
+Weil das Repo privat ist, ist dieser Weg absichtlich so gebaut, dass nur `relay`
+GitHub-Zugriff braucht. Die anderen Pis bekommen den Repo-Stand per SSH-Kopie.
+
 ## Pi 5: dsam
 
 ```bash
