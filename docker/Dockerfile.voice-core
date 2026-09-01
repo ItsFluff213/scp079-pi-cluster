@@ -1,0 +1,41 @@
+FROM python:3.12-slim-bookworm
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        ca-certificates \
+        curl \
+        ffmpeg \
+        libgomp1 \
+        libsndfile1 \
+        sox \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+COPY requirements-voice-core.txt /app/requirements-voice-core.txt
+RUN python -m pip install --upgrade pip \
+    && python -m pip install -r /app/requirements-voice-core.txt
+
+COPY app /app/app
+COPY assets /app/assets
+
+ENV SCP079_HOST=0.0.0.0 \
+    SCP079_PORT=7860 \
+    SCP079_NODE_NAME=logic \
+    SCP079_DATA_DIR=/data \
+    SCP079_OUTPUT_DIR=/tmp/scp079-audio \
+    CHAT_BACKEND=ollama \
+    OLLAMA_URL=http://dsam:11434 \
+    OLLAMA_MODEL=qwen3:4b-instruct \
+    STT_BACKEND=faster-whisper \
+    WHISPER_MODEL=tiny \
+    PIPER_BIN=/usr/local/bin/piper \
+    PIPER_MODEL=/opt/piper/de_DE-thorsten-medium.onnx
+
+EXPOSE 7860
+
+CMD ["python", "/app/app/voice_core.py"]
