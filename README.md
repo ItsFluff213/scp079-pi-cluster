@@ -218,7 +218,50 @@ Direkt per API:
 curl -H "Authorization: Bearer DEIN_TOKEN" http://logic:7860/api/chatlog
 ```
 
-## 7. Erinnerung an Personen
+## 7. Discord am Desktop-PC als virtuelles Kabel
+
+Python kann unter Windows kein echtes virtuelles Mikrofon ohne Audiotreiber
+erzeugen. Installiere dafuer VB-CABLE A+B oder Voicemeeter. Danach kann
+`app/pc_virtual_discord_cable.py` die beiden virtuellen Kabel wie ein SCP-079-
+Discord-Kabel benutzen.
+
+Auf dem PC:
+
+```powershell
+git clone https://github.com/ItsFluff213/scp079-pi-cluster.git
+cd scp079-pi-cluster
+py -m venv .venv
+.\.venv\Scripts\python -m pip install -U pip
+.\.venv\Scripts\python -m pip install -r requirements-pc.txt
+.\.venv\Scripts\python app\pc_virtual_discord_cable.py --list-devices
+```
+
+Routing mit zwei Kabeln:
+
+```text
+Discord Ausgabe  -> Cable A Input
+Script Eingang   -> Cable A Output
+Script Ausgang   -> Cable B Input
+Discord Mikrofon -> Cable B Output
+```
+
+Startbeispiel:
+
+```powershell
+.\.venv\Scripts\python app\pc_virtual_discord_cable.py `
+  --url http://logic:7860 `
+  --continuous `
+  --input-device "CABLE Output" `
+  --output-device "CABLE-A Input" `
+  --monitor-device "Kopfhoerer" `
+  --speaker discord
+```
+
+Die exakten Geraetenamen koennen anders heissen. Nimm sie aus
+`--list-devices`. Nutze nicht dasselbe Kabel fuer Eingang und Ausgang, sonst
+hoert SCP-079 sich selbst und erzeugt Feedback.
+
+## 8. Erinnerung an Personen
 
 Der Voice-Core speichert lokale Erinnerungen in:
 
@@ -248,7 +291,7 @@ Ich mag Retro-Horror.
 Merk dir: Ich will kurze Antworten.
 ```
 
-## 8. Internet-Suche ohne Downloads
+## 9. Internet-Suche ohne Downloads
 
 Das Modell hat keinen freien Browser. Es bekommt nur kurze JSON-Suchtreffer aus
 einer SearXNG-Instanz. Treffer-URLs und Dateien werden nicht heruntergeladen.
@@ -271,7 +314,7 @@ WEB_CONTEXT=always
 `auto` sucht nur bei aktuellen Fragen wie "heute", "aktuell", "News" oder
 "derzeit".
 
-## 9. SCP-079-Stimme
+## 10. SCP-079-Stimme
 
 In `/opt/scp079/.env`:
 
@@ -296,7 +339,7 @@ PIPER_NOISE_SCALE=0.85
 SCP079_VOICE_PRESET=scp079
 ```
 
-## 10. Latenz-Regeln
+## 11. Latenz-Regeln
 
 - Ethernet statt WLAN fuer Pi-zu-Pi-Traffic.
 - Pi 5 aktiv kuehlen.
@@ -305,7 +348,7 @@ SCP079_VOICE_PRESET=scp079
 - Kurze Antworten erzwingen, nicht 1000 Tokens generieren lassen.
 - Kein Kubernetes als Default; systemd ist fuer dieses Live-Setup direkter.
 
-## 11. Nuetzliche Befehle
+## 12. Nuetzliche Befehle
 
 Logs:
 
