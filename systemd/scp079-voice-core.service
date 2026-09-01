@@ -1,0 +1,18 @@
+[Unit]
+Description=SCP-079 voice core and dashboard
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/opt/scp079
+EnvironmentFile=/opt/scp079/.env
+ExecStart=/opt/scp079/.venv/bin/python /opt/scp079/app/voice_core.py
+Restart=on-failure
+RestartSec=2
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

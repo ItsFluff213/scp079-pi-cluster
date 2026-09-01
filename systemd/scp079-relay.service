@@ -1,0 +1,16 @@
+[Unit]
+Description=SCP-079 Discord/virtual-audio relay
+After=network-online.target sound.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/opt/scp079-relay
+EnvironmentFile=-/opt/scp079-relay/.env
+ExecStart=/opt/scp079-relay/.venv/bin/python /opt/scp079-relay/app/relay_bridge.py --continuous --sample-rate 16000 --silence 0.55 --max-seconds 8
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
