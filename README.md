@@ -221,9 +221,10 @@ curl -H "Authorization: Bearer DEIN_TOKEN" http://logic:7860/api/chatlog
 ## 7. Discord am Desktop-PC als virtuelles Kabel
 
 Python kann unter Windows kein echtes virtuelles Mikrofon ohne Audiotreiber
-erzeugen. Installiere dafuer VB-CABLE A+B oder Voicemeeter. Danach kann
-`app/pc_virtual_discord_cable.py` die beiden virtuellen Kabel wie ein SCP-079-
-Discord-Kabel benutzen.
+erzeugen. Installiere dafuer **Voicemeeter Banana**. Damit kannst du Discord
+weiterhin auf deinen Kopfhoerern hoeren, waehrend Python denselben Ton
+mithoert. Fuer den Rueckweg zu Discord kannst du entweder ein VB-CABLE oder den
+Voicemeeter-AUX-Ausgang verwenden.
 
 Auf dem PC:
 
@@ -236,30 +237,46 @@ py -m venv .venv
 .\.venv\Scripts\python app\pc_virtual_discord_cable.py --list-devices
 ```
 
-Routing mit zwei Kabeln:
+Empfohlenes Routing mit Voicemeeter Banana:
 
 ```text
-Discord Ausgabe  -> Cable A Input
-Script Eingang   -> Cable A Output
-Script Ausgang   -> Cable B Input
-Discord Mikrofon -> Cable B Output
+Windows Standardausgabe oder Discord-Ausgabe -> Voicemeeter Input (VAIO)
+Voicemeeter A1                               -> deine Kopfhoerer
+Voicemeeter B1                               -> Voicemeeter Output (VAIO)
+Python --input-device                        -> Voicemeeter Output (VAIO)
+Python --output-device                       -> CABLE Input oder Voicemeeter AUX Input
+Discord Mikrofon                             -> CABLE Output oder Voicemeeter AUX Output
 ```
 
-Startbeispiel:
+Startbeispiel mit VB-CABLE als Rueckweg:
 
 ```powershell
 .\.venv\Scripts\python app\pc_virtual_discord_cable.py `
   --url http://logic:7860 `
   --continuous `
-  --input-device "CABLE Output" `
-  --output-device "CABLE-A Input" `
-  --monitor-device "Kopfhoerer" `
+  --input-device "Voicemeeter Output" `
+  --output-device "CABLE Input" `
   --speaker discord
 ```
 
+In Discord:
+
+```text
+Ausgabegeraet: Voicemeeter Input
+Eingabegeraet: CABLE Output
+```
+
+In Voicemeeter:
+
+```text
+A1: deine Kopfhoerer auswaehlen
+B1: fuer Voicemeeter Input aktivieren
+```
+
 Die exakten Geraetenamen koennen anders heissen. Nimm sie aus
-`--list-devices`. Nutze nicht dasselbe Kabel fuer Eingang und Ausgang, sonst
-hoert SCP-079 sich selbst und erzeugt Feedback.
+`--list-devices`. Wichtig ist nur: Discord muss fuer dich hoerbar bleiben
+ueber A1, und SCP-079 darf nicht sein eigenes Ausgangssignal wieder als Eingang
+hoeren.
 
 ## 8. Erinnerung an Personen
 

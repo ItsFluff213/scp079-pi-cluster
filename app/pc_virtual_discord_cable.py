@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Windows/Linux desktop bridge for Discord virtual audio cables.
+"""Windows/Linux desktop bridge for Discord + Voicemeeter.
 
-This script does not install an audio driver. On Windows use VB-CABLE,
-VB-CABLE A+B, or Voicemeeter, then select those devices here.
+This script does not install an audio driver. For Windows, Voicemeeter Banana
+is recommended so you can hear Discord while the script hears the same audio.
 """
 
 from __future__ import annotations
@@ -34,11 +34,13 @@ def audio_device(value: str | None) -> str | int | None:
 def list_devices() -> None:
     print(sd.query_devices())
     print()
-    print("Typical VB-CABLE routing:")
-    print("  Discord Output  -> Cable A Input")
-    print("  Script Input    -> Cable A Output")
-    print("  Script Output   -> Cable B Input")
-    print("  Discord Mic     -> Cable B Output")
+    print("Recommended Voicemeeter Banana routing:")
+    print("  Windows/Discord Output -> Voicemeeter Input (VAIO)")
+    print("  Voicemeeter A1         -> your headphones")
+    print("  Voicemeeter B1         -> Voicemeeter Output (VAIO)")
+    print("  Script Input           -> Voicemeeter Output (VAIO)")
+    print("  Script Output          -> CABLE Input or Voicemeeter AUX Input")
+    print("  Discord Mic            -> CABLE Output or Voicemeeter AUX Output")
 
 
 def record_utterance(
@@ -175,7 +177,7 @@ def one_turn(args: argparse.Namespace) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="SCP-079 desktop virtual cable bridge for Discord")
+    parser = argparse.ArgumentParser(description="SCP-079 desktop Voicemeeter bridge for Discord")
     parser.add_argument("--url", default=DEFAULT_URL, help="voice-core URL, e.g. http://logic:7860")
     parser.add_argument("--token", default=DEFAULT_TOKEN)
     parser.add_argument("--speaker", default=os.getenv("SCP079_SPEAKER", "discord"))
