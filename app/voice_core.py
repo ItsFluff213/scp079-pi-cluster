@@ -56,6 +56,10 @@ class Settings:
     llama_cpp_model = os.getenv("LLAMA_CPP_MODEL", "local-gguf")
     piper_bin = os.getenv("PIPER_BIN", "piper")
     piper_model = os.getenv("PIPER_MODEL", "/opt/piper/de_DE-thorsten-medium.onnx")
+    piper_length_scale = os.getenv("PIPER_LENGTH_SCALE", "1.18")
+    piper_noise_scale = os.getenv("PIPER_NOISE_SCALE", "0.72")
+    piper_sentence_silence = os.getenv("PIPER_SENTENCE_SILENCE", "0.09")
+    voice_preset = os.getenv("SCP079_VOICE_PRESET", "scp079").lower()
     api_token = os.getenv("SCP079_API_TOKEN", "")
     stt_backend = os.getenv("STT_BACKEND", "faster-whisper")
     whisper_model = os.getenv("WHISPER_MODEL", "tiny")
@@ -252,9 +256,9 @@ def synthesize_piper(text: str, raw_path: Path) -> None:
         CFG.piper_bin,
         "--model", str(model),
         "--output_file", str(raw_path),
-        "--length_scale", "1.12",
-        "--noise_scale", "0.55",
-        "--sentence_silence", "0.12",
+        "--length_scale", CFG.piper_length_scale,
+        "--noise_scale", CFG.piper_noise_scale,
+        "--sentence_silence", CFG.piper_sentence_silence,
     ]
     with _piper_lock:
         subprocess.run(
@@ -276,49 +280,79 @@ def _to_float_mono(samples: np.ndarray) -> np.ndarray:
     return samples.astype(np.float32)
 
 
-def robot_filter(input_path: Path, output_path: Path) -> None:
-    """Cheap Pi-friendly band-limit + pitch/speed + ring-mod + crush + flanger + echo."""
-    sample_rate, source = wavfile.read(input_path)
-    x = _to_float_mono(source)
+def _crush(x: np.ndarray, bits: int, hold: int) -> np.ndarray:
+    levels = 2**bits
+    y = np.round(np.clip(x, -1.0, 1.0) * (levels / 2 - 1)) / (levels / 2 - 1)
+    if hold > 1:
+        y = np.repeat(y[::hold], hold)[: len(y)]
+    return y.astype(np.float32)
 
-    # Old-computer pitch/speed-up. This intentionally shortens the signal.
-    pitch_factor = 1.08
-    x = signal.resample(x, max(1, int(len(x) / pitch_factor))).astype(np.float32)
 
-    # Telephone-like bandwidth.
-    nyquist = sample_rate / 2.0
-    low = min(280.0 / nyquist, 0.95)
-    high = min(3600.0 / nyquist, 0.98)
-    if 0.0 < low < high < 1.0:
-        sos = signal.butter(4, [low, high], btype="bandpass", output="sos")
-        x = signal.sosfilt(sos, x).astype(np.float32)
+def _echo(y: np.ndarray, source: np.ndarray, sample_rate: int, taps: tuple[tuple[float, float], ...]) -> np.ndarray:
+    out = y.copy()
+    for seconds, gain in taps:
+        offset = int(seconds * sample_rate)
+        if 0 < offset < len(out):
+            out[offset:] += gain * source[:-offset]
+    return out.astype(np.float32)
 
-    # Metallic ring modulation.
+
+def _moving_delay(x: np.ndarray, sample_rate: int, base_ms: float, depth_ms: float, rate_hz: float, mix: float) -> np.ndarray:
     t = np.arange(len(x), dtype=np.float32) / sample_rate
-    x = x * (0.78 + 0.22 * np.sin(2.0 * np.pi * 47.0 * t))
-
-    # Bit crusher: 8-bit amplitude plus a mild sample-and-hold reduction.
-    levels = 2**8
-    x = np.round(np.clip(x, -1.0, 1.0) * (levels / 2 - 1)) / (levels / 2 - 1)
-    hold = 2
-    x = np.repeat(x[::hold], hold)[: len(x)]
-
-    # Flanger with a slowly varying 1..5 ms delay.
-    delay = (0.003 + 0.002 * np.sin(2.0 * np.pi * 0.32 * t)) * sample_rate
+    delay = ((base_ms / 1000.0) + (depth_ms / 1000.0) * np.sin(2.0 * np.pi * rate_hz * t)) * sample_rate
     indices = np.arange(len(x), dtype=np.float32) - delay
     delayed = np.interp(indices, np.arange(len(x)), x, left=0.0).astype(np.float32)
-    y = x + 0.38 * delayed
+    return (x + mix * delayed).astype(np.float32)
 
-    # Two short echoes.
-    for seconds, gain in ((0.075, 0.30), (0.145, 0.16)):
-        offset = int(seconds * sample_rate)
-        if offset < len(y):
-            y[offset:] += gain * x[:-offset]
+
+def robot_filter(input_path: Path, output_path: Path) -> None:
+    """Pi-friendly SCP-079 voice: band-limit, digital damage, modulation, echo."""
+    sample_rate, source = wavfile.read(input_path)
+    x = _to_float_mono(source)
+    preset = CFG.voice_preset
+
+    # Old computer speech in the SCP footage feels clipped, narrow and slightly too fast.
+    pitch_factor = 1.12 if preset == "scp079" else 1.06
+    x = signal.resample(x, max(1, int(len(x) / pitch_factor))).astype(np.float32)
+
+    # CRT/telephone bandwidth. The SCP preset is narrower and harsher.
+    nyquist = sample_rate / 2.0
+    low_hz, high_hz = (420.0, 2950.0) if preset == "scp079" else (280.0, 3600.0)
+    low = min(low_hz / nyquist, 0.95)
+    high = min(high_hz / nyquist, 0.98)
+    if 0.0 < low < high < 1.0:
+        sos = signal.butter(5, [low, high], btype="bandpass", output="sos")
+        x = signal.sosfilt(sos, x).astype(np.float32)
+
+    t = np.arange(len(x), dtype=np.float32) / sample_rate
+
+    # Metallic amplitude wobble plus a small ring-mod component for the "broken terminal" tone.
+    carrier = 0.58 + 0.42 * signal.square(2.0 * np.pi * 36.0 * t, duty=0.54)
+    ring = np.sin(2.0 * np.pi * 92.0 * t) * x
+    x = (0.82 * x * carrier + 0.18 * ring).astype(np.float32)
+
+    # Unstable old ADC/DAC: 6-bit for SCP preset, 8-bit for softer robot.
+    x = _crush(x, bits=6 if preset == "scp079" else 8, hold=3 if preset == "scp079" else 2)
+
+    # Fast combing/flanger: more claustrophobic than a normal robot voice.
+    y = _moving_delay(x, sample_rate, base_ms=2.2, depth_ms=1.1, rate_hz=0.41, mix=0.47)
+
+    # Small room/monitor slapback, kept short for live Discord latency.
+    taps = ((0.046, 0.23), (0.092, 0.17), (0.138, 0.09)) if preset == "scp079" else ((0.075, 0.30), (0.145, 0.16))
+    y = _echo(y, x, sample_rate, taps)
+
+    # Light mains hum and hiss sell the ancient-machine illusion without hiding words.
+    hum = 0.018 * np.sin(2.0 * np.pi * 50.0 * t[: len(y)])
+    hiss_rng = np.random.default_rng(79)
+    hiss = 0.006 * hiss_rng.standard_normal(len(y), dtype=np.float32)
+    y = (y + hum + hiss).astype(np.float32)
 
     peak = float(np.max(np.abs(y))) if len(y) else 0.0
     if peak > 0:
-        y = np.tanh(y * (1.7 / peak))
-        y *= 0.92 / max(float(np.max(np.abs(y))), 1e-9)
+        drive = 2.35 if preset == "scp079" else 1.7
+        y = np.tanh(y * (drive / peak))
+        y = _crush(y, bits=7 if preset == "scp079" else 8, hold=1)
+        y *= 0.94 / max(float(np.max(np.abs(y))), 1e-9)
     wavfile.write(output_path, sample_rate, (y * 32767.0).astype(np.int16))
 
 
