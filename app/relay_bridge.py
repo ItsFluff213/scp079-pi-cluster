@@ -84,11 +84,18 @@ def record_utterance(
     return output.getvalue()
 
 
-def send_audio(wav_bytes: bytes, dashboard_url: str, token: str, timeout: float = 240.0) -> bytes:
+def send_audio(
+    wav_bytes: bytes,
+    dashboard_url: str,
+    token: str,
+    speaker: str,
+    timeout: float = 240.0,
+) -> bytes:
     headers = {"Authorization": f"Bearer {token}"} if token else {}
     response = requests.post(
         f"{dashboard_url}/api/audio",
         headers=headers,
+        data={"speaker": speaker},
         files={"audio": ("relay.wav", wav_bytes, "audio/wav")},
         timeout=(5.0, timeout),
     )
@@ -123,7 +130,7 @@ def one_cycle(args: argparse.Namespace) -> None:
             input_device=audio_device(args.input_device),
         )
     print(f"Sende {len(wav_bytes) / 1024:.1f} KiB an dsam …", flush=True)
-    answer = send_audio(wav_bytes, args.url, args.token)
+    answer = send_audio(wav_bytes, args.url, args.token, args.speaker)
     print("Antwort empfangen.", flush=True)
     if args.output:
         Path(args.output).write_bytes(answer)
@@ -141,6 +148,7 @@ def main() -> None:
     parser.add_argument("--no-play", action="store_true")
     parser.add_argument("--input-device", help="Name/Index der Aufnahmequelle, z.B. Discord-Monitor")
     parser.add_argument("--output-device", help="Name/Index des virtuellen Discord-Mikrofons")
+    parser.add_argument("--speaker", default=os.getenv("SCP079_SPEAKER", "discord"))
     parser.add_argument("--list-devices", action="store_true")
     parser.add_argument("--sample-rate", type=int, default=16_000)
     parser.add_argument("--threshold", type=float, default=0.012, help="RMS-Sprachschwelle 0..1")
