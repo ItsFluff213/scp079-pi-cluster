@@ -41,7 +41,9 @@ def unit(name: str, action: str) -> tuple[int, str]:
     if host == "local":
         cmd = ["systemctl", action, service]
     else:
-        remote = f"sudo systemctl {shlex.quote(action)} {shlex.quote(service)}"
+        # The controller is non-interactive; never wait for a sudo password.
+        # Installers grant only these allow-listed systemctl actions.
+        remote = f"sudo -n systemctl {shlex.quote(action)} {shlex.quote(service)}"
         cmd = ["ssh", "-i", SSH_KEY, "-o", "BatchMode=yes", f"{user}@{host}", remote]
     try:
         p = subprocess.run(cmd, capture_output=True, text=True, timeout=25)
