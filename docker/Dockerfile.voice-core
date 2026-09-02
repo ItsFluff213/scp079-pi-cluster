@@ -22,6 +22,7 @@ RUN python -m pip install --upgrade pip \
 
 COPY app /app/app
 COPY assets /app/assets
+COPY prompts /app/prompts
 
 ENV SCP079_HOST=0.0.0.0 \
     SCP079_PORT=7860 \
