@@ -21,6 +21,10 @@ from urllib.parse import unquote
 import numpy as np
 import requests
 import sounddevice as sd
+try:
+    import soundcard as sc
+except ImportError:
+    sc = None
 
 
 DEFAULT_URL = os.getenv("SCP079_DASHBOARD_URL", "http://logic:7860").rstrip("/")
@@ -43,6 +47,32 @@ def list_devices() -> None:
     print("  Script Output          -> CABLE Input")
     print("  Script Monitor         -> your headphones")
     print("  Discord Mic            -> CABLE Output")
+    if sc is not None:
+        print("\nWASAPI loopback devices (for --loopback-device):")
+        for i, mic in enumerate(sc.all_microphones(include_loopback=True)):
+            print(f"  {i}: {mic.name}")
+
+
+def resolve_loopback(value: str | int):
+    if sc is None:
+        raise RuntimeError("WASAPI loopback requires: python -m pip install soundcard")
+    requested = str(value)
+    if requested.isdecimal():
+        try:
+            requested = str(sd.query_devices(int(requested))["name"])
+        except Exception:
+            pass
+    devices = sc.all_microphones(include_loopback=True)
+    needle = requested.lower()
+    for mic in devices:
+        if needle in mic.name.lower() or mic.name.lower() in needle:
+            return mic
+    # Match the distinctive part (e.g. G733) when Windows localises names.
+    words = [w for w in needle.replace("(", " ").replace(")", " ").split() if len(w) >= 4]
+    for mic in devices:
+        if any(w in mic.name.lower() for w in words):
+            return mic
+    raise RuntimeError(f"No WASAPI loopback device matched '{value}'. Run --list-devices.")
     print()
     print("Full Voicemeeter Banana routing:")
     print("  Your real mic          -> B1")
@@ -141,17 +171,11 @@ def record_utterance(
 
     print("listening...", flush=True)
     monitor_stream = None
-    # WASAPI loopback exposes the selected Windows playback device as an input
-    # stream. This lets us hear Discord/Desktop audio without VB-CABLE.
-    stream_settings = sd.WasapiSettings(loopback=True) if loopback_device is not None else None
-    with sd.InputStream(
-        samplerate=sample_rate,
-        channels=1,
-        dtype="int16",
-        blocksize=block_size,
-        device=loopback_device if loopback_device is not None else input_device,
-        extra_settings=stream_settings,
-    ) as stream:
+    loopback = resolve_loopback(loopback_device) if loopback_device is not None else None
+    stream_context = loopback.recorder(samplerate=sample_rate, channels=1, blocksize=block_size) if loopback else sd.InputStream(
+        samplerate=sample_rate, channels=1, dtype="int16", blocksize=block_size, device=input_device
+    )
+    with stream_context as stream:
         try:
             if monitor_device is not None:
                 monitor_stream = sd.OutputStream(
@@ -164,10 +188,13 @@ def record_utterance(
                 monitor_stream.start()
 
             for _ in range(max_blocks):
-                block, overflowed = stream.read(block_size)
-                if overflowed:
-                    print("warning: input overflow", file=sys.stderr)
-                mono = block[:, 0].copy()
+                block = stream.record(numframes=block_size) if loopback else stream.read(block_size)[0]
+                mono = np.asarray(block[:, 0] if block.ndim > 1 else block, dtype=np.float32)
+                if loopback:
+                    mono = np.clip(mono, -1.0, 1.0)
+                    mono = (mono * 32767.0).astype(np.int16)
+                else:
+                    mono = mono.astype(np.int16, copy=False)
                 if monitor_stream is not None:
                     monitor_stream.write(np.column_stack((mono, mono)))
                 rms = float(np.sqrt(np.mean((mono.astype(np.float32) / 32768.0) ** 2)))
