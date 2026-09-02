@@ -524,16 +524,34 @@ In `/opt/scp079/.env`:
 
 ```env
 PIPER_MODEL=/opt/piper/en_US-ryan-medium.onnx
-PIPER_LENGTH_SCALE=1.18
-PIPER_NOISE_SCALE=0.72
+PIPER_LENGTH_SCALE=1.08
+PIPER_NOISE_SCALE=0.58
 PIPER_SENTENCE_SILENCE=0.09
-SCP079_VOICE_PRESET=scp079
+SCP079_VOICE_PRESET=scp079_clear
+STT_LANGUAGE=en
+LLM_TEMPERATURE=0.45
+LLM_NUM_PREDICT=120
 ```
 
 Default ist jetzt Englisch, weil SCP-079 im Original englisch spricht. Als
 lokale, sichere Basisstimme nutzt das Setup `en_US-ryan-medium` von Piper und
-verformt sie danach stark mit Bitcrush, Bandlimit, metallischer Modulation,
-Echo, Flanger-Artefakten, Hum und Noise.
+verformt sie danach mit Bitcrush, Bandlimit, metallischer Modulation, Echo,
+Flanger-Artefakten, Hum und Noise.
+
+Der Default-Preset ist `scp079_clear`: noch kaputt und metallisch, aber fuer
+Discord besser verstaendlich. Wenn du maximal kaputt willst:
+
+```env
+PIPER_NOISE_SCALE=0.85
+SCP079_VOICE_PRESET=scp079_harsh
+```
+
+Wenn du mehr Klarheit willst:
+
+```env
+PIPER_NOISE_SCALE=0.45
+SCP079_VOICE_PRESET=discord
+```
 
 Piper wird auf `logic` automatisch nach `/opt/piper` installiert:
 
@@ -565,6 +583,10 @@ scp079   : ...
 Debug-WAVs auf dem PC speichern:
 
 ```powershell
+cd C:\Users\fanny\Documents\Codex\2026-09-01\hr\outputs\scp079-pi-cluster-repo
+
+$env:SCP079_API_TOKEN="DEIN_TOKEN"
+
 python app\pc_virtual_discord_cable.py `
   --url http://logic:7860 `
   --token "$env:SCP079_API_TOKEN" `
@@ -578,30 +600,164 @@ python app\pc_virtual_discord_cable.py `
   --continuous
 ```
 
-Mehr Verstaendlichkeit:
+Wenn die Konsole das hier zeigt:
 
-```env
-PIPER_NOISE_SCALE=0.55
-SCP079_VOICE_PRESET=robot
+```text
+heard    : <not provided by voice-core>
+scp079   : <not provided by voice-core>
 ```
 
-Haerter und kaputter:
+dann ist der PC-Client schon neu, aber der Voice-Core auf `logic` ist noch alt.
+Dann vom PC pushen und auf `relay` neu deployen:
 
-```env
-PIPER_NOISE_SCALE=0.85
-SCP079_VOICE_PRESET=scp079
+```powershell
+cd C:\Users\fanny\Documents\Codex\2026-09-01\hr\outputs\scp079-pi-cluster-repo
+git push origin main pi3-relay pi4-logic pi5-dsam
 ```
 
-## 13. Latenz-Regeln
+```bash
+cd ~/scp079-pi-cluster/scp079-pi-cluster
+git pull origin pi3-relay
+DSAM_USER=felix LOGIC_USER=admin SSH_KEY=~/.ssh/scp079_cluster \
+  bash scripts/bootstrap_from_relay.sh
+```
+
+Voice-Core-Env live auf `logic` klarer setzen:
+
+```bash
+ssh -i ~/.ssh/scp079_cluster admin@logic \
+  "sudo sed -i 's|^PIPER_LENGTH_SCALE=.*|PIPER_LENGTH_SCALE=1.08|; s|^PIPER_NOISE_SCALE=.*|PIPER_NOISE_SCALE=0.58|; s|^SCP079_VOICE_PRESET=.*|SCP079_VOICE_PRESET=scp079_clear|; s|^LLM_NUM_PREDICT=.*|LLM_NUM_PREDICT=120|' /opt/scp079/.env && sudo systemctl restart scp079-voice-core.service"
+```
+
+## 13. Modell-Speed: smart oder schnell?
+
+Aktuell laeuft:
+
+```text
+qwen3:4b-instruct
+```
+
+Das ist fuer einen Raspberry Pi 5 eher die "smarter, aber nicht super fluide"
+Wahl. Es kann gute Antworten geben, braucht aber spuerbar Zeit. Fuer echte
+Discord-Unterhaltung ist die groesste Bremse meistens:
+
+```text
+STT -> LLM Token-Generierung -> TTS -> Audioausgabe
+```
+
+Schneller antworten:
+
+```bash
+ssh -i ~/.ssh/scp079_cluster felix@dsam "ollama pull llama3.2:3b"
+ssh -i ~/.ssh/scp079_cluster admin@logic \
+  "sudo sed -i 's|^OLLAMA_MODEL=.*|OLLAMA_MODEL=llama3.2:3b|; s|^LLM_NUM_PREDICT=.*|LLM_NUM_PREDICT=80|' /opt/scp079/.env && sudo systemctl restart scp079-voice-core.service"
+```
+
+Zurueck zum smarteren Default:
+
+```bash
+ssh -i ~/.ssh/scp079_cluster felix@dsam "ollama pull qwen3:4b-instruct"
+ssh -i ~/.ssh/scp079_cluster admin@logic \
+  "sudo sed -i 's|^OLLAMA_MODEL=.*|OLLAMA_MODEL=qwen3:4b-instruct|; s|^LLM_NUM_PREDICT=.*|LLM_NUM_PREDICT=120|' /opt/scp079/.env && sudo systemctl restart scp079-voice-core.service"
+```
+
+Noch kuerzere Antworten erzwingen:
+
+```bash
+ssh -i ~/.ssh/scp079_cluster admin@logic \
+  "sudo sed -i 's|^LLM_NUM_PREDICT=.*|LLM_NUM_PREDICT=60|' /opt/scp079/.env && sudo systemctl restart scp079-voice-core.service"
+```
+
+Empfehlung:
+
+- Fluide Tests: `llama3.2:3b`, `LLM_NUM_PREDICT=60-80`
+- Bessere Antworten: `qwen3:4b-instruct`, `LLM_NUM_PREDICT=100-120`
+- Nicht splitten ueber Pi4/Pi5; das macht Live-Gespraeche meist langsamer.
+
+## 14. Latenz-Regeln
 
 - Ethernet statt WLAN fuer Pi-zu-Pi-Traffic.
 - Pi 5 aktiv kuehlen.
-- `qwen3:4b-instruct` zuerst testen.
+- Fuer live: zuerst `llama3.2:3b` testen, dann `qwen3:4b-instruct` vergleichen.
 - STT auf `tiny` lassen, wenn Discord moeglichst live sein soll.
-- Kurze Antworten erzwingen, nicht 1000 Tokens generieren lassen.
+- `LLM_NUM_PREDICT=60-120`, nicht 1000 Tokens generieren lassen.
+- `SCP079_VOICE_PRESET=scp079_clear` fuer Discord-Verstaendlichkeit.
 - Kein Kubernetes als Default; systemd ist fuer dieses Live-Setup direkter.
 
-## 14. Nuetzliche Befehle
+## 15. Funktionierende Befehle aus unserem Setup
+
+PC-Ordner oeffnen:
+
+```powershell
+cd C:\Users\fanny\Documents\Codex\2026-09-01\hr\outputs\scp079-pi-cluster-repo
+```
+
+PC-Pakete installieren:
+
+```powershell
+python -m pip install -r requirements-pc.txt
+```
+
+PC-Audiogeraete anzeigen:
+
+```powershell
+python app\pc_virtual_discord_cable.py --list-devices
+```
+
+Dein bisher funktionierender MME-Test:
+
+```powershell
+$env:SCP079_API_TOKEN="DEIN_TOKEN"
+
+python app\pc_virtual_discord_cable.py `
+  --url http://logic:7860 `
+  --token "$env:SCP079_API_TOKEN" `
+  --speaker fanny-discord `
+  --input-device 1 `
+  --output-device 6 `
+  --monitor-device 5 `
+  --sample-rate 48000 `
+  --save-input runtime\last-input.wav `
+  --save-answer runtime\last-answer.wav `
+  --continuous
+```
+
+Token auf `relay` anzeigen:
+
+```bash
+grep '^SCP079_API_TOKEN=' /opt/scp079-relay/.env
+```
+
+Pi-Health pruefen:
+
+```bash
+curl http://dsam:11434/api/tags
+curl http://logic:7860/health
+```
+
+Dashboard:
+
+```text
+http://logic:7860/ui/
+```
+
+Chatlog von `relay`:
+
+```bash
+TOKEN=$(grep '^SCP079_API_TOKEN=' /opt/scp079-relay/.env | cut -d= -f2-)
+curl -s -H "Authorization: Bearer $TOKEN" "http://logic:7860/api/chatlog?limit=10"
+```
+
+Bootstrap erneut ausfuehren:
+
+```bash
+cd ~/scp079-pi-cluster/scp079-pi-cluster
+git pull origin pi3-relay
+DSAM_USER=felix LOGIC_USER=admin SSH_KEY=~/.ssh/scp079_cluster \
+  bash scripts/bootstrap_from_relay.sh
+```
+
+## 16. Nuetzliche Befehle
 
 Logs:
 
