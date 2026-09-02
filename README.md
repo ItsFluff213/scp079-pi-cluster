@@ -145,6 +145,9 @@ Der Bootstrap installiert `relay` lokal, kopiert den Repo-Stand per SSH auf
 `dsam` und `logic`, checkt dort die passenden Branches aus, installiert die
 Dienste und erzeugt einen gemeinsamen `SCP079_API_TOKEN`.
 
+Wenn ein Ziel-Pi sehr frisch ist, installiert der Bootstrap dort `git`
+automatisch vor dem Branch-Wechsel.
+
 Falls `sudo dpkg --configure -a` eine Raspberry-Pi-Connect-Sitzung schliesst:
 danach per normalem SSH vom PC verbinden und den Befehl erneut ausfuehren:
 
