@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+dpkg --configure -a
 apt-get update
 apt-get install -y curl
 
