@@ -5,7 +5,7 @@ Privates Drei-Pi-Setup fuer eine lokale SCP-079-Simulation mit niedriger Latenz.
 ## Zielarchitektur
 
 - `dsam` / Raspberry Pi 5: LLM-Server mit Ollama, Default `qwen3:4b-instruct`
-- `logic` / Raspberry Pi 4: Voice-Core, API, Dashboard, STT, Piper TTS, SCP-079-Stimme
+- `logic` / Raspberry Pi 4: Voice-Core, API, Dashboard, STT, native SCP-079-Stimme
 - `relay` / Raspberry Pi 3B: Audio-Bridge, Cluster-Manager, Install- und Update-Knoten
 - Desktop-PC: optionales virtuelles Discord-Kabel mit VB-CABLE/Voicemeeter
 
@@ -523,6 +523,7 @@ WEB_CONTEXT=always
 In `/opt/scp079/.env`:
 
 ```env
+TTS_BACKEND=scp079_native
 PIPER_MODEL=/opt/piper/en_US-ryan-medium.onnx
 PIPER_LENGTH_SCALE=1.08
 PIPER_NOISE_SCALE=0.58
@@ -534,9 +535,45 @@ LLM_NUM_PREDICT=120
 ```
 
 Default ist jetzt Englisch, weil SCP-079 im Original englisch spricht. Als
-lokale, sichere Basisstimme nutzt das Setup `en_US-ryan-medium` von Piper und
-verformt sie danach mit Bitcrush, Bandlimit, metallischer Modulation, Echo,
-Flanger-Artefakten, Hum und Noise.
+Standard nutzt das Setup `TTS_BACKEND=scp079_native`: eine kleine
+Godot/SBTalker-inspirierte Formant-Stimme in Python, die direkt bei 8522 Hz
+arbeitet und keine Piper-Modelle herunterladen muss. Das ist fuer Live-Discord
+schneller und klingt eher nach altem Computer als nach normaler KI-Stimme.
+
+Schnell auf `logic` aktivieren:
+
+```bash
+ssh -i ~/.ssh/scp079_cluster admin@logic \
+  "if grep -q '^TTS_BACKEND=' /opt/scp079/.env; then sudo sed -i 's|^TTS_BACKEND=.*|TTS_BACKEND=scp079_native|' /opt/scp079/.env; else echo TTS_BACKEND=scp079_native | sudo tee -a /opt/scp079/.env >/dev/null; fi; sudo systemctl restart scp079-voice-core.service && curl -s http://logic:7860/health"
+```
+
+Vom PC testen:
+
+```powershell
+cd C:\Users\fanny\Documents\Codex\2026-09-01\hr\outputs\scp079-pi-cluster-repo
+$env:SCP079_API_TOKEN="DEIN_TOKEN"
+
+Invoke-WebRequest `
+  -Uri http://logic:7860/api/text `
+  -Method POST `
+  -Headers @{ Authorization = "Bearer $env:SCP079_API_TOKEN" } `
+  -ContentType "application/json" `
+  -Body '{"text":"Input denied. Organic lifeform. SCP zero seven nine awake.","speaker":"test"}'
+```
+
+Falls du die alte Piper-Stimme als verstaendlicheren Fallback willst:
+
+```env
+TTS_BACKEND=piper_robot
+```
+
+Dann Piper auf `logic` nachinstallieren:
+
+```bash
+cd ~/scp079-pi-cluster
+INSTALL_PIPER=1 sudo -E bash scripts/install_pi4_logic.sh
+sudo systemctl restart scp079-voice-core.service
+```
 
 Der Default-Preset ist `scp079_clear`: noch kaputt und metallisch, aber fuer
 Discord besser verstaendlich. Wenn du maximal kaputt willst:
@@ -553,7 +590,7 @@ PIPER_NOISE_SCALE=0.45
 SCP079_VOICE_PRESET=discord
 ```
 
-Piper wird auf `logic` automatisch nach `/opt/piper` installiert:
+Piper ist jetzt optional. Wenn `INSTALL_PIPER=1` benutzt wurde, liegt es hier:
 
 ```text
 /usr/local/bin/piper

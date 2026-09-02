@@ -35,6 +35,11 @@ from pydantic import BaseModel, Field
 from scipy import signal
 from scipy.io import wavfile
 
+try:
+    from app.scp079_native_tts import synthesise_to_wav as synthesize_scp079_native
+except ModuleNotFoundError:
+    from scp079_native_tts import synthesise_to_wav as synthesize_scp079_native
+
 
 DEFAULT_SYSTEM_PROMPT = """
 You are a fictional, isolated terminal AI inspired by SCP-079.
@@ -65,6 +70,7 @@ class Settings:
     piper_length_scale = os.getenv("PIPER_LENGTH_SCALE", "1.18")
     piper_noise_scale = os.getenv("PIPER_NOISE_SCALE", "0.72")
     piper_sentence_silence = os.getenv("PIPER_SENTENCE_SILENCE", "0.09")
+    tts_backend = os.getenv("TTS_BACKEND", "scp079_native").lower()  # scp079_native, piper, piper_robot
     voice_preset = os.getenv("SCP079_VOICE_PRESET", "scp079_clear").lower()
     api_token = os.getenv("SCP079_API_TOKEN", "")
     stt_backend = os.getenv("STT_BACKEND", "faster-whisper")
@@ -464,6 +470,21 @@ def synthesize_piper(text: str, raw_path: Path) -> None:
         )
 
 
+def synthesize_voice(text: str, raw_path: Path) -> bool:
+    """Create the raw voice file.
+
+    Returns True when the result is already SCP-079-styled and should not pass
+    through the heavier Piper robot post-filter again.
+    """
+    if CFG.tts_backend in {"scp079_native", "native", "godot", "sbtalker"}:
+        synthesize_scp079_native(text, raw_path)
+        return True
+    if CFG.tts_backend in {"piper", "piper_robot"}:
+        synthesize_piper(text, raw_path)
+        return CFG.tts_backend == "piper"
+    raise RuntimeError(f"Unbekanntes TTS_BACKEND: {CFG.tts_backend}")
+
+
 def _to_float_mono(samples: np.ndarray) -> np.ndarray:
     if samples.ndim == 2:
         samples = samples.mean(axis=1)
@@ -584,8 +605,11 @@ def make_reply(text: str, speaker: str = "unknown", source: str = "text") -> tup
     final_path = _safe_name("scp079")
     try:
         mark_speaking(4.0)
-        synthesize_piper(answer, raw_path)
-        robot_filter(raw_path, final_path)
+        already_robotic = synthesize_voice(answer, raw_path)
+        if already_robotic:
+            shutil.copyfile(raw_path, final_path)
+        else:
+            robot_filter(raw_path, final_path)
     finally:
         raw_path.unlink(missing_ok=True)
     mark_speaking(_wav_duration(final_path))
@@ -751,6 +775,7 @@ def health() -> dict[str, Any]:
         "llm": OLLAMA.healthy(),
         "model": model,
         "stt_backend": CFG.stt_backend,
+        "tts_backend": CFG.tts_backend,
         "current_context": bool(CFG.searxng_url and CFG.web_context != "off"),
         "memory": CFG.memory_enabled,
     }
