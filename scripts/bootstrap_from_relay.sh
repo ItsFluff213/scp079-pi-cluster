@@ -71,6 +71,14 @@ echo "SCP-079 bootstrap from relay"
 echo "Repo: $ROOT_DIR"
 echo "Targets: ${DSAM_USER}@${DSAM_HOST}, ${LOGIC_USER}@${LOGIC_HOST}"
 echo "Bridge token: generated for this install"
+cat <<'EOF'
+
+   .-------------------------------.
+   | SCP-079 CLUSTER BOOTSTRAP     |
+   | STATUS: ORGANIC INPUT TOLERATED|
+   '-------------------------------'
+
+EOF
 
 SSH_OPTS=()
 if [[ -f "$SSH_KEY" ]]; then
@@ -105,6 +113,7 @@ install_remote_node() {
 
   ssh -t "${SSH_OPTS[@]}" "${user}@${host}" "
     set -e
+    sudo dpkg --configure -a
     if ! command -v git >/dev/null 2>&1; then
       sudo apt-get update
       sudo apt-get install -y git

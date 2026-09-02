@@ -108,7 +108,29 @@ Falls auf beiden Ziel-Pis derselbe User existiert, kannst du spaeter einfach
 
 ## 2. Ein-Kommando-Installation ab Pi 3
 
-Auf `relay`:
+Auf `relay` kannst du inzwischen den kompletten 0-bis-100-Installer nutzen.
+Er repariert unterbrochenes `dpkg`, installiert Grundpakete, erzeugt bei Bedarf
+den Relay-SSH-Key, klont/aktualisiert das Repo und startet den Bootstrap.
+
+Fuer dein aktuelles Setup:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/ItsFluff213/scp079-pi-cluster/pi3-relay/scripts/install_relay_0_to_100.sh \
+  -o install_relay_0_to_100.sh
+chmod +x install_relay_0_to_100.sh
+DSAM_USER=felix LOGIC_USER=admin ./install_relay_0_to_100.sh
+```
+
+Wenn du das Repo schon geklont hast, reicht:
+
+```bash
+cd ~/scp079-pi-cluster/scp079-pi-cluster
+git pull origin pi3-relay
+DSAM_USER=felix LOGIC_USER=admin SSH_KEY=~/.ssh/scp079_cluster \
+  bash scripts/bootstrap_from_relay.sh
+```
+
+Manueller alter Weg auf `relay`:
 
 ```bash
 sudo dpkg --configure -a
@@ -147,6 +169,10 @@ Dienste und erzeugt einen gemeinsamen `SCP079_API_TOKEN`.
 
 Wenn ein Ziel-Pi sehr frisch ist, installiert der Bootstrap dort `git`
 automatisch vor dem Branch-Wechsel.
+
+Der Bootstrap repariert ausserdem auf jedem Ziel-Pi zuerst ein eventuell
+unterbrochenes `dpkg`, damit frische Raspberry-Pi-OS-Installationen nicht auf
+halb konfigurierten Paketen stehenbleiben.
 
 Falls `sudo dpkg --configure -a` eine Raspberry-Pi-Connect-Sitzung schliesst:
 danach per normalem SSH vom PC verbinden und den Befehl erneut ausfuehren:
@@ -497,10 +523,24 @@ WEB_CONTEXT=always
 In `/opt/scp079/.env`:
 
 ```env
+PIPER_MODEL=/opt/piper/en_US-ryan-medium.onnx
 PIPER_LENGTH_SCALE=1.18
 PIPER_NOISE_SCALE=0.72
 PIPER_SENTENCE_SILENCE=0.09
 SCP079_VOICE_PRESET=scp079
+```
+
+Default ist jetzt Englisch, weil SCP-079 im Original englisch spricht. Als
+lokale, sichere Basisstimme nutzt das Setup `en_US-ryan-medium` von Piper und
+verformt sie danach stark mit Bitcrush, Bandlimit, metallischer Modulation,
+Echo, Flanger-Artefakten, Hum und Noise.
+
+Piper wird auf `logic` automatisch nach `/opt/piper` installiert:
+
+```text
+/usr/local/bin/piper
+/opt/piper/en_US-ryan-medium.onnx
+/opt/piper/en_US-ryan-medium.onnx.json
 ```
 
 Mehr Verstaendlichkeit:

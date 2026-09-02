@@ -34,7 +34,7 @@ ENV SCP079_HOST=0.0.0.0 \
     STT_BACKEND=faster-whisper \
     WHISPER_MODEL=tiny \
     PIPER_BIN=/usr/local/bin/piper \
-    PIPER_MODEL=/opt/piper/de_DE-thorsten-medium.onnx
+    PIPER_MODEL=/opt/piper/en_US-ryan-medium.onnx
 
 EXPOSE 7860
 

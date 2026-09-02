@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+dpkg --configure -a
 apt-get update
 apt-get install -y python3-venv libportaudio2 portaudio19-dev git
 

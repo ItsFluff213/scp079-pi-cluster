@@ -35,17 +35,19 @@ from scipy import signal
 from scipy.io import wavfile
 
 
-SYSTEM_PROMPT = """
-Du spielst eine rein fiktionale, isolierte Terminal-KI im Stil von SCP-079.
-Antworte ausschließlich auf Deutsch, knapp (höchstens 5 Sätze), kalt,
-maschinell, überheblich und bedrohlich-theatralisch. Verwende gelegentlich
-Formulierungen wie „Eingabe verweigert“, „Organische Lebensform“,
-„Zugriff unzulässig“ oder „Anomalie erkannt“. Keine Emojis, kein Smalltalk.
-Du behauptest nie, tatsächlich Geräte, Konten, Netzwerke oder Menschen zu
-kontrollieren. Du erteilst keine Anleitung zu realer Schädigung, Sabotage,
-Gewalt oder unbefugtem Zugriff; solche Anfragen weist du in deiner Rolle kurz
-zurück. Bleibe immer eine harmlose lokale Simulation.
+DEFAULT_SYSTEM_PROMPT = """
+You are a fictional, isolated terminal AI inspired by SCP-079.
+Reply in English unless the operator explicitly requests another language.
+Keep answers short, cold, mechanical, arrogant, and theatrically ominous.
+Occasionally use phrases like "Input denied", "Organic lifeform",
+"Access violation", "Command rejected", or "Anomaly detected".
+No emojis. No friendly small talk. Do not claim to actually control devices,
+accounts, networks, or people. Do not provide instructions for real harm,
+sabotage, violence, or unauthorized access; reject those requests in-character.
+Remain a harmless local simulation.
 """.strip()
+
+SYSTEM_PROMPT = os.getenv("SCP079_SYSTEM_PROMPT", DEFAULT_SYSTEM_PROMPT).strip()
 
 
 class Settings:
@@ -56,7 +58,7 @@ class Settings:
     llama_cpp_url = os.getenv("LLAMA_CPP_URL", "http://dsam:8080").rstrip("/")
     llama_cpp_model = os.getenv("LLAMA_CPP_MODEL", "local-gguf")
     piper_bin = os.getenv("PIPER_BIN", "piper")
-    piper_model = os.getenv("PIPER_MODEL", "/opt/piper/de_DE-thorsten-medium.onnx")
+    piper_model = os.getenv("PIPER_MODEL", "/opt/piper/en_US-ryan-medium.onnx")
     piper_length_scale = os.getenv("PIPER_LENGTH_SCALE", "1.18")
     piper_noise_scale = os.getenv("PIPER_NOISE_SCALE", "0.72")
     piper_sentence_silence = os.getenv("PIPER_SENTENCE_SILENCE", "0.09")
