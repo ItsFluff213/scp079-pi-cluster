@@ -3,6 +3,7 @@ set -euo pipefail
 
 PI_USER="${PI_USER:-pi}"
 LOGIC_HOST="${LOGIC_HOST:-logic}"
+LOGIC_USER="${LOGIC_USER:-$PI_USER}"
 SSH_KEY="${SSH_KEY:-$HOME/.ssh/scp079_cluster}"
 REMOTE_TMP="${REMOTE_TMP:-/tmp/scp079-bootstrap}"
 SCP079_API_TOKEN="${SCP079_API_TOKEN:-}"
@@ -41,17 +42,17 @@ if [[ -z "$SCP079_API_TOKEN" ]]; then
 fi
 
 echo "==> Copying repo snapshot to logic for local image build"
-ssh "${SSH_OPTS[@]}" "${PI_USER}@${LOGIC_HOST}" "mkdir -p '${REMOTE_TMP}'"
+ssh "${SSH_OPTS[@]}" "${LOGIC_USER}@${LOGIC_HOST}" "mkdir -p '${REMOTE_TMP}'"
 tar \
   --exclude='.git/hooks' \
   --exclude='__pycache__' \
   --exclude='.venv' \
   --exclude='runtime' \
   --exclude='models' \
-  -czf - . | ssh "${SSH_OPTS[@]}" "${PI_USER}@${LOGIC_HOST}" "rm -rf '${REMOTE_TMP:?}'/* && tar -xzf - -C '${REMOTE_TMP}'"
+  -czf - . | ssh "${SSH_OPTS[@]}" "${LOGIC_USER}@${LOGIC_HOST}" "rm -rf '${REMOTE_TMP:?}'/* && tar -xzf - -C '${REMOTE_TMP}'"
 
 echo "==> Building voice-core image on logic"
-ssh -t "${SSH_OPTS[@]}" "${PI_USER}@${LOGIC_HOST}" "
+ssh -t "${SSH_OPTS[@]}" "${LOGIC_USER}@${LOGIC_HOST}" "
   set -e
   sudo mkdir -p /var/lib/scp079
   cd '${REMOTE_TMP}'

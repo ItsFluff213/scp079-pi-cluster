@@ -4,6 +4,8 @@ set -euo pipefail
 PI_USER="${PI_USER:-pi}"
 DSAM_HOST="${DSAM_HOST:-dsam}"
 LOGIC_HOST="${LOGIC_HOST:-logic}"
+DSAM_USER="${DSAM_USER:-$PI_USER}"
+LOGIC_USER="${LOGIC_USER:-$PI_USER}"
 SSH_KEY="${SSH_KEY:-$HOME/.ssh/scp079_cluster}"
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -25,7 +27,8 @@ install_docker_local() {
 
 install_docker_remote() {
   local host="$1"
-  ssh -t "${SSH_OPTS[@]}" "${PI_USER}@${host}" "
+  local user="$2"
+  ssh -t "${SSH_OPTS[@]}" "${user}@${host}" "
     set -e
     if ! command -v docker >/dev/null 2>&1; then
       sudo apt update
@@ -45,8 +48,8 @@ relay_ip() {
 
 echo "==> Installing Docker on relay, dsam and logic"
 install_docker_local
-install_docker_remote "$DSAM_HOST"
-install_docker_remote "$LOGIC_HOST"
+install_docker_remote "$DSAM_HOST" "$DSAM_USER"
+install_docker_remote "$LOGIC_HOST" "$LOGIC_USER"
 
 if [[ "$(swarm_state)" != "active" ]]; then
   echo "==> Initializing Docker Swarm on relay"
@@ -60,7 +63,8 @@ MANAGER_ADDR="$(relay_ip):2377"
 
 join_worker() {
   local host="$1"
-  ssh -t "${SSH_OPTS[@]}" "${PI_USER}@${host}" "
+  local user="$2"
+  ssh -t "${SSH_OPTS[@]}" "${user}@${host}" "
     set -e
     state=\$(sudo docker info --format '{{.Swarm.LocalNodeState}}' 2>/dev/null || true)
     if [ \"\$state\" != 'active' ]; then
@@ -72,8 +76,8 @@ join_worker() {
 }
 
 echo "==> Joining workers"
-join_worker "$DSAM_HOST"
-join_worker "$LOGIC_HOST"
+join_worker "$DSAM_HOST" "$DSAM_USER"
+join_worker "$LOGIC_HOST" "$LOGIC_USER"
 
 echo "==> Labeling nodes"
 sudo docker node update --label-add scp079.role=control relay >/dev/null
