@@ -23,5 +23,8 @@ chown -R "${TARGET_USER}:${TARGET_USER}" /var/lib/scp079 /opt/scp079 /opt/piper
 
 cp systemd/scp079-voice-core.service /etc/systemd/system/
 sed -i "s/^User=.*/User=${TARGET_USER}/" /etc/systemd/system/scp079-voice-core.service
+# Permit the Pi-3 controller to manage only the voice service without a TTY.
+printf '%s ALL=(root) NOPASSWD: /usr/bin/systemctl start scp079-voice-core.service, /usr/bin/systemctl stop scp079-voice-core.service, /usr/bin/systemctl restart scp079-voice-core.service, /usr/bin/systemctl status scp079-voice-core.service\n' "${TARGET_USER}" > /etc/sudoers.d/scp079-control
+chmod 0440 /etc/sudoers.d/scp079-control
 systemctl daemon-reload
 echo "Now copy env/pi4-logic.env.example to /opt/scp079/.env and set token/model paths."
