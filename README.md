@@ -543,6 +543,41 @@ Piper wird auf `logic` automatisch nach `/opt/piper` installiert:
 /opt/piper/en_US-ryan-medium.onnx.json
 ```
 
+Der Prompt-Stil liegt in:
+
+```text
+prompts/scp079_conversation_style.md
+```
+
+Der Voice-Core laedt diese Datei automatisch und schreibt dadurch kuerzere,
+haertere, besser verstaendliche SCP-079-Saetze. Das ist besonders wichtig fuer
+Godot/SBTalker-artige Stimmen, weil lange Assistant-Antworten durch den
+Roboterfilter schnell unklar werden.
+
+Die Audio-API gibt ausserdem Transcript und Modellantwort in HTTP-Headern
+zurueck. Der Desktop-Bridge-Client zeigt deshalb live:
+
+```text
+heard    : ...
+scp079   : ...
+```
+
+Debug-WAVs auf dem PC speichern:
+
+```powershell
+python app\pc_virtual_discord_cable.py `
+  --url http://logic:7860 `
+  --token "$env:SCP079_API_TOKEN" `
+  --speaker fanny-discord `
+  --input-device 1 `
+  --output-device 6 `
+  --monitor-device 5 `
+  --sample-rate 48000 `
+  --save-input runtime\last-input.wav `
+  --save-answer runtime\last-answer.wav `
+  --continuous
+```
+
 Mehr Verstaendlichkeit:
 
 ```env

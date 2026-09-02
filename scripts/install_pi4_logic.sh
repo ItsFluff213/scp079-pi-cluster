@@ -8,7 +8,7 @@ apt-get install -y python3-venv libsndfile1 ffmpeg git curl tar ca-certificates
 TARGET_USER="${SUDO_USER:-pi}"
 mkdir -p /opt/scp079 /opt/piper
 mkdir -p /var/lib/scp079
-cp -r app assets env requirements-voice-core.txt /opt/scp079/
+cp -r app assets env prompts requirements-voice-core.txt /opt/scp079/
 bash scripts/install_piper_voice.sh
 python3 -m venv /opt/scp079/.venv
 /opt/scp079/.venv/bin/pip install -U pip

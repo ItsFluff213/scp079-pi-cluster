@@ -23,6 +23,7 @@ import tempfile
 import threading
 import time
 import uuid
+from urllib.parse import quote
 from pathlib import Path
 from typing import Any
 
@@ -88,7 +89,21 @@ _db_lock = threading.Lock()
 _state_lock = threading.Lock()
 _speaking_until = 0.0
 ASSET_DIR = Path(__file__).resolve().parent.parent / "assets"
+PROMPT_DIR = Path(__file__).resolve().parent.parent / "prompts"
 SCP079_IMAGE = ASSET_DIR / "scp079.png"
+STYLE_FILE = PROMPT_DIR / "scp079_conversation_style.md"
+
+
+def load_style_pack() -> str:
+    try:
+        return STYLE_FILE.read_text(encoding="utf-8")[:7000].strip()
+    except OSError:
+        return ""
+
+
+STYLE_PACK = load_style_pack()
+if STYLE_PACK:
+    SYSTEM_PROMPT = f"{SYSTEM_PROMPT}\n\nAdditional conversation style pack:\n{STYLE_PACK}"
 
 
 def _safe_name(prefix: str) -> Path:
@@ -397,7 +412,7 @@ class SpeechToText:
 
             self._model = WhisperModel(CFG.whisper_model, device="cpu", compute_type="int8")
         segments, _ = self._model.transcribe(
-            str(audio_path), language="de", beam_size=1, vad_filter=True
+            str(audio_path), language="en", beam_size=1, vad_filter=True
         )
         text = " ".join(segment.text.strip() for segment in segments).strip()
         if not text:
@@ -410,7 +425,7 @@ class SpeechToText:
             CFG.whisper_cpp_bin,
             "-m", CFG.whisper_cpp_model,
             "-f", str(audio_path),
-            "-l", "de",
+            "-l", "en",
             "-nt", "-np",
         ]
         result = subprocess.run(cmd, check=True, capture_output=True, text=True, timeout=180)
@@ -773,9 +788,12 @@ def api_audio(
             raise HTTPException(status_code=413, detail="Audio ist größer als 20 MB")
         transcript, answer, output = process_audio_file(input_path, speaker=speaker)
         # ASCII-safe metadata for logs/clients; WAV remains the response body.
+        # Keep headers bounded so proxies/clients do not choke on long answers.
         headers = {
             "X-SCP079-Transcript-Chars": str(len(transcript)),
             "X-SCP079-Answer-Chars": str(len(answer)),
+            "X-SCP079-Transcript": quote(transcript[:1200], safe=""),
+            "X-SCP079-Answer": quote(answer[:1800], safe=""),
         }
         return FileResponse(output, media_type="audio/wav", filename="scp079-response.wav", headers=headers)
     except HTTPException:

@@ -16,6 +16,7 @@ import threading
 import time
 import wave
 from pathlib import Path
+from urllib.parse import unquote
 
 import numpy as np
 import requests
@@ -37,13 +38,18 @@ def audio_device(value: str | None) -> str | int | None:
 def list_devices() -> None:
     print(sd.query_devices())
     print()
-    print("Recommended Voicemeeter Banana routing:")
-    print("  Windows/Discord Output -> Voicemeeter Input (VAIO)")
-    print("  Voicemeeter A1         -> your headphones")
-    print("  Voicemeeter B1         -> Voicemeeter Output (VAIO)")
-    print("  Script Input           -> Voicemeeter Output (VAIO)")
-    print("  Script Output          -> CABLE Input or Voicemeeter AUX Input")
-    print("  Discord Mic            -> CABLE Output or Voicemeeter AUX Output")
+    print("Simple VB-CABLE test routing:")
+    print("  Script Input           -> your microphone")
+    print("  Script Output          -> CABLE Input")
+    print("  Script Monitor         -> your headphones")
+    print("  Discord Mic            -> CABLE Output")
+    print()
+    print("Full Voicemeeter Banana routing:")
+    print("  Your real mic          -> B1")
+    print("  Discord Output         -> Voicemeeter AUX Input -> A1, not B1")
+    print("  Script Input           -> Voicemeeter AUX Output")
+    print("  Script Output          -> Voicemeeter Input -> B1")
+    print("  Discord Mic            -> Voicemeeter Output")
 
 
 def load_config() -> dict[str, str]:
@@ -190,7 +196,7 @@ def record_utterance(
     return output.getvalue()
 
 
-def send_audio(url: str, token: str, speaker: str, wav_bytes: bytes, timeout: float) -> bytes:
+def send_audio(url: str, token: str, speaker: str, wav_bytes: bytes, timeout: float) -> tuple[bytes, str, str]:
     headers = {"Authorization": f"Bearer {token}"} if token else {}
     response = requests.post(
         f"{url}/api/audio",
@@ -203,7 +209,9 @@ def send_audio(url: str, token: str, speaker: str, wav_bytes: bytes, timeout: fl
         raise RuntimeError(f"voice-core HTTP {response.status_code}: {response.text[:500]}")
     if "audio" not in response.headers.get("content-type", ""):
         raise RuntimeError("voice-core did not return audio")
-    return response.content
+    transcript = unquote(response.headers.get("X-SCP079-Transcript", "")).strip()
+    answer = unquote(response.headers.get("X-SCP079-Answer", "")).strip()
+    return response.content, transcript, answer
 
 
 def read_wav(wav_bytes: bytes) -> tuple[np.ndarray, int]:
@@ -220,6 +228,14 @@ def read_wav(wav_bytes: bytes) -> tuple[np.ndarray, int]:
 
 def play_samples(samples: np.ndarray, sample_rate: int, device: str | int | None) -> None:
     sd.play(samples, sample_rate, device=device, blocking=True)
+
+
+def write_debug_wav(path: str | None, wav_bytes: bytes) -> None:
+    if not path:
+        return
+    destination = Path(path)
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_bytes(wav_bytes)
 
 
 def play_answer(
@@ -255,13 +271,24 @@ def one_turn(args: argparse.Namespace) -> None:
             max_seconds=args.max_seconds,
             preroll_ms=args.preroll_ms,
         )
+    write_debug_wav(args.save_input, wav_bytes)
 
     print(f"sending {len(wav_bytes) / 1024:.1f} KiB to {args.url}", flush=True)
-    answer = send_audio(args.url, args.token, args.speaker, wav_bytes, args.timeout)
+    answer, transcript, reply_text = send_audio(args.url, args.token, args.speaker, wav_bytes, args.timeout)
     print("answer received", flush=True)
+    print("-" * 60, flush=True)
+    if transcript:
+        print(f"heard    : {transcript}", flush=True)
+    else:
+        print("heard    : <not provided by voice-core>", flush=True)
+    if reply_text:
+        print(f"scp079   : {reply_text}", flush=True)
+    else:
+        print("scp079   : <not provided by voice-core>", flush=True)
+    print("-" * 60, flush=True)
 
     if args.save_answer:
-        Path(args.save_answer).write_bytes(answer)
+        write_debug_wav(args.save_answer, answer)
     if not args.no_play:
         play_answer(answer, audio_device(args.output_device), audio_device(args.monitor_device))
 
@@ -279,6 +306,7 @@ def main() -> None:
     parser.add_argument("--continuous", action="store_true")
     parser.add_argument("--once", action="store_true", help="process one utterance and exit")
     parser.add_argument("--file", help="send a WAV file instead of listening")
+    parser.add_argument("--save-input", help="write the latest captured input WAV to this path")
     parser.add_argument("--save-answer", help="write returned SCP-079 WAV to this file")
     parser.add_argument("--no-play", action="store_true")
     parser.add_argument("--sample-rate", type=int, default=16_000)
@@ -302,6 +330,15 @@ def main() -> None:
 
     if not args.file and not args.once:
         args.continuous = True
+
+    print("SCP-079 desktop bridge active")
+    print(f"  url            : {args.url}")
+    print(f"  speaker        : {args.speaker}")
+    print(f"  input device   : {args.input_device or '<system default>'}")
+    print(f"  output device  : {args.output_device or '<system default>'}")
+    print(f"  monitor device : {args.monitor_device or '<none>'}")
+    print(f"  sample rate    : {args.sample_rate}")
+    print()
 
     while True:
         try:
