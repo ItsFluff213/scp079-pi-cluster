@@ -149,6 +149,7 @@ if [[ "$INSTALL_RELAY" == "1" ]]; then
     sudo cp env/pi3-relay.env.example /opt/scp079-relay/.env
   fi
   sudo sed -i "s/^SCP079_API_TOKEN=.*/SCP079_API_TOKEN=${SCP079_API_TOKEN}/" /opt/scp079-relay/.env
+  sudo systemctl restart scp079-control.service
 fi
 
 if [[ "$INSTALL_REMOTE" == "1" ]]; then
