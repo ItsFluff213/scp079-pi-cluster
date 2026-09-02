@@ -342,6 +342,22 @@ Dashboard:
 http://logic:7860/ui/
 ```
 
+Pi-3-Steuerkonsole:
+
+```text
+http://relay:8090/ui/
+```
+
+Sie verwaltet ausschließlich die freigegebenen Dienste `dashboard`, `scp079`,
+`so100`, `coding` und `swarm`. API-Aufrufe nutzen `Authorization: Bearer
+CONTROL_TOKEN`; beliebige Shell-Befehle werden nicht angenommen. Nach dem
+Installer startet sie mit:
+
+```bash
+sudo systemctl enable --now scp079-control.service
+curl http://relay:8090/health
+```
+
 ## 7. Relay starten
 
 Audiogeraete anzeigen:
