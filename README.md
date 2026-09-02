@@ -86,22 +86,25 @@ Beispiel:
 192.168.50.12 relay
 ```
 
-Auf `relay` einen SSH-Key erzeugen und auf die anderen Pis verteilen:
+Auf `relay` einen SSH-Key erzeugen und auf die anderen Pis verteilen.
+Ersetze `admin-dsam` und `admin-logic` durch die echten Usernamen deiner Pis:
 
 ```bash
 ssh-keygen -t ed25519 -C "scp079-relay" -f ~/.ssh/scp079_cluster
-ssh-copy-id -i ~/.ssh/scp079_cluster.pub pi@dsam
-ssh-copy-id -i ~/.ssh/scp079_cluster.pub pi@logic
+ssh-copy-id -i ~/.ssh/scp079_cluster.pub admin-dsam@dsam
+ssh-copy-id -i ~/.ssh/scp079_cluster.pub admin-logic@logic
 ```
 
 SSH testen:
 
 ```bash
-ssh -i ~/.ssh/scp079_cluster pi@dsam hostname
-ssh -i ~/.ssh/scp079_cluster pi@logic hostname
+ssh -i ~/.ssh/scp079_cluster admin-dsam@dsam hostname
+ssh -i ~/.ssh/scp079_cluster admin-logic@logic hostname
 ```
 
-Falls du einen anderen User nutzt, ersetze `pi`.
+Falls auf beiden Ziel-Pis derselbe User existiert, kannst du spaeter einfach
+`PI_USER=deinuser` setzen. Falls die User unterschiedlich sind, nutze
+`DSAM_USER=...` und `LOGIC_USER=...`.
 
 ## 2. Ein-Kommando-Installation ab Pi 3
 
@@ -117,10 +120,18 @@ git checkout pi3-relay
 bash scripts/bootstrap_from_relay.sh
 ```
 
-Mit anderem User oder festen IPs:
+Mit gleichem User auf beiden Ziel-Pis oder festen IPs:
 
 ```bash
 PI_USER=deinuser DSAM_HOST=192.168.50.10 LOGIC_HOST=192.168.50.11 \
+  bash scripts/bootstrap_from_relay.sh
+```
+
+Mit unterschiedlichen Usernamen:
+
+```bash
+DSAM_USER=admin-dsam LOGIC_USER=admin-logic \
+  DSAM_HOST=dsam LOGIC_HOST=logic \
   bash scripts/bootstrap_from_relay.sh
 ```
 
@@ -165,13 +176,23 @@ bash scripts/setup_swarm_from_relay.sh
 bash scripts/deploy_swarm_from_relay.sh
 ```
 
-Wenn du feste IPs oder andere User nutzt:
+Wenn du feste IPs oder gleiche User nutzt:
 
 ```bash
 PI_USER=admin DSAM_HOST=192.168.50.10 LOGIC_HOST=192.168.50.11 \
   bash scripts/setup_swarm_from_relay.sh
 
 PI_USER=admin LOGIC_HOST=192.168.50.11 \
+  bash scripts/deploy_swarm_from_relay.sh
+```
+
+Wenn `dsam` und `logic` unterschiedliche User haben:
+
+```bash
+DSAM_USER=admin-dsam LOGIC_USER=admin-logic \
+  bash scripts/setup_swarm_from_relay.sh
+
+LOGIC_USER=admin-logic \
   bash scripts/deploy_swarm_from_relay.sh
 ```
 
@@ -189,7 +210,7 @@ Zurueck zur direkten systemd-Variante:
 ```bash
 sudo docker stack rm scp079
 sudo systemctl enable --now ollama
-ssh -i ~/.ssh/scp079_cluster pi@logic 'sudo systemctl enable --now scp079-voice-core.service'
+ssh -i ~/.ssh/scp079_cluster admin-logic@logic 'sudo systemctl enable --now scp079-voice-core.service'
 ```
 
 ## 4. Privates GitHub-Repo und Auto-Updates ueber Pi 3
