@@ -36,8 +36,10 @@ from scipy import signal
 from scipy.io import wavfile
 
 try:
+    from app.scp079_godot_tts import synthesise_to_wav as synthesize_scp079_godot
     from app.scp079_native_tts import synthesise_to_wav as synthesize_scp079_native
 except ModuleNotFoundError:
+    from scp079_godot_tts import synthesise_to_wav as synthesize_scp079_godot
     from scp079_native_tts import synthesise_to_wav as synthesize_scp079_native
 
 
@@ -70,7 +72,7 @@ class Settings:
     piper_length_scale = os.getenv("PIPER_LENGTH_SCALE", "1.18")
     piper_noise_scale = os.getenv("PIPER_NOISE_SCALE", "0.72")
     piper_sentence_silence = os.getenv("PIPER_SENTENCE_SILENCE", "0.09")
-    tts_backend = os.getenv("TTS_BACKEND", "scp079_native").lower()  # scp079_native, piper, piper_robot
+    tts_backend = os.getenv("TTS_BACKEND", "scp079_godot").lower()  # scp079_godot, scp079_native, piper, piper_robot
     voice_preset = os.getenv("SCP079_VOICE_PRESET", "scp079_clear").lower()
     api_token = os.getenv("SCP079_API_TOKEN", "")
     stt_backend = os.getenv("STT_BACKEND", "faster-whisper")
@@ -476,7 +478,10 @@ def synthesize_voice(text: str, raw_path: Path) -> bool:
     Returns True when the result is already SCP-079-styled and should not pass
     through the heavier Piper robot post-filter again.
     """
-    if CFG.tts_backend in {"scp079_native", "native", "godot", "sbtalker"}:
+    if CFG.tts_backend in {"scp079_godot", "godot", "sbtalker"}:
+        synthesize_scp079_godot(text, raw_path)
+        return True
+    if CFG.tts_backend in {"scp079_native", "native"}:
         synthesize_scp079_native(text, raw_path)
         return True
     if CFG.tts_backend in {"piper", "piper_robot"}:
