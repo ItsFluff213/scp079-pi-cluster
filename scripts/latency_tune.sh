@@ -5,7 +5,9 @@ apt-get update
 
 install_if_available() {
   local package="$1"
-  if apt-cache show "$package" >/dev/null 2>&1; then
+  local candidate
+  candidate="$(apt-cache policy "$package" | awk '/Candidate:/ {print $2; exit}')"
+  if [[ -n "$candidate" && "$candidate" != "(none)" ]]; then
     apt-get install -y "$package"
   else
     echo "Package not available, skipping: $package"
