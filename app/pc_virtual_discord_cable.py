@@ -121,6 +121,7 @@ def apply_config(args: argparse.Namespace, config: dict[str, str]) -> argparse.N
 
 def record_utterance(
     input_device: str | int | None,
+    loopback_device: str | int | None,
     monitor_device: str | int | None,
     sample_rate: int,
     block_ms: int,
@@ -140,12 +141,16 @@ def record_utterance(
 
     print("listening...", flush=True)
     monitor_stream = None
+    # WASAPI loopback exposes the selected Windows playback device as an input
+    # stream. This lets us hear Discord/Desktop audio without VB-CABLE.
+    stream_settings = sd.WasapiSettings(loopback=True) if loopback_device is not None else None
     with sd.InputStream(
         samplerate=sample_rate,
         channels=1,
         dtype="int16",
         blocksize=block_size,
-        device=input_device,
+        device=loopback_device if loopback_device is not None else input_device,
+        extra_settings=stream_settings,
     ) as stream:
         try:
             if monitor_device is not None:
@@ -263,6 +268,7 @@ def one_turn(args: argparse.Namespace) -> None:
     else:
         wav_bytes = record_utterance(
             input_device=audio_device(args.input_device),
+            loopback_device=audio_device(args.loopback_device),
             monitor_device=audio_device(args.monitor_device),
             sample_rate=args.sample_rate,
             block_ms=args.block_ms,
@@ -294,11 +300,12 @@ def one_turn(args: argparse.Namespace) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="SCP-079 desktop Voicemeeter bridge for Discord")
+    parser = argparse.ArgumentParser(description="SCP-079 desktop bridge with optional Windows WASAPI loopback")
     parser.add_argument("--url", default=DEFAULT_URL, help="voice-core URL, e.g. http://logic:7860")
     parser.add_argument("--token", default=DEFAULT_TOKEN)
     parser.add_argument("--speaker", default=os.getenv("SCP079_SPEAKER", "discord"))
     parser.add_argument("--input-device", help="recording device that receives Discord output")
+    parser.add_argument("--loopback-device", help="Windows WASAPI playback device to capture (no virtual cable needed)")
     parser.add_argument("--output-device", help="playback device that feeds Discord microphone")
     parser.add_argument("--monitor-device", help="optional headphones/speakers to hear SCP-079 locally")
     parser.add_argument("--list-devices", action="store_true")
@@ -335,6 +342,7 @@ def main() -> None:
     print(f"  url            : {args.url}")
     print(f"  speaker        : {args.speaker}")
     print(f"  input device   : {args.input_device or '<system default>'}")
+    print(f"  loopback       : {args.loopback_device or '<disabled>'}")
     print(f"  output device  : {args.output_device or '<system default>'}")
     print(f"  monitor device : {args.monitor_device or '<none>'}")
     print(f"  sample rate    : {args.sample_rate}")
