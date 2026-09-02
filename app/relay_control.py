@@ -2,6 +2,7 @@
 """Allow-listed Pi-3 orchestration API for the SCP-079 cluster."""
 from __future__ import annotations
 import html, json, os, shlex, subprocess
+from urllib.request import Request, urlopen
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse
 
@@ -9,6 +10,8 @@ HOST = os.getenv("CONTROL_HOST", "0.0.0.0")
 PORT = int(os.getenv("CONTROL_PORT", "8090"))
 TOKEN = os.getenv("CONTROL_TOKEN", os.getenv("SCP079_API_TOKEN", ""))
 SSH_KEY = os.getenv("CONTROL_SSH_KEY", "/home/admin-relay/.ssh/scp079_cluster")
+CODING_URL = os.getenv("CODING_CONTROL_URL", "").rstrip("/")
+CODING_TOKEN = os.getenv("CODING_CONTROL_TOKEN", TOKEN)
 SERVICES = {
     "dashboard": ("logic", os.getenv("LOGIC_USER", "admin"), "scp079-voice-core.service"),
     "scp079": ("logic", os.getenv("LOGIC_USER", "admin"), "scp079-voice-core.service"),
@@ -23,6 +26,13 @@ def auth(h: BaseHTTPRequestHandler) -> bool:
 def unit(name: str, action: str) -> tuple[int, str]:
     if name not in SERVICES or action not in {"start", "stop", "restart", "status"}:
         return 400, "unknown service or action"
+    if name == "coding" and CODING_URL:
+        try:
+            req = Request(f"{CODING_URL}/{action}", method="POST", headers={"Authorization": f"Bearer {CODING_TOKEN}"} if CODING_TOKEN else {})
+            with urlopen(req, timeout=10) as response:
+                return response.status, response.read().decode("utf-8", "replace")
+        except Exception as exc:
+            return 502, str(exc)
     host, user, service = SERVICES[name]
     if host == "local":
         cmd = ["systemctl", action, service]

@@ -358,6 +358,22 @@ sudo systemctl enable --now scp079-control.service
 curl http://relay:8090/health
 ```
 
+Optionaler Coding-Agent auf Windows (damit `coding` in der Relay-Konsole den
+lokalen Aider startet/stoppt):
+
+```powershell
+$env:CODING_CONTROL_TOKEN="eigener-token"
+$env:CODING_PROJECT="C:\Users\fanny\Documents\scp079-coding"
+python app\pc_coding_control.py
+```
+
+Auf `relay` dazu in `/opt/scp079-relay/.env` setzen:
+
+```text
+CODING_CONTROL_URL=http://DEIN-PC-NAME-ODER-IP:8091
+CODING_CONTROL_TOKEN=eigener-token
+```
+
 ## 7. Relay starten
 
 Audiogeraete anzeigen:
