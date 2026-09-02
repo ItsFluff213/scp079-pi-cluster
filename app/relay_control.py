@@ -4,7 +4,7 @@ from __future__ import annotations
 import html, json, os, shlex, subprocess
 from urllib.request import Request, urlopen
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
-from urllib.parse import urlparse
+from urllib.parse import parse_qs, quote, urlparse
 
 HOST = os.getenv("CONTROL_HOST", "0.0.0.0")
 PORT = int(os.getenv("CONTROL_PORT", "8090"))
@@ -21,7 +21,11 @@ SERVICES = {
 }
 
 def auth(h: BaseHTTPRequestHandler) -> bool:
-    return not TOKEN or h.headers.get("Authorization", "") == f"Bearer {TOKEN}"
+    if not TOKEN:
+        return True
+    header = h.headers.get("Authorization", "")
+    query = parse_qs(urlparse(h.path).query).get("token", [""])[0]
+    return header == f"Bearer {TOKEN}" or query == TOKEN
 
 def unit(name: str, action: str) -> tuple[int, str]:
     if name not in SERVICES or action not in {"start", "stop", "restart", "status"}:
@@ -50,11 +54,10 @@ class Handler(BaseHTTPRequestHandler):
         raw = body.encode(); self.send_response(code); self.send_header("Content-Type", kind)
         self.send_header("Content-Length", str(len(raw))); self.end_headers(); self.wfile.write(raw)
     def do_GET(self) -> None:
-        if not auth(self): self.send_body(401, json.dumps({"error":"unauthorized"})); return
         path = urlparse(self.path).path
         if path in {"/", "/ui/"}:
             rows = "".join(f"<tr><td>{html.escape(n)}</td><td><form method='post' action='/api/services/{n}/start'><button>Start</button></form></td><td><form method='post' action='/api/services/{n}/stop'><button>Stop</button></form></td><td><form method='post' action='/api/services/{n}/status'><button>Status</button></form></td></tr>" for n in SERVICES)
-            page = "<!doctype html><meta charset='utf-8'><title>SCP-079 Control</title><style>body{background:#090b0d;color:#d6e7e8;font:16px monospace;margin:2rem}table{border-collapse:collapse}td{padding:8px;border-bottom:1px solid #354}button{font:inherit;background:#182b2d;color:#d6e7e8;border:1px solid #5aa;padding:5px 12px}</style><h1>SCP-079 // CONTROL NODE</h1><p>Pi 3 orchestration console</p><table><tr><th>Service</th><th colspan=3>Action</th></tr>" + rows + "</table>"
+            page = "<!doctype html><meta charset='utf-8'><title>SCP-079 Control</title><style>body{background:#090b0d;color:#d6e7e8;font:16px monospace;margin:2rem}table{border-collapse:collapse}td{padding:8px;border-bottom:1px solid #354}button{font:inherit;background:#182b2d;color:#d6e7e8;border:1px solid #5aa;padding:5px 12px}input{background:#111;color:#d6e7e8;border:1px solid #5aa;padding:5px;width:22rem}</style><h1>SCP-079 // CONTROL NODE</h1><p>Pi 3 orchestration console</p><label>Control token: <input id='token' type='password' autocomplete='off'></label><table><tr><th>Service</th><th colspan=3>Action</th></tr>" + rows + "</table><script>document.querySelectorAll('form').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();let t=document.getElementById('token').value;fetch(f.action+'?token='+encodeURIComponent(t),{method:'POST'}).then(r=>r.json()).then(x=>alert(x.output||JSON.stringify(x))) }))</script>"
             self.send_body(200, page, "text/html; charset=utf-8"); return
         if path == "/health": self.send_body(200, json.dumps({"ok":True,"node":"relay","services":list(SERVICES)})); return
         if path == "/api/services": self.send_body(200, json.dumps({n:unit(n,"status")[1] for n in SERVICES})); return
