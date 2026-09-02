@@ -8,6 +8,7 @@ apt-get install -y python3-venv libportaudio2 portaudio19-dev git
 TARGET_USER="${SUDO_USER:-pi}"
 mkdir -p /opt/scp079-relay
 cp -r app assets env requirements-relay.txt /opt/scp079-relay/
+install -m 0755 scripts/controlctl.sh /usr/local/bin/scp079-controlctl
 python3 -m venv /opt/scp079-relay/.venv
 /opt/scp079-relay/.venv/bin/pip install -U pip
 /opt/scp079-relay/.venv/bin/pip install -r /opt/scp079-relay/requirements-relay.txt
