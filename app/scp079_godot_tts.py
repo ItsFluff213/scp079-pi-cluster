@@ -691,3 +691,15 @@ def engine() -> TTS079Godot:
 
 def synthesise_to_wav(text: str, output_path: str | Path, pitch_level: int = 5) -> None:
     engine().synthesise_to_wav(text, output_path, pitch_level=pitch_level)
+
+
+if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(description="SCP-079 Godot-compatible voice synthesizer")
+    parser.add_argument("--text", required=True, help="English text to synthesize")
+    parser.add_argument("--output", required=True, help="Output WAV path")
+    parser.add_argument("--pitch", type=int, default=5, help="Addon pitch level (default: 5)")
+    args = parser.parse_args()
+    synthesise_to_wav(args.text, args.output, pitch_level=args.pitch)
+    print(f"Wrote {args.output}")
