@@ -1,0 +1,16 @@
+[Unit]
+Description=SCP-079 Pi 3 orchestration control
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=admin-relay
+WorkingDirectory=/opt/scp079-relay
+EnvironmentFile=-/opt/scp079-relay/.env
+ExecStart=/usr/bin/python3 /opt/scp079-relay/app/relay_control.py
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
