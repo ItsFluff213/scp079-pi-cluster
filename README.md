@@ -358,6 +358,15 @@ sudo systemctl enable --now scp079-control.service
 curl http://relay:8090/health
 ```
 
+Dieselben Aktionen per SSH/Kommandozeile:
+
+```bash
+CONTROL_TOKEN=dein-control-token scp079-controlctl scp079 start
+CONTROL_TOKEN=dein-control-token scp079-controlctl so100 stop
+CONTROL_TOKEN=dein-control-token scp079-controlctl coding restart
+CONTROL_TOKEN=dein-control-token scp079-controlctl dashboard status
+```
+
 Optionaler Coding-Agent auf Windows (damit `coding` in der Relay-Konsole den
 lokalen Aider startet/stoppt):
 
