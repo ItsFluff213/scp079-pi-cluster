@@ -18,4 +18,5 @@ sed -i "s/^User=.*/User=${TARGET_USER}/" /etc/systemd/system/scp079-relay.servic
 cp systemd/scp079-control.service /etc/systemd/system/
 sed -i "s/^User=.*/User=${TARGET_USER}/" /etc/systemd/system/scp079-control.service
 systemctl daemon-reload
+systemctl enable --now scp079-control.service
 echo "Now copy env/pi3-relay.env.example to /opt/scp079-relay/.env and set token/audio devices."
