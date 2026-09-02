@@ -730,6 +730,11 @@ def display_html() -> str:
   <div id="scp-display">
     <img id="scp-face" src="/assets/scp079.png" alt="">
   </div>
+  <section id="voice-controls" style="position:fixed;left:1rem;bottom:1rem;z-index:5;background:#090b0dcc;padding:12px;border:1px solid #587;color:#d6e7e8;font:14px monospace">
+    <input id="voice-token" type="password" placeholder="SCP079 API token" style="background:#111;color:#d6e7e8;border:1px solid #587;padding:6px;width:16rem">
+    <button id="record" style="background:#182b2d;color:#d6e7e8;border:1px solid #5aa;padding:6px">🎙 Speak</button>
+    <span id="voice-status">ready</span><div id="voice-transcript"></div><audio id="voice-audio" controls></audio>
+  </section>
   <script>
     async function pollScpState() {{
       try {{
@@ -740,6 +745,25 @@ def display_html() -> str:
       setTimeout(pollScpState, 250);
     }}
     pollScpState();
+    let recorder, chunks = [];
+    document.getElementById("record").onclick = async () => {{
+      const status = document.getElementById("voice-status");
+      try {{
+        if (recorder && recorder.state === "recording") {{ recorder.stop(); return; }}
+        const stream = await navigator.mediaDevices.getUserMedia({{audio:true}});
+        recorder = new MediaRecorder(stream); chunks = [];
+        recorder.ondataavailable = e => chunks.push(e.data);
+        recorder.onstop = async () => {{
+          stream.getTracks().forEach(t => t.stop()); status.textContent = "processing...";
+          const form = new FormData(); form.append("audio", new Blob(chunks, {{type: recorder.mimeType || "audio/webm"}}), "browser.webm");
+          const response = await fetch("/api/audio", {{method:"POST", headers:{{Authorization:"Bearer "+document.getElementById("voice-token").value}}, body:form}});
+          if (!response.ok) {{ status.textContent = await response.text(); return; }}
+          document.getElementById("voice-transcript").textContent = decodeURIComponent(response.headers.get("X-SCP079-Transcript") || "");
+          document.getElementById("voice-audio").src = URL.createObjectURL(await response.blob()); status.textContent = "answer ready";
+        }};
+        recorder.start(); status.textContent = "recording — click again to send";
+      }} catch (e) {{ status.textContent = e.message; }}
+    }};
   </script>
 </body>
 </html>"""
@@ -837,14 +861,22 @@ def api_audio(
     authorization: str | None = Header(default=None),
 ) -> FileResponse:
     require_token(authorization)
-    if audio.content_type not in {"audio/wav", "audio/x-wav", "application/octet-stream"}:
-        raise HTTPException(status_code=415, detail="Bitte PCM-WAV senden")
+    if audio.content_type not in {"audio/wav", "audio/x-wav", "application/octet-stream", "audio/webm", "audio/ogg", "video/webm"}:
+        raise HTTPException(status_code=415, detail="Bitte WAV/WebM senden")
     input_path = _safe_name("upload")
+    converted_path: Path | None = None
     try:
         with input_path.open("wb") as destination:
             shutil.copyfileobj(audio.file, destination)
         if input_path.stat().st_size > 20 * 1024 * 1024:
             raise HTTPException(status_code=413, detail="Audio ist größer als 20 MB")
+        if audio.content_type not in {"audio/wav", "audio/x-wav", "application/octet-stream"}:
+            converted_path = _safe_name("upload-wav")
+            result = subprocess.run(["ffmpeg", "-y", "-i", str(input_path), "-ar", "16000", "-ac", "1", str(converted_path)], capture_output=True, text=True, timeout=30)
+            if result.returncode != 0:
+                raise RuntimeError("Browser-Audio konnte nicht in WAV umgewandelt werden")
+            input_path.unlink(missing_ok=True)
+            input_path = converted_path
         transcript, answer, output = process_audio_file(input_path, speaker=speaker)
         # ASCII-safe metadata for logs/clients; WAV remains the response body.
         # Keep headers bounded so proxies/clients do not choke on long answers.
@@ -861,6 +893,8 @@ def api_audio(
         raise HTTPException(status_code=502, detail=str(exc)) from exc
     finally:
         input_path.unlink(missing_ok=True)
+        if converted_path:
+            converted_path.unlink(missing_ok=True)
 
 
 def main() -> None:
