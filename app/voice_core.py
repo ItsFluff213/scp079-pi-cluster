@@ -56,6 +56,8 @@ class Settings:
     chat_backend = os.getenv("CHAT_BACKEND", "ollama").lower()  # ollama, llamacpp
     ollama_url = os.getenv("OLLAMA_URL", "http://dsam:11434").rstrip("/")
     ollama_model = os.getenv("OLLAMA_MODEL", "qwen3:4b-instruct")
+    llm_temperature = float(os.getenv("LLM_TEMPERATURE", "0.45"))
+    llm_num_predict = int(os.getenv("LLM_NUM_PREDICT", "120"))
     llama_cpp_url = os.getenv("LLAMA_CPP_URL", "http://dsam:8080").rstrip("/")
     llama_cpp_model = os.getenv("LLAMA_CPP_MODEL", "local-gguf")
     piper_bin = os.getenv("PIPER_BIN", "piper")
@@ -63,9 +65,10 @@ class Settings:
     piper_length_scale = os.getenv("PIPER_LENGTH_SCALE", "1.18")
     piper_noise_scale = os.getenv("PIPER_NOISE_SCALE", "0.72")
     piper_sentence_silence = os.getenv("PIPER_SENTENCE_SILENCE", "0.09")
-    voice_preset = os.getenv("SCP079_VOICE_PRESET", "scp079").lower()
+    voice_preset = os.getenv("SCP079_VOICE_PRESET", "scp079_clear").lower()
     api_token = os.getenv("SCP079_API_TOKEN", "")
     stt_backend = os.getenv("STT_BACKEND", "faster-whisper")
+    stt_language = os.getenv("STT_LANGUAGE", "en")
     whisper_model = os.getenv("WHISPER_MODEL", "tiny")
     whisper_cpp_bin = os.getenv("WHISPER_CPP_BIN", "/opt/whisper.cpp/build/bin/whisper-cli")
     whisper_cpp_model = os.getenv("WHISPER_CPP_MODEL", "/opt/whisper.cpp/models/ggml-tiny.bin")
@@ -318,7 +321,7 @@ class OllamaClient:
                     {"role": "user", "content": self._user_content(text, speaker)},
                 ],
                 "stream": False,
-                "options": {"temperature": 0.55, "num_predict": 220},
+                "options": {"temperature": CFG.llm_temperature, "num_predict": CFG.llm_num_predict},
                 "keep_alive": "10m",
             },
         )
@@ -338,8 +341,8 @@ class OllamaClient:
                     {"role": "user", "content": self._user_content(text, speaker)},
                 ],
                 "stream": False,
-                "temperature": 0.55,
-                "max_tokens": 220,
+                "temperature": CFG.llm_temperature,
+                "max_tokens": CFG.llm_num_predict,
             },
         )
         response.raise_for_status()
@@ -412,7 +415,7 @@ class SpeechToText:
 
             self._model = WhisperModel(CFG.whisper_model, device="cpu", compute_type="int8")
         segments, _ = self._model.transcribe(
-            str(audio_path), language="en", beam_size=1, vad_filter=True
+            str(audio_path), language=CFG.stt_language, beam_size=1, vad_filter=True
         )
         text = " ".join(segment.text.strip() for segment in segments).strip()
         if not text:
@@ -425,7 +428,7 @@ class SpeechToText:
             CFG.whisper_cpp_bin,
             "-m", CFG.whisper_cpp_model,
             "-f", str(audio_path),
-            "-l", "en",
+            "-l", CFG.stt_language,
             "-nt", "-np",
         ]
         result = subprocess.run(cmd, check=True, capture_output=True, text=True, timeout=180)
@@ -501,13 +504,22 @@ def robot_filter(input_path: Path, output_path: Path) -> None:
     x = _to_float_mono(source)
     preset = CFG.voice_preset
 
-    # Old computer speech in the SCP footage feels clipped, narrow and slightly too fast.
-    pitch_factor = 1.12 if preset == "scp079" else 1.06
+    clear_preset = preset in {"scp079_clear", "clear", "discord"}
+    harsh_preset = preset in {"scp079", "scp079_harsh", "harsh"}
+
+    # Old computer speech in the SCP footage feels clipped and slightly too fast.
+    # The clear preset keeps consonants more intact for Discord.
+    pitch_factor = 1.08 if clear_preset else (1.12 if harsh_preset else 1.06)
     x = signal.resample(x, max(1, int(len(x) / pitch_factor))).astype(np.float32)
 
     # CRT/telephone bandwidth. The SCP preset is narrower and harsher.
     nyquist = sample_rate / 2.0
-    low_hz, high_hz = (420.0, 2950.0) if preset == "scp079" else (280.0, 3600.0)
+    if clear_preset:
+        low_hz, high_hz = (260.0, 3800.0)
+    elif harsh_preset:
+        low_hz, high_hz = (420.0, 2950.0)
+    else:
+        low_hz, high_hz = (280.0, 3600.0)
     low = min(low_hz / nyquist, 0.95)
     high = min(high_hz / nyquist, 0.98)
     if 0.0 < low < high < 1.0:
@@ -517,31 +529,48 @@ def robot_filter(input_path: Path, output_path: Path) -> None:
     t = np.arange(len(x), dtype=np.float32) / sample_rate
 
     # Metallic amplitude wobble plus a small ring-mod component for the "broken terminal" tone.
-    carrier = 0.58 + 0.42 * signal.square(2.0 * np.pi * 36.0 * t, duty=0.54)
+    carrier_depth = 0.26 if clear_preset else 0.42
+    carrier = (1.0 - carrier_depth) + carrier_depth * signal.square(2.0 * np.pi * 36.0 * t, duty=0.54)
     ring = np.sin(2.0 * np.pi * 92.0 * t) * x
-    x = (0.82 * x * carrier + 0.18 * ring).astype(np.float32)
+    ring_mix = 0.10 if clear_preset else 0.18
+    x = ((1.0 - ring_mix) * x * carrier + ring_mix * ring).astype(np.float32)
 
     # Unstable old ADC/DAC: 6-bit for SCP preset, 8-bit for softer robot.
-    x = _crush(x, bits=6 if preset == "scp079" else 8, hold=3 if preset == "scp079" else 2)
+    if clear_preset:
+        x = _crush(x, bits=8, hold=2)
+    else:
+        x = _crush(x, bits=6 if harsh_preset else 8, hold=3 if harsh_preset else 2)
 
     # Fast combing/flanger: more claustrophobic than a normal robot voice.
-    y = _moving_delay(x, sample_rate, base_ms=2.2, depth_ms=1.1, rate_hz=0.41, mix=0.47)
+    y = _moving_delay(
+        x,
+        sample_rate,
+        base_ms=1.7 if clear_preset else 2.2,
+        depth_ms=0.55 if clear_preset else 1.1,
+        rate_hz=0.35 if clear_preset else 0.41,
+        mix=0.25 if clear_preset else 0.47,
+    )
 
     # Small room/monitor slapback, kept short for live Discord latency.
-    taps = ((0.046, 0.23), (0.092, 0.17), (0.138, 0.09)) if preset == "scp079" else ((0.075, 0.30), (0.145, 0.16))
+    if clear_preset:
+        taps = ((0.052, 0.13), (0.104, 0.07))
+    elif harsh_preset:
+        taps = ((0.046, 0.23), (0.092, 0.17), (0.138, 0.09))
+    else:
+        taps = ((0.075, 0.30), (0.145, 0.16))
     y = _echo(y, x, sample_rate, taps)
 
     # Light mains hum and hiss sell the ancient-machine illusion without hiding words.
-    hum = 0.018 * np.sin(2.0 * np.pi * 50.0 * t[: len(y)])
+    hum = (0.010 if clear_preset else 0.018) * np.sin(2.0 * np.pi * 50.0 * t[: len(y)])
     hiss_rng = np.random.default_rng(79)
-    hiss = 0.006 * hiss_rng.standard_normal(len(y), dtype=np.float32)
+    hiss = (0.0035 if clear_preset else 0.006) * hiss_rng.standard_normal(len(y), dtype=np.float32)
     y = (y + hum + hiss).astype(np.float32)
 
     peak = float(np.max(np.abs(y))) if len(y) else 0.0
     if peak > 0:
-        drive = 2.35 if preset == "scp079" else 1.7
+        drive = 1.75 if clear_preset else (2.35 if harsh_preset else 1.7)
         y = np.tanh(y * (drive / peak))
-        y = _crush(y, bits=7 if preset == "scp079" else 8, hold=1)
+        y = _crush(y, bits=8 if clear_preset else (7 if harsh_preset else 8), hold=1)
         y *= 0.94 / max(float(np.max(np.abs(y))), 1e-9)
     wavfile.write(output_path, sample_rate, (y * 32767.0).astype(np.int16))
 
