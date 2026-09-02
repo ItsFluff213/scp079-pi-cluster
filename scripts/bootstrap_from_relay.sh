@@ -128,9 +128,9 @@ install_remote_node() {
     if [ '${branch}' = 'pi4-logic' ]; then
       sudo sed -i 's/^SCP079_API_TOKEN=.*/SCP079_API_TOKEN=${SCP079_API_TOKEN}/' /opt/scp079/.env
       if grep -q '^TTS_BACKEND=' /opt/scp079/.env; then
-        sudo sed -i 's/^TTS_BACKEND=.*/TTS_BACKEND=scp079_native/' /opt/scp079/.env
+        sudo sed -i 's/^TTS_BACKEND=.*/TTS_BACKEND=scp079_godot/' /opt/scp079/.env
       else
-        echo 'TTS_BACKEND=scp079_native' | sudo tee -a /opt/scp079/.env >/dev/null
+        echo 'TTS_BACKEND=scp079_godot' | sudo tee -a /opt/scp079/.env >/dev/null
       fi
     fi
     sudo systemctl daemon-reload

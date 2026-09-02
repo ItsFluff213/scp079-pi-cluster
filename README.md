@@ -523,7 +523,7 @@ WEB_CONTEXT=always
 In `/opt/scp079/.env`:
 
 ```env
-TTS_BACKEND=scp079_native
+TTS_BACKEND=scp079_godot
 PIPER_MODEL=/opt/piper/en_US-ryan-medium.onnx
 PIPER_LENGTH_SCALE=1.08
 PIPER_NOISE_SCALE=0.58
@@ -535,16 +535,25 @@ LLM_NUM_PREDICT=120
 ```
 
 Default ist jetzt Englisch, weil SCP-079 im Original englisch spricht. Als
-Standard nutzt das Setup `TTS_BACKEND=scp079_native`: eine kleine
-Godot/SBTalker-inspirierte Formant-Stimme in Python, die direkt bei 8522 Hz
-arbeitet und keine Piper-Modelle herunterladen muss. Das ist fuer Live-Discord
-schneller und klingt eher nach altem Computer als nach normaler KI-Stimme.
+Standard nutzt das Setup `TTS_BACKEND=scp079_godot`: eine direkte Python-Portierung
+des MIT-lizenzierten Godot-Addons **Voice Synthesizer SCP079** von Eibriel.
+Die Stimme nutzt die originalen Addon-Daten (`tables.json`, `g2p_rules.json`,
+`blocks.bin`) und arbeitet wie das Godot-Beispiel bei 8522 Hz. Dadurch klingt
+sie deutlich mehr nach SCP-079/SBTalker als nach normaler KI-Stimme und braucht
+keinen Piper-Modelldownload.
+
+Quelle/Lizenz der Voice-Daten:
+
+```text
+app/tts_079_data/README.md
+app/tts_079_data/LICENSE
+```
 
 Schnell auf `logic` aktivieren:
 
 ```bash
 ssh -i ~/.ssh/scp079_cluster admin@logic \
-  "if grep -q '^TTS_BACKEND=' /opt/scp079/.env; then sudo sed -i 's|^TTS_BACKEND=.*|TTS_BACKEND=scp079_native|' /opt/scp079/.env; else echo TTS_BACKEND=scp079_native | sudo tee -a /opt/scp079/.env >/dev/null; fi; sudo systemctl restart scp079-voice-core.service && curl -s http://logic:7860/health"
+  "if grep -q '^TTS_BACKEND=' /opt/scp079/.env; then sudo sed -i 's|^TTS_BACKEND=.*|TTS_BACKEND=scp079_godot|' /opt/scp079/.env; else echo TTS_BACKEND=scp079_godot | sudo tee -a /opt/scp079/.env >/dev/null; fi; sudo systemctl restart scp079-voice-core.service && curl -s http://logic:7860/health"
 ```
 
 Vom PC testen:
@@ -565,6 +574,12 @@ Falls du die alte Piper-Stimme als verstaendlicheren Fallback willst:
 
 ```env
 TTS_BACKEND=piper_robot
+```
+
+Falls du meinen kleinen approximativen Fallback ohne Originaldaten testen willst:
+
+```env
+TTS_BACKEND=scp079_native
 ```
 
 Dann Piper auf `logic` nachinstallieren:
