@@ -34,7 +34,7 @@ ENV SCP079_HOST=0.0.0.0 \
     OLLAMA_MODEL=qwen3:4b-instruct \
     STT_BACKEND=faster-whisper \
     WHISPER_MODEL=tiny \
-    TTS_BACKEND=scp079_native \
+    TTS_BACKEND=scp079_godot \
     PIPER_BIN=/usr/local/bin/piper \
     PIPER_MODEL=/opt/piper/en_US-ryan-medium.onnx
 
