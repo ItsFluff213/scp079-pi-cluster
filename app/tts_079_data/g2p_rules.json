@@ -1,0 +1,8604 @@
+{
+  "A": [
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": " ",
+      "phon": "\\AX/"
+    },
+    {
+      "rctx": "H",
+      "lctx": "*",
+      "bctx": " ",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "'",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": ":#",
+      "bctx": "S ",
+      "phon": "AX"
+    },
+    {
+      "rctx": "ND",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "\\[AEnd/"
+    },
+    {
+      "rctx": "RE",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "\\AAr/"
+    },
+    {
+      "rctx": "RE",
+      "lctx": " ",
+      "bctx": "N'T ",
+      "phon": "/AAr\\"
+    },
+    {
+      "rctx": "N",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "\\AXn/"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "H ",
+      "phon": "/]AA\\"
+    },
+    {
+      "rctx": "R",
+      "lctx": " ",
+      "bctx": "O",
+      "phon": "AXr"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "^ILIT",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "^ITION",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "^IET",
+      "phon": "AX"
+    },
+    {
+      "rctx": "RA",
+      "lctx": "PE",
+      "bctx": "TE!",
+      "phon": "rIX"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#*",
+      "bctx": "RAT+",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "^A",
+      "bctx": "RI!",
+      "phon": "/AA\\"
+    },
+    {
+      "rctx": "R",
+      "lctx": "",
+      "bctx": "#",
+      "phon": "EHr"
+    },
+    {
+      "rctx": "S",
+      "lctx": "HP ",
+      "bctx": "#",
+      "phon": "EYz"
+    },
+    {
+      "rctx": "S",
+      "lctx": "RHP ",
+      "bctx": "#",
+      "phon": "EYz"
+    },
+    {
+      "rctx": "S",
+      "lctx": "^ ",
+      "bctx": "#",
+      "phon": "EYs"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "WA",
+      "phon": "AX"
+    },
+    {
+      "rctx": "W",
+      "lctx": "",
+      "bctx": "",
+      "phon": "AO"
+    },
+    {
+      "rctx": "NY",
+      "lctx": ": ",
+      "bctx": "",
+      "phon": "/EHn[IY\\"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NIO",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": ":#",
+      "bctx": "N-",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "R ",
+      "bctx": "TION",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": "N",
+      "bctx": "TIONAL",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "HEAD",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "^+#",
+      "phon": "EY"
+    },
+    {
+      "rctx": "LLY",
+      "lctx": ":#",
+      "bctx": "",
+      "phon": "\\AXl[IY/"
+    },
+    {
+      "rctx": "GAIN",
+      "lctx": "",
+      "bctx": "",
+      "phon": "AX/gEHn\\"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "BR",
+      "phon": "AX"
+    },
+    {
+      "rctx": "BSE",
+      "lctx": " ",
+      "bctx": "N",
+      "phon": "AEbsAX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "CADEM-",
+      "phon": "AX"
+    },
+    {
+      "rctx": "CA",
+      "lctx": " ",
+      "bctx": "DEM",
+      "phon": "AEkAX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "CCUR",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "CCEP",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "CC+",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "CC",
+      "phon": "AX"
+    },
+    {
+      "rctx": "CH",
+      "lctx": "",
+      "bctx": "%",
+      "phon": "EYk"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "CHI",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "CRE",
+      "phon": "EY"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "CROS",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "DAM",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "DD!",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "DD%",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "DDITIO",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "DD+",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "DDRE",
+      "phon": "AE"
+    },
+    {
+      "rctx": "DE",
+      "lctx": " ",
+      "bctx": "Q",
+      "phon": "AEdAX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "DRI#",
+      "phon": "EY"
+    },
+    {
+      "rctx": "DVERT",
+      "lctx": " ",
+      "bctx": "IS",
+      "phon": "AEdvERt"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "D",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "FF",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "FRAI",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "GA^",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "GENDA",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "GE",
+      "phon": "EY"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "GN",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "GO",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "GRI",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "GR",
+      "phon": "AX"
+    },
+    {
+      "rctx": "LL",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "/AOl\\"
+    },
+    {
+      "rctx": "L",
+      "lctx": " ",
+      "bctx": "SO",
+      "phon": "/AOl\\"
+    },
+    {
+      "rctx": "LWAYS",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "/AOlw[EYz\\"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "LLOC",
+      "phon": "/AE\\"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "LLO",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "LAR",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "LA.",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "LEC",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "LEX",
+      "phon": "AE"
+    },
+    {
+      "rctx": "LFRED",
+      "lctx": " ",
+      "bctx": "!",
+      "phon": "AElfrIXd"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "LICE",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "LIEN",
+      "phon": "EY"
+    },
+    {
+      "rctx": "L",
+      "lctx": " ",
+      "bctx": "#",
+      "phon": "AXl"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "NCIE",
+      "phon": "EY"
+    },
+    {
+      "rctx": "NG",
+      "lctx": " ",
+      "bctx": "ER",
+      "phon": "AENGg"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "NIM",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "NNO",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "NOD",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "NOR",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "PPLE",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "PPLIC",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "PPREH",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "PP",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "PR",
+      "phon": "EY"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "SSAY",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "SSET",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "SS",
+      "phon": "AX"
+    },
+    {
+      "rctx": "TT",
+      "lctx": " ",
+      "bctx": "IC",
+      "phon": "AEDX"
+    },
+    {
+      "rctx": "TTI",
+      "lctx": " ",
+      "bctx": "T",
+      "phon": "AEDXIX"
+    },
+    {
+      "rctx": "TT",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "AXt"
+    },
+    {
+      "rctx": "VER",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "AEvr"
+    },
+    {
+      "rctx": "VE",
+      "lctx": " ",
+      "bctx": "N",
+      "phon": "AEvIX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "VE",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "^#^",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "^ ",
+      "bctx": "LLY",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": "^ ",
+      "bctx": "LLEY",
+      "phon": "AE"
+    },
+    {
+      "rctx": "G",
+      "lctx": ":#",
+      "bctx": "%",
+      "phon": "IXdZH"
+    },
+    {
+      "rctx": "",
+      "lctx": ":#",
+      "bctx": "GEMENT",
+      "phon": "IX"
+    },
+    {
+      "rctx": "V",
+      "lctx": "* ",
+      "bctx": "ER",
+      "phon": "EYv"
+    },
+    {
+      "rctx": "TE",
+      "lctx": "",
+      "bctx": "MENT",
+      "phon": "EYt"
+    },
+    {
+      "rctx": "",
+      "lctx": "RTSIN",
+      "bctx": "T",
+      "phon": "EY"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#",
+      "bctx": "MENT",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#",
+      "bctx": "TIV",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NIZ",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "CL%",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "CID",
+      "bctx": "T",
+      "phon": "EY"
+    },
+    {
+      "rctx": "",
+      "lctx": ":#*#",
+      "bctx": "TELY",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "REPO",
+      "bctx": "T",
+      "phon": "EY"
+    },
+    {
+      "rctx": "",
+      "lctx": ":#*#",
+      "bctx": "TE ",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": ":#*#",
+      "bctx": "T%",
+      "phon": "EY"
+    },
+    {
+      "rctx": "T",
+      "lctx": "M",
+      "bctx": "ER",
+      "phon": "AXt"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "TIL",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "N",
+      "bctx": "TUR+",
+      "phon": "EY"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "TUR+",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "^+:#",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": ": ",
+      "bctx": "^+ ",
+      "phon": "EY"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#*",
+      "bctx": "C+",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "LER ",
+      "bctx": "T%",
+      "phon": "EY"
+    },
+    {
+      "rctx": "",
+      "lctx": "COL ",
+      "bctx": "T%",
+      "phon": "EY"
+    },
+    {
+      "rctx": "",
+      "lctx": "^#* ",
+      "bctx": "T%",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "HCR",
+      "bctx": "S",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "T",
+      "bctx": "X%",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "^%",
+      "phon": "EY"
+    },
+    {
+      "rctx": "RR",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "AXr"
+    },
+    {
+      "rctx": "RR",
+      "lctx": "",
+      "bctx": "",
+      "phon": "AEr"
+    },
+    {
+      "rctx": "R",
+      "lctx": ": ",
+      "bctx": "!",
+      "phon": "AAr"
+    },
+    {
+      "rctx": "R",
+      "lctx": "",
+      "bctx": "!",
+      "phon": "ER"
+    },
+    {
+      "rctx": "",
+      "lctx": "G",
+      "bctx": "RD",
+      "phon": "AA"
+    },
+    {
+      "rctx": "",
+      "lctx": "UG",
+      "bctx": "RD",
+      "phon": "AA"
+    },
+    {
+      "rctx": "R",
+      "lctx": ":#*",
+      "bctx": "D",
+      "phon": "ER"
+    },
+    {
+      "rctx": "R",
+      "lctx": ":#*",
+      "bctx": "TM",
+      "phon": "AAr"
+    },
+    {
+      "rctx": "R",
+      "lctx": ":#*",
+      "bctx": "T",
+      "phon": "ER"
+    },
+    {
+      "rctx": "R",
+      "lctx": "",
+      "bctx": "#",
+      "phon": "AEr"
+    },
+    {
+      "rctx": "R",
+      "lctx": "",
+      "bctx": "",
+      "phon": "AAr"
+    },
+    {
+      "rctx": "IR",
+      "lctx": "",
+      "bctx": "",
+      "phon": "EHr"
+    },
+    {
+      "rctx": "IGN",
+      "lctx": "",
+      "bctx": "",
+      "phon": "EYn"
+    },
+    {
+      "rctx": "I",
+      "lctx": "TPAC",
+      "bctx": "N",
+      "phon": "AX"
+    },
+    {
+      "rctx": "I",
+      "lctx": "",
+      "bctx": "",
+      "phon": "EY"
+    },
+    {
+      "rctx": "Y",
+      "lctx": "",
+      "bctx": "",
+      "phon": "EY"
+    },
+    {
+      "rctx": "U",
+      "lctx": "",
+      "bctx": "THORIT",
+      "phon": "AX"
+    },
+    {
+      "rctx": "U",
+      "lctx": "",
+      "bctx": "",
+      "phon": "AO"
+    },
+    {
+      "rctx": "LK",
+      "lctx": "",
+      "bctx": "",
+      "phon": "AAk"
+    },
+    {
+      "rctx": "L",
+      "lctx": ":#",
+      "bctx": "!",
+      "phon": "AXl"
+    },
+    {
+      "rctx": "L",
+      "lctx": "^",
+      "bctx": "F",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": "HS",
+      "bctx": "L^",
+      "phon": "AE"
+    },
+    {
+      "rctx": "LPHA",
+      "lctx": "",
+      "bctx": "",
+      "phon": "/AEl\\fAX"
+    },
+    {
+      "rctx": "",
+      "lctx": ":#*",
+      "bctx": "LIT-",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": "#",
+      "bctx": "LI",
+      "phon": "AX"
+    },
+    {
+      "rctx": "L",
+      "lctx": "^",
+      "bctx": "M",
+      "phon": "AA"
+    },
+    {
+      "rctx": "LD",
+      "lctx": "",
+      "bctx": "!",
+      "phon": "AXld"
+    },
+    {
+      "rctx": "L",
+      "lctx": "",
+      "bctx": "^",
+      "phon": "AOl"
+    },
+    {
+      "rctx": "BLE",
+      "lctx": ": ",
+      "bctx": "",
+      "phon": "EYb[AXl"
+    },
+    {
+      "rctx": "BLE",
+      "lctx": "NU ",
+      "bctx": "",
+      "phon": "EYb[AXl"
+    },
+    {
+      "rctx": "BLE",
+      "lctx": "",
+      "bctx": "",
+      "phon": "AXb[AXl"
+    },
+    {
+      "rctx": "BLY",
+      "lctx": "",
+      "bctx": "",
+      "phon": "AXblIY"
+    },
+    {
+      "rctx": "NG",
+      "lctx": "",
+      "bctx": "EL#",
+      "phon": "AEndZH"
+    },
+    {
+      "rctx": "NG",
+      "lctx": "",
+      "bctx": "+",
+      "phon": "EYndZH"
+    },
+    {
+      "rctx": "",
+      "lctx": ":#",
+      "bctx": "M!",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "MR",
+      "bctx": "N!",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "M*",
+      "bctx": "N ",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": "GEB",
+      "bctx": "N",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": ":#",
+      "bctx": "N!",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "N^IAL",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": ":#*",
+      "bctx": "NT",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "TSM",
+      "bctx": "NC+",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": "VDA ",
+      "bctx": "NC",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": ":#",
+      "bctx": "NC+",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "^OR#",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "^OR",
+      "phon": "EY"
+    },
+    {
+      "rctx": "",
+      "lctx": "D",
+      "bctx": "TA",
+      "phon": "EY"
+    },
+    {
+      "rctx": "",
+      "lctx": "B",
+      "bctx": "ST%",
+      "phon": "EY"
+    },
+    {
+      "rctx": "",
+      "lctx": "W",
+      "bctx": "ST%",
+      "phon": "EY"
+    },
+    {
+      "rctx": "",
+      "lctx": ".",
+      "bctx": "ST",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "ST%",
+      "phon": "EY"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "ST-",
+      "phon": "EY"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "GUE",
+      "phon": "EY"
+    },
+    {
+      "rctx": "",
+      "lctx": "^ ",
+      "bctx": "KEN",
+      "phon": "EY"
+    },
+    {
+      "rctx": "",
+      "lctx": "F",
+      "bctx": "THER",
+      "phon": "AA"
+    },
+    {
+      "rctx": "",
+      "lctx": "TS",
+      "bctx": "ND",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": "M",
+      "bctx": "ND",
+      "phon": "AE"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#",
+      "bctx": "ND!",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "VI",
+      "bctx": "L",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "^#US",
+      "phon": "EY"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "MA!",
+      "phon": "AA"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": " ",
+      "phon": "EY"
+    },
+    {
+      "rctx": "",
+      "lctx": "SSAM",
+      "bctx": "C",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "",
+      "phon": "AE"
+    }
+  ],
+  "B": [
+    {
+      "rctx": "ECAUSE",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "bIX/kAHz\\"
+    },
+    {
+      "rctx": "E",
+      "lctx": " ",
+      "bctx": "^W",
+      "phon": "bIX"
+    },
+    {
+      "rctx": "ENEA",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "bIXnIY"
+    },
+    {
+      "rctx": "ENE",
+      "lctx": " ",
+      "bctx": "V",
+      "phon": "bIXnEH"
+    },
+    {
+      "rctx": "ENE",
+      "lctx": " ",
+      "bctx": "F",
+      "phon": "bEHnIX"
+    },
+    {
+      "rctx": "E",
+      "lctx": " ",
+      "bctx": "V#",
+      "phon": "bEH"
+    },
+    {
+      "rctx": "E",
+      "lctx": " ",
+      "bctx": "^#",
+      "phon": "bIX"
+    },
+    {
+      "rctx": "EING",
+      "lctx": "",
+      "bctx": "",
+      "phon": "bIYIXNG"
+    },
+    {
+      "rctx": "OTH",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "/bOWTH\\"
+    },
+    {
+      "rctx": "US",
+      "lctx": " ",
+      "bctx": "#",
+      "phon": "/bIHz\\"
+    },
+    {
+      "rctx": "A",
+      "lctx": "",
+      "bctx": "LLIS",
+      "phon": "bAX"
+    },
+    {
+      "rctx": "A",
+      "lctx": "",
+      "bctx": "LLOO",
+      "phon": "bAX"
+    },
+    {
+      "rctx": "A",
+      "lctx": "",
+      "bctx": "LL%",
+      "phon": "bAO"
+    },
+    {
+      "rctx": "A",
+      "lctx": "",
+      "bctx": "LL#",
+      "phon": "bAE"
+    },
+    {
+      "rctx": "ASE",
+      "lctx": "",
+      "bctx": "^#*",
+      "phon": "bEYs"
+    },
+    {
+      "rctx": "EEN",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "\\bIXn/"
+    },
+    {
+      "rctx": "IB",
+      "lctx": "",
+      "bctx": "LE",
+      "phon": "bAYb"
+    },
+    {
+      "rctx": "",
+      "lctx": "#D",
+      "bctx": "T",
+      "phon": ""
+    },
+    {
+      "rctx": "O",
+      "lctx": "#",
+      "bctx": "D+",
+      "phon": "bAH"
+    },
+    {
+      "rctx": "OL",
+      "lctx": "M",
+      "bctx": "",
+      "phon": "b[AXl"
+    },
+    {
+      "rctx": "OR",
+      "lctx": "HGIEN",
+      "bctx": "",
+      "phon": "bER"
+    },
+    {
+      "rctx": "REAKFAST",
+      "lctx": "",
+      "bctx": "",
+      "phon": "brEHkfAXst"
+    },
+    {
+      "rctx": "RITAIN",
+      "lctx": "",
+      "bctx": "",
+      "phon": "brIHtn"
+    },
+    {
+      "rctx": "ROCH",
+      "lctx": "",
+      "bctx": "",
+      "phon": "brOWSH"
+    },
+    {
+      "rctx": "",
+      "lctx": "B",
+      "bctx": "",
+      "phon": ""
+    },
+    {
+      "rctx": "Y",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "\\b[AY/"
+    },
+    {
+      "rctx": "UT",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "\\bAHt/"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "",
+      "phon": "b"
+    }
+  ],
+  "C": [
+    {
+      "rctx": "AN",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "\\kAEn/"
+    },
+    {
+      "rctx": "ANADA",
+      "lctx": "",
+      "bctx": "",
+      "phon": "/kAEn\\AXdAX"
+    },
+    {
+      "rctx": "AN",
+      "lctx": " ",
+      "bctx": "A",
+      "phon": "kAXn"
+    },
+    {
+      "rctx": "HRISTMAS",
+      "lctx": "",
+      "bctx": "",
+      "phon": "krIHsmAXs"
+    },
+    {
+      "rctx": "HRI",
+      "lctx": "",
+      "bctx": "ST+",
+      "phon": "krIH"
+    },
+    {
+      "rctx": "HRI",
+      "lctx": "",
+      "bctx": "ST",
+      "phon": "krAY"
+    },
+    {
+      "rctx": "H",
+      "lctx": "",
+      "bctx": "R",
+      "phon": "k"
+    },
+    {
+      "rctx": "H",
+      "lctx": "",
+      "bctx": "L",
+      "phon": "k"
+    },
+    {
+      "rctx": "H",
+      "lctx": "",
+      "bctx": "EM",
+      "phon": "k"
+    },
+    {
+      "rctx": "HE",
+      "lctx": "RO",
+      "bctx": "",
+      "phon": "kIX"
+    },
+    {
+      "rctx": "H",
+      "lctx": "E^",
+      "bctx": "",
+      "phon": "k"
+    },
+    {
+      "rctx": "HARA",
+      "lctx": "",
+      "bctx": "",
+      "phon": "/kAEr\\IX"
+    },
+    {
+      "rctx": "H",
+      "lctx": "RA",
+      "bctx": "A",
+      "phon": "k"
+    },
+    {
+      "rctx": "H",
+      "lctx": "RA",
+      "bctx": "I",
+      "phon": "k"
+    },
+    {
+      "rctx": "HICA",
+      "lctx": "",
+      "bctx": "GO",
+      "phon": "SHIXkAA"
+    },
+    {
+      "rctx": "HA",
+      "lctx": "",
+      "bctx": "MBER",
+      "phon": "tSHEY"
+    },
+    {
+      "rctx": "H",
+      "lctx": "",
+      "bctx": "ARLOT",
+      "phon": "SH"
+    },
+    {
+      "rctx": "H",
+      "lctx": "",
+      "bctx": "ARLEN",
+      "phon": "SH"
+    },
+    {
+      "rctx": "H",
+      "lctx": "",
+      "bctx": "ERYL",
+      "phon": "SH"
+    },
+    {
+      "rctx": "H",
+      "lctx": "",
+      "bctx": "",
+      "phon": "tSH"
+    },
+    {
+      "rctx": "I",
+      "lctx": "S ",
+      "bctx": "#",
+      "phon": "sAY"
+    },
+    {
+      "rctx": "I",
+      "lctx": "N",
+      "bctx": "L",
+      "phon": "sAX"
+    },
+    {
+      "rctx": "I",
+      "lctx": "",
+      "bctx": "AT+",
+      "phon": "SHIY"
+    },
+    {
+      "rctx": "I",
+      "lctx": "",
+      "bctx": "AL",
+      "phon": "SH"
+    },
+    {
+      "rctx": "I",
+      "lctx": "",
+      "bctx": "A",
+      "phon": "SHy"
+    },
+    {
+      "rctx": "I",
+      "lctx": "",
+      "bctx": "O",
+      "phon": "SH"
+    },
+    {
+      "rctx": "I",
+      "lctx": "",
+      "bctx": "EN",
+      "phon": "SH"
+    },
+    {
+      "rctx": "C",
+      "lctx": "",
+      "bctx": "+",
+      "phon": "ks"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "C",
+      "phon": ""
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "+",
+      "phon": "s"
+    },
+    {
+      "rctx": "K",
+      "lctx": "",
+      "bctx": "",
+      "phon": "k"
+    },
+    {
+      "rctx": "O",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "kAHmpAXnIY"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "M%",
+      "phon": "kAH"
+    },
+    {
+      "rctx": "APA",
+      "lctx": "",
+      "bctx": "C",
+      "phon": "kAXpAE"
+    },
+    {
+      "rctx": "AREER",
+      "lctx": "",
+      "bctx": "",
+      "phon": "kAXrIHr"
+    },
+    {
+      "rctx": "A",
+      "lctx": "",
+      "bctx": "PAB",
+      "phon": "kEY"
+    },
+    {
+      "rctx": "OLON",
+      "lctx": "",
+      "bctx": "EL",
+      "phon": "kERn"
+    },
+    {
+      "rctx": "OLO",
+      "lctx": "",
+      "bctx": "NIA",
+      "phon": "kAXlOW"
+    },
+    {
+      "rctx": "OLO",
+      "lctx": "",
+      "bctx": "N+",
+      "phon": "kAAlAX"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "LON",
+      "phon": "kOW"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "LOR",
+      "phon": "kAH"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "LO",
+      "phon": "kAX"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "LL#G",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "LL",
+      "phon": "kAX"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "M+",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "MF",
+      "phon": "kAH"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "MMENT",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "MMERCE",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "OMMO",
+      "lctx": "",
+      "bctx": "DORE",
+      "phon": "/kAAm\\AX"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "MMON",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "OMMU",
+      "lctx": "",
+      "bctx": "NIS",
+      "phon": "/kAAm\\yUH"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "MM",
+      "phon": "kAX"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "MPAN",
+      "phon": "kAH"
+    },
+    {
+      "rctx": "OMPAR",
+      "lctx": "",
+      "bctx": "AB",
+      "phon": "kAAmpER"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "MPASS ",
+      "phon": "kAH"
+    },
+    {
+      "rctx": "OMPASS",
+      "lctx": "",
+      "bctx": "%",
+      "phon": "kAHmpAXs"
+    },
+    {
+      "rctx": "OMPE",
+      "lctx": "",
+      "bctx": "NSAT+",
+      "phon": "kAAmpIX"
+    },
+    {
+      "rctx": "OMPE",
+      "lctx": "",
+      "bctx": "TEN",
+      "phon": "kAAmpIX"
+    },
+    {
+      "rctx": "OMPET",
+      "lctx": "",
+      "bctx": "ITION",
+      "phon": "kAAmpIXt"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "MPILA",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "MPL+M",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "MPLEX ",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "MPLICA",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "MPLISH",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "MPOUND",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "MPREH",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "MPROM",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "MP",
+      "phon": "kAX"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "NCENTRA",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "NCE^T ",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "NCE^T^",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "NCORD ",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "NCRETE ",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "NDUCT ",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "NIC",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "N+",
+      "phon": "kOW"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "NFERE",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "NFID%",
+      "phon": "kAX"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "NFID",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "NFL",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "NGO",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "ONGRESS",
+      "lctx": "",
+      "bctx": " ",
+      "phon": "/kAANG\\grIXs"
+    },
+    {
+      "rctx": "ONGRESSMAN",
+      "lctx": "",
+      "bctx": "",
+      "phon": "kAANGgrIXsmAXn"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "NGRES",
+      "phon": "kAX"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "NGRE",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "NJUG",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "NSCI",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "NSEQ",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "NSERVATION",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "ONSO",
+      "lctx": "",
+      "bctx": "N",
+      "phon": "kAAnsAX"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "NSTR",
+      "phon": "kAX"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "NST",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "ONSUL",
+      "lctx": "",
+      "bctx": "T",
+      "phon": "kAXnsAHl"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "NSUL",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "NTAC",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "ONTE",
+      "lctx": "",
+      "bctx": "MPL",
+      "phon": "kAAntIX"
+    },
+    {
+      "rctx": "ONTE",
+      "lctx": "",
+      "bctx": "^T!",
+      "phon": "kAAntEH"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "NTINE",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "NTINUIT",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "NTOU",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "NTRACTION",
+      "phon": "kAX"
+    },
+    {
+      "rctx": "ONTRA",
+      "lctx": "",
+      "bctx": "ST",
+      "phon": "kAAntrAE"
+    },
+    {
+      "rctx": "ONTRA",
+      "lctx": "",
+      "bctx": "CT",
+      "phon": "kAAntrAE"
+    },
+    {
+      "rctx": "ONTRAR",
+      "lctx": "",
+      "bctx": "",
+      "phon": "kAAntrEHr"
+    },
+    {
+      "rctx": "ONTRA",
+      "lctx": "",
+      "bctx": "",
+      "phon": "kAAntrAX"
+    },
+    {
+      "rctx": "ONTRI",
+      "lctx": "",
+      "bctx": "BUT%",
+      "phon": "kAXntrIH"
+    },
+    {
+      "rctx": "ONTRI",
+      "lctx": "",
+      "bctx": "B",
+      "phon": "kAAntrIX"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "NTROV",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "ONVA",
+      "lctx": "",
+      "bctx": "L",
+      "phon": "kAAnvAX"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "NVERSAT",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "ONVI",
+      "lctx": "",
+      "bctx": "",
+      "phon": "kAXnvIH"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "NVO",
+      "phon": "kAA"
+    },
+    {
+      "rctx": "ORPS",
+      "lctx": "",
+      "bctx": "!",
+      "phon": "kOWr"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "RREL",
+      "phon": "kAO"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "RRES",
+      "phon": "kAO"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "RRI",
+      "phon": "kAO"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "RR",
+      "phon": "kAX"
+    },
+    {
+      "rctx": "OU",
+      "lctx": "",
+      "bctx": "NTR",
+      "phon": "kAH"
+    },
+    {
+      "rctx": "OUR",
+      "lctx": "",
+      "bctx": "#",
+      "phon": "kER"
+    },
+    {
+      "rctx": "OU",
+      "lctx": "",
+      "bctx": "SIN",
+      "phon": "kAH"
+    },
+    {
+      "rctx": "ATHO",
+      "lctx": "",
+      "bctx": "LIC",
+      "phon": "kAETH"
+    },
+    {
+      "rctx": "",
+      "lctx": "TE",
+      "bctx": "",
+      "phon": "sEHtAXrAX"
+    },
+    {
+      "rctx": "",
+      "lctx": "S",
+      "bctx": "#",
+      "phon": "KX"
+    },
+    {
+      "rctx": "",
+      "lctx": "S",
+      "bctx": "^#",
+      "phon": "KX"
+    },
+    {
+      "rctx": "",
+      "lctx": "X",
+      "bctx": "#",
+      "phon": "KX"
+    },
+    {
+      "rctx": "",
+      "lctx": "X",
+      "bctx": "^#",
+      "phon": "KX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "",
+      "phon": "k"
+    }
+  ],
+  "D": [
+    {
+      "rctx": "ED",
+      "lctx": ":#",
+      "bctx": " ",
+      "phon": "dIXd"
+    },
+    {
+      "rctx": "",
+      "lctx": "E.",
+      "bctx": " ",
+      "phon": "d"
+    },
+    {
+      "rctx": "",
+      "lctx": "E*#",
+      "bctx": " ",
+      "phon": "t"
+    },
+    {
+      "rctx": "A",
+      "lctx": "",
+      "bctx": "LL",
+      "phon": "dAE"
+    },
+    {
+      "rctx": "A",
+      "lctx": "",
+      "bctx": "VI",
+      "phon": "dEY"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "BO",
+      "phon": "dEH"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "CAD",
+      "phon": "dEH"
+    },
+    {
+      "rctx": "ECE",
+      "lctx": "",
+      "bctx": "N",
+      "phon": "dIYs"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "LICA",
+      "phon": "dEH"
+    },
+    {
+      "rctx": "EMO",
+      "lctx": "",
+      "bctx": "CRAT",
+      "phon": "dEHmAX"
+    },
+    {
+      "rctx": "EMO",
+      "lctx": "",
+      "bctx": "NSTRAT",
+      "phon": "dEHmAX"
+    },
+    {
+      "rctx": "E",
+      "lctx": "NI",
+      "bctx": "PEN",
+      "phon": "dIX"
+    },
+    {
+      "rctx": "ESK",
+      "lctx": "",
+      "bctx": "",
+      "phon": "dEHsk"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "TON",
+      "phon": "dEH"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "TRIB",
+      "phon": "dEH"
+    },
+    {
+      "rctx": "ET",
+      "lctx": "",
+      "bctx": "",
+      "phon": "dIXt"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "VI#",
+      "phon": "dIY"
+    },
+    {
+      "rctx": "E",
+      "lctx": " ",
+      "bctx": "*#",
+      "phon": "dIX"
+    },
+    {
+      "rctx": "I",
+      "lctx": " ",
+      "bctx": "A",
+      "phon": "dAY"
+    },
+    {
+      "rctx": "IREC",
+      "lctx": "",
+      "bctx": "T",
+      "phon": "dIXrEHk"
+    },
+    {
+      "rctx": "ISA",
+      "lctx": "",
+      "bctx": "G",
+      "phon": "dIHsAX"
+    },
+    {
+      "rctx": "ISA",
+      "lctx": "",
+      "bctx": "P",
+      "phon": "dIHsAX"
+    },
+    {
+      "rctx": "IS",
+      "lctx": "",
+      "bctx": "CH",
+      "phon": "dIHs"
+    },
+    {
+      "rctx": "ISCIPLIN",
+      "lctx": "",
+      "bctx": "",
+      "phon": "dIHsIXplIXn"
+    },
+    {
+      "rctx": "ISEN",
+      "lctx": "",
+      "bctx": "",
+      "phon": "dIHsIXn"
+    },
+    {
+      "rctx": "ISH",
+      "lctx": "",
+      "bctx": "",
+      "phon": "dIHSH"
+    },
+    {
+      "rctx": "IS",
+      "lctx": "",
+      "bctx": "K",
+      "phon": "dIHs"
+    },
+    {
+      "rctx": "ISPOS",
+      "lctx": "",
+      "bctx": "IT",
+      "phon": "dIHsPXAXz"
+    },
+    {
+      "rctx": "IS",
+      "lctx": "",
+      "bctx": "TAN",
+      "phon": "dIHs"
+    },
+    {
+      "rctx": "ISTRI",
+      "lctx": "",
+      "bctx": "BUTIO",
+      "phon": "dIHsTXrIX"
+    },
+    {
+      "rctx": "IS",
+      "lctx": "",
+      "bctx": "TRIC",
+      "phon": "dIHs"
+    },
+    {
+      "rctx": "I",
+      "lctx": "",
+      "bctx": "S",
+      "phon": "dIX"
+    },
+    {
+      "rctx": "O",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "/dUW\\"
+    },
+    {
+      "rctx": "OES",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "dAHz"
+    },
+    {
+      "rctx": "OING",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "/dUW\\IXNG"
+    },
+    {
+      "rctx": "OW",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "dAW"
+    },
+    {
+      "rctx": "I",
+      "lctx": "LOS",
+      "bctx": "ER",
+      "phon": "dZH"
+    },
+    {
+      "rctx": "OG",
+      "lctx": "",
+      "bctx": "",
+      "phon": "dAOg"
+    },
+    {
+      "rctx": "OME",
+      "lctx": "",
+      "bctx": "ST",
+      "phon": "dAXmEH"
+    },
+    {
+      "rctx": "ONE",
+      "lctx": "",
+      "bctx": " ",
+      "phon": "dAHn"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "ZEN",
+      "phon": "dAH"
+    },
+    {
+      "rctx": "RAMA",
+      "lctx": "",
+      "bctx": "TIC",
+      "phon": "drAXmAE"
+    },
+    {
+      "rctx": "U",
+      "lctx": "E",
+      "bctx": "CA",
+      "phon": "dZHIX"
+    },
+    {
+      "rctx": "U",
+      "lctx": "NI",
+      "bctx": "STR-",
+      "phon": "dAX"
+    },
+    {
+      "rctx": "U",
+      "lctx": "",
+      "bctx": "A",
+      "phon": "dZHUH"
+    },
+    {
+      "rctx": "G",
+      "lctx": "",
+      "bctx": "M",
+      "phon": "dZH"
+    },
+    {
+      "rctx": "G",
+      "lctx": "",
+      "bctx": "+",
+      "phon": "dZH"
+    },
+    {
+      "rctx": "AY",
+      "lctx": ":#*",
+      "bctx": "",
+      "phon": "dIY"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "D",
+      "phon": ""
+    },
+    {
+      "rctx": "R",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "dAAktER"
+    },
+    {
+      "rctx": "E",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "dIX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "",
+      "phon": "d"
+    }
+  ],
+  "E": [
+    {
+      "rctx": "",
+      "lctx": ":#",
+      "bctx": " ",
+      "phon": ""
+    },
+    {
+      "rctx": ".G",
+      "lctx": "",
+      "bctx": "",
+      "phon": "\\fAOr/IHg/zAEm\\pAXl"
+    },
+    {
+      "rctx": "",
+      "lctx": ":#",
+      "bctx": "'",
+      "phon": ""
+    },
+    {
+      "rctx": "",
+      "lctx": "*'",
+      "bctx": " ",
+      "phon": ""
+    },
+    {
+      "rctx": "",
+      "lctx": ": ",
+      "bctx": "!",
+      "phon": "/IY\\"
+    },
+    {
+      "rctx": "D",
+      "lctx": "T:#",
+      "bctx": " ",
+      "phon": "IXd"
+    },
+    {
+      "rctx": "CON",
+      "lctx": "",
+      "bctx": "OMIC",
+      "phon": "EHkIXn"
+    },
+    {
+      "rctx": "CON",
+      "lctx": "",
+      "bctx": "OM",
+      "phon": "IXkAAn"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "FFEC",
+      "phon": "IX"
+    },
+    {
+      "rctx": "FFI",
+      "lctx": "",
+      "bctx": "CI",
+      "phon": "IXfIH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "LEC",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "LLEC",
+      "phon": "IX"
+    },
+    {
+      "rctx": "LIM",
+      "lctx": "",
+      "bctx": "",
+      "phon": "IXlIHm"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "M!",
+      "phon": "EH"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "MANAT",
+      "phon": "EH"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "MBASS",
+      "phon": "EH"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "MBLEM",
+      "phon": "EH"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "MBRYO!",
+      "phon": "EH"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "MERA",
+      "phon": "EH"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "MIGRA",
+      "phon": "EH"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "MINE",
+      "phon": "EH"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "MISSA",
+      "phon": "EH"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "MMA!",
+      "phon": "EH"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "MMETT",
+      "phon": "EH"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "MORY",
+      "phon": "EH"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "MOT",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "MPATH+",
+      "phon": "EH"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "MPER",
+      "phon": "EH"
+    },
+    {
+      "rctx": "MPHA",
+      "lctx": " ",
+      "bctx": "S",
+      "phon": "EHmfAX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "MPIRE!",
+      "phon": "EH"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "MPT",
+      "phon": "EH"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "MU",
+      "phon": "EH"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "M",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "NC",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "NDUR",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "ND",
+      "phon": "EH"
+    },
+    {
+      "rctx": "NE",
+      "lctx": " ",
+      "bctx": "M",
+      "phon": "/EHn\\IX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "NER^",
+      "phon": "EH"
+    },
+    {
+      "rctx": "NGA",
+      "lctx": "",
+      "bctx": "",
+      "phon": "IXngEY"
+    },
+    {
+      "rctx": "NG",
+      "lctx": " ",
+      "bctx": "L",
+      "phon": "IHNGg"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "NGIN",
+      "phon": "EH"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "NTER",
+      "phon": "EH"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "NTRA",
+      "phon": "EH"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "N",
+      "phon": "IX"
+    },
+    {
+      "rctx": "QUA",
+      "lctx": "",
+      "bctx": "L",
+      "phon": "IYkwAX"
+    },
+    {
+      "rctx": "QUI",
+      "lctx": "",
+      "bctx": "L",
+      "phon": "IYkwAX"
+    },
+    {
+      "rctx": "QUI",
+      "lctx": "",
+      "bctx": "P",
+      "phon": "IXkwIH"
+    },
+    {
+      "rctx": "QUI",
+      "lctx": "",
+      "bctx": "T",
+      "phon": "EHkwIX"
+    },
+    {
+      "rctx": "QUI",
+      "lctx": "",
+      "bctx": "V",
+      "phon": "IXkwIH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "STIM",
+      "phon": "EH"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "S",
+      "phon": "IX"
+    },
+    {
+      "rctx": "URO",
+      "lctx": "",
+      "bctx": "PE",
+      "phon": "yUHrAX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "VIL",
+      "phon": "IY"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "VIOUS",
+      "phon": "IY"
+    },
+    {
+      "rctx": "X",
+      "lctx": " ",
+      "bctx": "TRA",
+      "phon": "EHks"
+    },
+    {
+      "rctx": "XCE",
+      "lctx": " ",
+      "bctx": "LL",
+      "phon": "/EHk\\sIX"
+    },
+    {
+      "rctx": "X",
+      "lctx": " ",
+      "bctx": "ERC",
+      "phon": "EHks"
+    },
+    {
+      "rctx": "X",
+      "lctx": "LA",
+      "bctx": "AND",
+      "phon": "IXgz"
+    },
+    {
+      "rctx": "X",
+      "lctx": " ",
+      "bctx": "#",
+      "phon": "IXgz"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "X",
+      "phon": "IX"
+    },
+    {
+      "rctx": "D",
+      "lctx": "#",
+      "bctx": "!",
+      "phon": "d"
+    },
+    {
+      "rctx": "",
+      "lctx": "RD",
+      "bctx": "D",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": ":#",
+      "bctx": "D!",
+      "phon": ""
+    },
+    {
+      "rctx": "V",
+      "lctx": "",
+      "bctx": "ER",
+      "phon": "EHv"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "GE",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "^",
+      "bctx": "GAL",
+      "phon": "IY"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "GI",
+      "phon": "IY"
+    },
+    {
+      "rctx": "LI",
+      "lctx": "",
+      "bctx": "A!",
+      "phon": "IYly"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NE!",
+      "phon": "IY"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NNE!",
+      "phon": "EH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "TTE!",
+      "phon": "EH"
+    },
+    {
+      "rctx": "RE",
+      "lctx": "M",
+      "bctx": "",
+      "phon": "IHr"
+    },
+    {
+      "rctx": "RE",
+      "lctx": "CNIS",
+      "bctx": "",
+      "phon": "IHr"
+    },
+    {
+      "rctx": "R",
+      "lctx": "HPS",
+      "bctx": "",
+      "phon": "IHr"
+    },
+    {
+      "rctx": "R",
+      "lctx": "",
+      "bctx": "%",
+      "phon": "ER"
+    },
+    {
+      "rctx": "",
+      "lctx": "PP",
+      "bctx": "N%",
+      "phon": "IX"
+    },
+    {
+      "rctx": "N",
+      "lctx": "SE",
+      "bctx": "T%",
+      "phon": "EHn"
+    },
+    {
+      "rctx": "N",
+      "lctx": "SE",
+      "bctx": "T",
+      "phon": "AXn"
+    },
+    {
+      "rctx": "N",
+      "lctx": "VE",
+      "bctx": "T",
+      "phon": "EHn"
+    },
+    {
+      "rctx": "N",
+      "lctx": "VE",
+      "bctx": "ING",
+      "phon": "n"
+    },
+    {
+      "rctx": "N",
+      "lctx": "VE",
+      "bctx": "",
+      "phon": "IXn"
+    },
+    {
+      "rctx": "N",
+      "lctx": "*#* ",
+      "bctx": "AN",
+      "phon": "IXn"
+    },
+    {
+      "rctx": "N",
+      "lctx": "*#",
+      "bctx": "%",
+      "phon": "IXn"
+    },
+    {
+      "rctx": "LES",
+      "lctx": "",
+      "bctx": "",
+      "phon": "AXlIXs"
+    },
+    {
+      "rctx": "",
+      "lctx": "M#*",
+      "bctx": "TER",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "^%",
+      "phon": "IY"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "TI#^",
+      "phon": "IY"
+    },
+    {
+      "rctx": "RI",
+      "lctx": "",
+      "bctx": "#",
+      "phon": "IHrIY"
+    },
+    {
+      "rctx": "RI",
+      "lctx": "",
+      "bctx": "ST",
+      "phon": "AXrIH"
+    },
+    {
+      "rctx": "R",
+      "lctx": "",
+      "bctx": "I",
+      "phon": "EHr"
+    },
+    {
+      "rctx": "RY",
+      "lctx": "V#",
+      "bctx": "",
+      "phon": "rIY"
+    },
+    {
+      "rctx": "REN",
+      "lctx": ":#",
+      "bctx": "TI",
+      "phon": "rEHn"
+    },
+    {
+      "rctx": "R",
+      "lctx": "DE",
+      "bctx": "AL",
+      "phon": "r"
+    },
+    {
+      "rctx": "R",
+      "lctx": "VE",
+      "bctx": "AL",
+      "phon": "r"
+    },
+    {
+      "rctx": "",
+      "lctx": "FRETNI",
+      "bctx": "R",
+      "phon": "IH"
+    },
+    {
+      "rctx": "R",
+      "lctx": "F",
+      "bctx": "EN",
+      "phon": "r"
+    },
+    {
+      "rctx": "R",
+      "lctx": "T",
+      "bctx": "EST",
+      "phon": "r"
+    },
+    {
+      "rctx": "RA",
+      "lctx": "PM",
+      "bctx": "^",
+      "phon": "rAX"
+    },
+    {
+      "rctx": "R",
+      "lctx": ":#",
+      "bctx": "#",
+      "phon": "AXr"
+    },
+    {
+      "rctx": "R",
+      "lctx": "",
+      "bctx": "#",
+      "phon": "EHr"
+    },
+    {
+      "rctx": "R",
+      "lctx": "VOG",
+      "bctx": "NOR",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": ": ",
+      "bctx": "RR",
+      "phon": "EH"
+    },
+    {
+      "rctx": "R",
+      "lctx": "",
+      "bctx": "",
+      "phon": "ER"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "VENT",
+      "phon": "IX"
+    },
+    {
+      "rctx": "V",
+      "lctx": " ",
+      "bctx": "EN",
+      "phon": "/IYv\\"
+    },
+    {
+      "rctx": "PH",
+      "lctx": "TS",
+      "bctx": "EN",
+      "phon": "IYv"
+    },
+    {
+      "rctx": "V",
+      "lctx": "TS",
+      "bctx": "E",
+      "phon": "IYv"
+    },
+    {
+      "rctx": "",
+      "lctx": ":#",
+      "bctx": "W",
+      "phon": ""
+    },
+    {
+      "rctx": "W",
+      "lctx": "@",
+      "bctx": "",
+      "phon": "UW"
+    },
+    {
+      "rctx": "W",
+      "lctx": "",
+      "bctx": "",
+      "phon": "yUW"
+    },
+    {
+      "rctx": "",
+      "lctx": "G",
+      "bctx": "OU",
+      "phon": ""
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "O",
+      "phon": "IY"
+    },
+    {
+      "rctx": "S",
+      "lctx": "&:#",
+      "bctx": " ",
+      "phon": "IXz"
+    },
+    {
+      "rctx": "",
+      "lctx": ":#",
+      "bctx": "S ",
+      "phon": ""
+    },
+    {
+      "rctx": "LY",
+      "lctx": ":#",
+      "bctx": " ",
+      "phon": "lIY"
+    },
+    {
+      "rctx": "",
+      "lctx": "L#",
+      "bctx": "MENT",
+      "phon": "IX"
+    },
+    {
+      "rctx": "MENT",
+      "lctx": ":#",
+      "bctx": "",
+      "phon": "mAXnt"
+    },
+    {
+      "rctx": "",
+      "lctx": "M",
+      "bctx": "NTA^",
+      "phon": "EH"
+    },
+    {
+      "rctx": "",
+      "lctx": "V",
+      "bctx": "NT",
+      "phon": "EH"
+    },
+    {
+      "rctx": "",
+      "lctx": "FREP",
+      "bctx": "CT ",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "JBU",
+      "bctx": "CTS",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#*",
+      "bctx": "NT+",
+      "phon": "EH"
+    },
+    {
+      "rctx": "",
+      "lctx": "CR",
+      "bctx": "NT",
+      "phon": "EH"
+    },
+    {
+      "rctx": "",
+      "lctx": ":#*",
+      "bctx": "NT",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": ":#*",
+      "bctx": "NC+",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "GA",
+      "bctx": "N",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#*",
+      "bctx": "TAR+",
+      "phon": "IX"
+    },
+    {
+      "rctx": "FUL",
+      "lctx": "",
+      "bctx": "",
+      "phon": "fUHl"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "R",
+      "phon": "IH"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "",
+      "phon": "IY"
+    },
+    {
+      "rctx": "ACH",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "/IYtSH\\"
+    },
+    {
+      "rctx": "AR",
+      "lctx": "B",
+      "bctx": "D",
+      "phon": "IHr"
+    },
+    {
+      "rctx": "A",
+      "lctx": "B",
+      "bctx": "R",
+      "phon": "EH"
+    },
+    {
+      "rctx": "AR",
+      "lctx": "",
+      "bctx": "D",
+      "phon": "ER"
+    },
+    {
+      "rctx": "AR",
+      "lctx": "",
+      "bctx": "N",
+      "phon": "ER"
+    },
+    {
+      "rctx": "AR",
+      "lctx": " ",
+      "bctx": "^",
+      "phon": "ER"
+    },
+    {
+      "rctx": "AR",
+      "lctx": "",
+      "bctx": "T",
+      "phon": "AAr"
+    },
+    {
+      "rctx": "AR",
+      "lctx": "H",
+      "bctx": "ST",
+      "phon": "ER"
+    },
+    {
+      "rctx": "A",
+      "lctx": "W",
+      "bctx": "RING",
+      "phon": "EH"
+    },
+    {
+      "rctx": "A",
+      "lctx": "W",
+      "bctx": "R+",
+      "phon": "IH"
+    },
+    {
+      "rctx": "A",
+      "lctx": "W",
+      "bctx": "R",
+      "phon": "EH"
+    },
+    {
+      "rctx": "A",
+      "lctx": "",
+      "bctx": "R",
+      "phon": "IH"
+    },
+    {
+      "rctx": "A",
+      "lctx": "RB",
+      "bctx": "D",
+      "phon": "EH"
+    },
+    {
+      "rctx": "A",
+      "lctx": "RB",
+      "bctx": "K",
+      "phon": "EY"
+    },
+    {
+      "rctx": "A",
+      "lctx": "RPS",
+      "bctx": "D",
+      "phon": "EH"
+    },
+    {
+      "rctx": "A",
+      "lctx": "R",
+      "bctx": "DING",
+      "phon": "IY"
+    },
+    {
+      "rctx": "A",
+      "lctx": "R",
+      "bctx": "D+",
+      "phon": "EH"
+    },
+    {
+      "rctx": "A",
+      "lctx": "R",
+      "bctx": "D",
+      "phon": "IY"
+    },
+    {
+      "rctx": "A",
+      "lctx": "B",
+      "bctx": "D",
+      "phon": "IY"
+    },
+    {
+      "rctx": "A",
+      "lctx": "",
+      "bctx": "D",
+      "phon": "EH"
+    },
+    {
+      "rctx": "A",
+      "lctx": "",
+      "bctx": "TH",
+      "phon": "EH"
+    },
+    {
+      "rctx": "A",
+      "lctx": "",
+      "bctx": "LTH",
+      "phon": "EH"
+    },
+    {
+      "rctx": "A",
+      "lctx": "H",
+      "bctx": "V+",
+      "phon": "EH"
+    },
+    {
+      "rctx": "A",
+      "lctx": ":#",
+      "bctx": "!",
+      "phon": "IYAX"
+    },
+    {
+      "rctx": "A",
+      "lctx": "",
+      "bctx": "SU",
+      "phon": "EH"
+    },
+    {
+      "rctx": "A",
+      "lctx": "RC",
+      "bctx": "TUR",
+      "phon": "IY"
+    },
+    {
+      "rctx": "A",
+      "lctx": "RC",
+      "bctx": "T",
+      "phon": "IYEY"
+    },
+    {
+      "rctx": "A",
+      "lctx": "R",
+      "bctx": "CT",
+      "phon": "IYAE"
+    },
+    {
+      "rctx": "AU",
+      "lctx": "",
+      "bctx": " ",
+      "phon": "OW"
+    },
+    {
+      "rctx": "A",
+      "lctx": "M",
+      "bctx": "NT ",
+      "phon": "EH"
+    },
+    {
+      "rctx": "A",
+      "lctx": "",
+      "bctx": "LIT+",
+      "phon": "IYAE"
+    },
+    {
+      "rctx": "A",
+      "lctx": "",
+      "bctx": "LIZ",
+      "phon": "IYIX"
+    },
+    {
+      "rctx": "AU",
+      "lctx": "B",
+      "bctx": "T",
+      "phon": "yUW"
+    },
+    {
+      "rctx": "A",
+      "lctx": "HT",
+      "bctx": "T",
+      "phon": "IYIX"
+    },
+    {
+      "rctx": "A",
+      "lctx": "",
+      "bctx": "",
+      "phon": "IY"
+    },
+    {
+      "rctx": "IGN",
+      "lctx": "R",
+      "bctx": "",
+      "phon": "IXn"
+    },
+    {
+      "rctx": "IGH",
+      "lctx": "",
+      "bctx": "",
+      "phon": "EY"
+    },
+    {
+      "rctx": "ISE",
+      "lctx": "",
+      "bctx": "N",
+      "phon": "AYzAX"
+    },
+    {
+      "rctx": "I",
+      "lctx": "",
+      "bctx": "",
+      "phon": "IY"
+    },
+    {
+      "rctx": "YE",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "AY"
+    },
+    {
+      "rctx": "Y",
+      "lctx": "",
+      "bctx": "",
+      "phon": "IY"
+    },
+    {
+      "rctx": "U",
+      "lctx": "@",
+      "bctx": "",
+      "phon": "UW"
+    },
+    {
+      "rctx": "U",
+      "lctx": "",
+      "bctx": "",
+      "phon": "yUW"
+    },
+    {
+      "rctx": "L",
+      "lctx": "*#",
+      "bctx": "!",
+      "phon": "[AXl"
+    },
+    {
+      "rctx": "N",
+      "lctx": "DD",
+      "bctx": "",
+      "phon": "n"
+    },
+    {
+      "rctx": "N",
+      "lctx": "*#",
+      "bctx": "!",
+      "phon": "IXn"
+    },
+    {
+      "rctx": "M",
+      "lctx": "*#",
+      "bctx": "!",
+      "phon": "IXm"
+    },
+    {
+      "rctx": "",
+      "lctx": "N",
+      "bctx": "SS",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "M",
+      "bctx": "DI#",
+      "phon": "IY"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#",
+      "bctx": "DG",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "L#",
+      "bctx": "N:#",
+      "phon": "IX"
+    },
+    {
+      "rctx": "T",
+      "lctx": "LLAB",
+      "bctx": "!",
+      "phon": "EY"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#*",
+      "bctx": "T!",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#*",
+      "bctx": "TT!",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#*",
+      "bctx": "T%",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "D-",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "^E*",
+      "bctx": "*A",
+      "phon": "IX"
+    },
+    {
+      "rctx": "DUR",
+      "lctx": "",
+      "bctx": "",
+      "phon": "IYdZHER"
+    },
+    {
+      "rctx": "",
+      "lctx": "UQ",
+      "bctx": "ST",
+      "phon": "EH"
+    },
+    {
+      "rctx": "S",
+      "lctx": "*#*",
+      "bctx": "T",
+      "phon": "IXs"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "*#TION",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "",
+      "phon": "EH"
+    }
+  ],
+  "F": [
+    {
+      "rctx": "ULL",
+      "lctx": "",
+      "bctx": "",
+      "phon": "fUHl"
+    },
+    {
+      "rctx": "UL",
+      "lctx": "",
+      "bctx": "",
+      "phon": "fUHl"
+    },
+    {
+      "rctx": "",
+      "lctx": "F",
+      "bctx": "",
+      "phon": ""
+    },
+    {
+      "rctx": "AMIL",
+      "lctx": "",
+      "bctx": "IA",
+      "phon": "fAXmIHl"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "MALE",
+      "phon": "fIY"
+    },
+    {
+      "rctx": "I",
+      "lctx": "",
+      "bctx": "NAN",
+      "phon": "fAY"
+    },
+    {
+      "rctx": "ONT",
+      "lctx": "",
+      "bctx": "",
+      "phon": "fAAnt"
+    },
+    {
+      "rctx": "OR",
+      "lctx": "NI",
+      "bctx": "MATIO",
+      "phon": "fER"
+    },
+    {
+      "rctx": "OR",
+      "lctx": "",
+      "bctx": "C",
+      "phon": "fOWr"
+    },
+    {
+      "rctx": "OR",
+      "lctx": "",
+      "bctx": "EIGN",
+      "phon": "fAOr"
+    },
+    {
+      "rctx": "OR",
+      "lctx": "",
+      "bctx": "E",
+      "phon": "fOWr"
+    },
+    {
+      "rctx": "OR",
+      "lctx": "",
+      "bctx": "G%",
+      "phon": "fOWr"
+    },
+    {
+      "rctx": "OR",
+      "lctx": "",
+      "bctx": "GER-",
+      "phon": "fOWr"
+    },
+    {
+      "rctx": "OR",
+      "lctx": "",
+      "bctx": "G",
+      "phon": "fER"
+    },
+    {
+      "rctx": "OR",
+      "lctx": "",
+      "bctx": "TH",
+      "phon": "fOWr"
+    },
+    {
+      "rctx": "RE",
+      "lctx": "",
+      "bctx": "Q",
+      "phon": "frIY"
+    },
+    {
+      "rctx": "ROM",
+      "lctx": "",
+      "bctx": " ",
+      "phon": "\\frAHm/"
+    },
+    {
+      "rctx": "RI",
+      "lctx": "",
+      "bctx": "DAY",
+      "phon": "/frAY\\"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "",
+      "phon": "f"
+    }
+  ],
+  "G": [
+    {
+      "rctx": "IV",
+      "lctx": "",
+      "bctx": "",
+      "phon": "/gIHv\\"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "I^",
+      "phon": "g"
+    },
+    {
+      "rctx": "E",
+      "lctx": "RA",
+      "bctx": "T",
+      "phon": "gIX"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "T",
+      "phon": "gEH"
+    },
+    {
+      "rctx": "G",
+      "lctx": "",
+      "bctx": "",
+      "phon": "g"
+    },
+    {
+      "rctx": "EN",
+      "lctx": "",
+      "bctx": "%",
+      "phon": "dZHIYn"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "NI#",
+      "phon": "dZHIY"
+    },
+    {
+      "rctx": "",
+      "lctx": "#B ",
+      "bctx": "",
+      "phon": "g"
+    },
+    {
+      "rctx": "EOR",
+      "lctx": "",
+      "bctx": "",
+      "phon": "dZHAOr"
+    },
+    {
+      "rctx": "EOF",
+      "lctx": "",
+      "bctx": "",
+      "phon": "dZHEHf"
+    },
+    {
+      "rctx": "I",
+      "lctx": "",
+      "bctx": "O",
+      "phon": "dZH"
+    },
+    {
+      "rctx": "",
+      "lctx": "AE",
+      "bctx": "ER",
+      "phon": "g"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "+",
+      "phon": "dZH"
+    },
+    {
+      "rctx": "REAT",
+      "lctx": "",
+      "bctx": "",
+      "phon": "/grEYt\\"
+    },
+    {
+      "rctx": "H",
+      "lctx": "#",
+      "bctx": "",
+      "phon": ""
+    },
+    {
+      "rctx": "ORBACHEV",
+      "lctx": "",
+      "bctx": "",
+      "phon": "gAOrbAXtSHAAf"
+    },
+    {
+      "rctx": "ASO",
+      "lctx": "",
+      "bctx": "",
+      "phon": "/gAEs\\AX"
+    },
+    {
+      "rctx": "AS",
+      "lctx": "",
+      "bctx": " ",
+      "phon": "gAEs"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "",
+      "phon": "g"
+    }
+  ],
+  "H": [
+    {
+      "rctx": "AV",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "\\hAEv/"
+    },
+    {
+      "rctx": "ERE",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "/hIHr\\"
+    },
+    {
+      "rctx": "O",
+      "lctx": " ",
+      "bctx": "NES",
+      "phon": "AA"
+    },
+    {
+      "rctx": "O",
+      "lctx": " ",
+      "bctx": "NOR",
+      "phon": "AA"
+    },
+    {
+      "rctx": "O",
+      "lctx": " ",
+      "bctx": "NOUR",
+      "phon": "AA"
+    },
+    {
+      "rctx": "OUR",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "AWER"
+    },
+    {
+      "rctx": "OW",
+      "lctx": "",
+      "bctx": "",
+      "phon": "hAW"
+    },
+    {
+      "rctx": "ISTOR",
+      "lctx": "",
+      "bctx": "-",
+      "phon": "/hIHs\\tr"
+    },
+    {
+      "rctx": "",
+      "lctx": "R ",
+      "bctx": "O",
+      "phon": ""
+    },
+    {
+      "rctx": "AD",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "\\hAEd/"
+    },
+    {
+      "rctx": "AS",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "\\hAEz/"
+    },
+    {
+      "rctx": "ER",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "\\hER/"
+    },
+    {
+      "rctx": "IM",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "\\hIHm/"
+    },
+    {
+      "rctx": "E",
+      "lctx": " ",
+      "bctx": "RO",
+      "phon": "hIH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "#",
+      "phon": "h"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "",
+      "phon": ""
+    }
+  ],
+  "I": [
+    {
+      "rctx": "N",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "\\IXn/"
+    },
+    {
+      "rctx": ".E",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "\\DHAEDX//IHz\\"
+    },
+    {
+      "rctx": "S",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "\\IXz/"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "!",
+      "phon": "/[AY\\"
+    },
+    {
+      "rctx": "",
+      "lctx": "* ",
+      "bctx": " ",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "L",
+      "bctx": "VELY",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "L ",
+      "bctx": "V",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "R ",
+      "bctx": "V",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "X%",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#",
+      "bctx": "CER!",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "VR",
+      "bctx": "C%",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "V:#",
+      "bctx": "C%",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#",
+      "bctx": "C%",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "MI",
+      "bctx": "T%",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "CN",
+      "bctx": "P",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "SOP",
+      "bctx": "TE",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "T",
+      "bctx": "V%",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "M:#",
+      "bctx": "N%",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "SNOC",
+      "bctx": "D",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "G",
+      "bctx": "N%",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "^#*A^",
+      "bctx": "NE!",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "RTC",
+      "bctx": "N#",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#",
+      "bctx": "NE!",
+      "phon": "IY"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#",
+      "bctx": "NNE!",
+      "phon": "IY"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#*",
+      "bctx": "V%",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "SS",
+      "bctx": "L",
+      "phon": "AX"
+    },
+    {
+      "rctx": "S",
+      "lctx": "MORP ",
+      "bctx": "%",
+      "phon": "IXs"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "^E!",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "TEM",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "^%",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NOR!",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "HC",
+      "bctx": "N#",
+      "phon": "AY"
+    },
+    {
+      "rctx": "GH",
+      "lctx": "",
+      "bctx": "",
+      "phon": "AY"
+    },
+    {
+      "rctx": "GN",
+      "lctx": "",
+      "bctx": "!",
+      "phon": "AYn"
+    },
+    {
+      "rctx": "GN",
+      "lctx": "",
+      "bctx": "^",
+      "phon": "AYn"
+    },
+    {
+      "rctx": "GN",
+      "lctx": "",
+      "bctx": "%",
+      "phon": "AYn"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "LDE",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "LDRE",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "LD",
+      "phon": "AY"
+    },
+    {
+      "rctx": "S",
+      "lctx": "",
+      "bctx": "L",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "T",
+      "bctx": "TL%",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "C ",
+      "bctx": "T-",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "* ",
+      "bctx": "^-",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "N# ",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "MAF",
+      "bctx": "L-",
+      "phon": ""
+    },
+    {
+      "rctx": "",
+      "lctx": "*#",
+      "bctx": "^-",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "^I#*",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "FIC",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "GEB",
+      "bctx": "N",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "SUB",
+      "bctx": "NESS",
+      "phon": ""
+    },
+    {
+      "rctx": "",
+      "lctx": "MMOC",
+      "bctx": "",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "TNOC",
+      "bctx": "NU",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "XE",
+      "bctx": "ST",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "M",
+      "bctx": "NIS",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "R",
+      "bctx": "VA",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "R",
+      "bctx": "MA",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "*ER",
+      "bctx": "*#",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "S",
+      "bctx": "ST",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "T",
+      "bctx": "CU",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "^#",
+      "bctx": "DU#",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "^",
+      "bctx": "^IT",
+      "phon": "IH"
+    },
+    {
+      "rctx": "QUE",
+      "lctx": "",
+      "bctx": "",
+      "phon": "IYk"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "PTIO",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "TT%",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "LAC",
+      "bctx": "F",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#",
+      "bctx": "*#",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "TNU",
+      "bctx": "L ",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#",
+      "bctx": "L!",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#",
+      "bctx": "C!",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "^#",
+      "bctx": "^!",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": ":#",
+      "bctx": "NG!",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#",
+      "bctx": "ST!",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#",
+      "bctx": "SH!",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "D",
+      "bctx": "VI",
+      "phon": "IX"
+    },
+    {
+      "rctx": "R",
+      "lctx": "PS",
+      "bctx": "IT",
+      "phon": "IHr"
+    },
+    {
+      "rctx": "RA",
+      "lctx": " ",
+      "bctx": "^!",
+      "phon": "IXrAA"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "R#",
+      "phon": "AY"
+    },
+    {
+      "rctx": "R",
+      "lctx": "",
+      "bctx": "",
+      "phon": "ER"
+    },
+    {
+      "rctx": "ER",
+      "lctx": "",
+      "bctx": "",
+      "phon": "IYER"
+    },
+    {
+      "rctx": "ED",
+      "lctx": "R:#",
+      "bctx": " ",
+      "phon": "IYd"
+    },
+    {
+      "rctx": "ED",
+      "lctx": "DUTS",
+      "bctx": "",
+      "phon": "IYd"
+    },
+    {
+      "rctx": "ED",
+      "lctx": "",
+      "bctx": " ",
+      "phon": "AYd"
+    },
+    {
+      "rctx": "EN",
+      "lctx": "RF",
+      "bctx": "D",
+      "phon": "EHn"
+    },
+    {
+      "rctx": "EN",
+      "lctx": "",
+      "bctx": "",
+      "phon": "IYAXn"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "T#",
+      "phon": "AYIX"
+    },
+    {
+      "rctx": "E",
+      "lctx": "UQ",
+      "bctx": "T",
+      "phon": "AYIX"
+    },
+    {
+      "rctx": "",
+      "lctx": "LP",
+      "bctx": "%",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "F:I*#",
+      "bctx": "%",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "^ED ",
+      "bctx": "%",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "* ",
+      "bctx": "%",
+      "phon": "AY"
+    },
+    {
+      "rctx": "A",
+      "lctx": "* ",
+      "bctx": "L",
+      "phon": "AY"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "",
+      "phon": "IY"
+    },
+    {
+      "rctx": "",
+      "lctx": "R",
+      "bctx": "AGE",
+      "phon": ""
+    },
+    {
+      "rctx": "",
+      "lctx": "R^ ",
+      "bctx": "#R",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "R",
+      "bctx": "#",
+      "phon": "IY"
+    },
+    {
+      "rctx": "",
+      "lctx": "D",
+      "bctx": "#",
+      "phon": "IY"
+    },
+    {
+      "rctx": "",
+      "lctx": "L#",
+      "bctx": "AR",
+      "phon": "y"
+    },
+    {
+      "rctx": "",
+      "lctx": "L#",
+      "bctx": "# ",
+      "phon": "IY"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#",
+      "bctx": "BL",
+      "phon": "IX"
+    },
+    {
+      "rctx": "DE",
+      "lctx": "",
+      "bctx": "#",
+      "phon": "AYdIY"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "DEN",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "* ",
+      "bctx": "#^!",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "V ",
+      "bctx": "A ",
+      "phon": "AY"
+    },
+    {
+      "rctx": "O",
+      "lctx": "V ",
+      "bctx": "L",
+      "phon": "AYAX"
+    },
+    {
+      "rctx": "",
+      "lctx": "G",
+      "bctx": "#",
+      "phon": ""
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "#",
+      "phon": "y"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "MAGE",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "MITA",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "MMI",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "MPAC",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "MPLE",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "MPLICA",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "MPULSE",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "M",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "NA^",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NCH",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NCID",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NCLU",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NCO",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "NC",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NDEP",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NDEX",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NDING",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NDI",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NDUSTR-",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NFAN",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NFI",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NFLU",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NFORMAT",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NJUR",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NN",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NP",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NQ",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NR",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NSE",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NSIG",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NSTAN",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NSTI",
+      "phon": "IH"
+    },
+    {
+      "rctx": "NSTRU",
+      "lctx": "",
+      "bctx": "M",
+      "phon": "IHnsTXrAX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NSUL",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NTEG",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NTELLEC",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NTERIOR",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NTERNAL",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NTERPRET",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NTER",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NTIMA",
+      "phon": "IH"
+    },
+    {
+      "rctx": "NTO",
+      "lctx": "",
+      "bctx": " ",
+      "phon": "IXntAX"
+    },
+    {
+      "rctx": "NTRO",
+      "lctx": "",
+      "bctx": "",
+      "phon": "IHntrAX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NVITA",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NWARD",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "N",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "SA^",
+      "phon": "IH"
+    },
+    {
+      "rctx": "TA",
+      "lctx": "",
+      "bctx": "LI",
+      "phon": "IXtAE"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "^A",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "C",
+      "bctx": "ND",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "LB",
+      "bctx": "ND",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "L",
+      "bctx": "ND",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "W",
+      "bctx": "ND",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": "^",
+      "bctx": "ND",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "LC",
+      "bctx": "MB",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "SIS",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "FL%",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "LEN^",
+      "phon": "AY"
+    },
+    {
+      "rctx": "F",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "\\IHf/"
+    },
+    {
+      "rctx": "T",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "\\IXt/"
+    },
+    {
+      "rctx": "J",
+      "lctx": "",
+      "bctx": "",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "",
+      "phon": "IH"
+    }
+  ],
+  "J": [
+    {
+      "rctx": "R",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "dZHUWnyER"
+    },
+    {
+      "rctx": "ULY",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "dZHUWlAY"
+    },
+    {
+      "rctx": "ESUS",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "dZHIYzAXz"
+    },
+    {
+      "rctx": "OSEPH",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "dZHOWzIXf"
+    },
+    {
+      "rctx": "APA",
+      "lctx": " ",
+      "bctx": "N ",
+      "phon": "dZHAXpAE"
+    },
+    {
+      "rctx": "APA",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "dZHAEpAX"
+    },
+    {
+      "rctx": "UA",
+      "lctx": " ",
+      "bctx": "N",
+      "phon": "wAA"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "",
+      "phon": "dZH"
+    }
+  ],
+  "K": [
+    {
+      "rctx": "",
+      "lctx": "N",
+      "bctx": "N",
+      "phon": ""
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "N",
+      "phon": ""
+    },
+    {
+      "rctx": "",
+      "lctx": "S",
+      "bctx": "ED",
+      "phon": "k"
+    },
+    {
+      "rctx": "",
+      "lctx": "S",
+      "bctx": "#",
+      "phon": "KX"
+    },
+    {
+      "rctx": "HRU",
+      "lctx": "",
+      "bctx": "",
+      "phon": "krUW"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "K",
+      "phon": ""
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "",
+      "phon": "k"
+    }
+  ],
+  "L": [
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "C#",
+      "phon": "lOW"
+    },
+    {
+      "rctx": "",
+      "lctx": "L",
+      "bctx": "",
+      "phon": ""
+    },
+    {
+      "rctx": "",
+      "lctx": "F:#",
+      "bctx": "%",
+      "phon": "UHl"
+    },
+    {
+      "rctx": "",
+      "lctx": "P:#",
+      "bctx": "%",
+      "phon": "ll"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#",
+      "bctx": "%",
+      "phon": "[AXl"
+    },
+    {
+      "rctx": "EAD",
+      "lctx": "",
+      "bctx": "",
+      "phon": "lIYd"
+    },
+    {
+      "rctx": "A",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "lAA"
+    },
+    {
+      "rctx": "AOS",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "lAAOWs"
+    },
+    {
+      "rctx": "AS",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "lAAs"
+    },
+    {
+      "rctx": "OS",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "lAOs"
+    },
+    {
+      "rctx": "A",
+      "lctx": "",
+      "bctx": "BEL",
+      "phon": "lEY"
+    },
+    {
+      "rctx": "AUGH",
+      "lctx": "",
+      "bctx": "",
+      "phon": "lAEf"
+    },
+    {
+      "rctx": "AST",
+      "lctx": "",
+      "bctx": "",
+      "phon": "/lAEst\\"
+    },
+    {
+      "rctx": "EGI",
+      "lctx": "",
+      "bctx": "S",
+      "phon": "lEHdZHIX"
+    },
+    {
+      "rctx": "IBR",
+      "lctx": "",
+      "bctx": "",
+      "phon": "lAYbr"
+    },
+    {
+      "rctx": "I",
+      "lctx": "",
+      "bctx": "CIA",
+      "phon": "lIY"
+    },
+    {
+      "rctx": "IKE",
+      "lctx": "",
+      "bctx": "",
+      "phon": "\\lAYk/"
+    },
+    {
+      "rctx": "INE",
+      "lctx": "",
+      "bctx": "",
+      "phon": "lAYn"
+    },
+    {
+      "rctx": "ISTEN",
+      "lctx": "",
+      "bctx": "",
+      "phon": "lIHsIXn"
+    },
+    {
+      "rctx": "OP",
+      "lctx": "EV",
+      "bctx": "!",
+      "phon": "lAXp"
+    },
+    {
+      "rctx": "OP",
+      "lctx": "EV",
+      "bctx": "E!",
+      "phon": "lOWp"
+    },
+    {
+      "rctx": "OP",
+      "lctx": "EV",
+      "bctx": "+",
+      "phon": "lAXp"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "",
+      "phon": "l"
+    }
+  ],
+  "M": [
+    {
+      "rctx": "OV",
+      "lctx": "",
+      "bctx": "",
+      "phon": "mUWv"
+    },
+    {
+      "rctx": "ARINE",
+      "lctx": "",
+      "bctx": "!",
+      "phon": "mAXrIYn"
+    },
+    {
+      "rctx": "ARTIN",
+      "lctx": "",
+      "bctx": "!",
+      "phon": "mAArtn"
+    },
+    {
+      "rctx": "AY",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "/mEY\\"
+    },
+    {
+      "rctx": "ICHAEL",
+      "lctx": "",
+      "bctx": "",
+      "phon": "/mAYk\\[AXl"
+    },
+    {
+      "rctx": "ICRO",
+      "lctx": "",
+      "bctx": "",
+      "phon": "mAYkrOW"
+    },
+    {
+      "rctx": "IGHT",
+      "lctx": "",
+      "bctx": "",
+      "phon": "/mAYt\\"
+    },
+    {
+      "rctx": "INI",
+      "lctx": "",
+      "bctx": "A",
+      "phon": "mIHny"
+    },
+    {
+      "rctx": "INI",
+      "lctx": "",
+      "bctx": "C",
+      "phon": "mIHnIY"
+    },
+    {
+      "rctx": "IR",
+      "lctx": "",
+      "bctx": "A^",
+      "phon": "mIHr"
+    },
+    {
+      "rctx": "OBIL",
+      "lctx": "",
+      "bctx": "+",
+      "phon": "mOWbIYl"
+    },
+    {
+      "rctx": "ODEM",
+      "lctx": "",
+      "bctx": "",
+      "phon": "mOWdAXm"
+    },
+    {
+      "rctx": "ONEY",
+      "lctx": "",
+      "bctx": "",
+      "phon": "mAHnIY"
+    },
+    {
+      "rctx": "OREOVER",
+      "lctx": "",
+      "bctx": "",
+      "phon": "mOWrOWvER"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "T#",
+      "phon": "mOW"
+    },
+    {
+      "rctx": "AYBE",
+      "lctx": "",
+      "bctx": "",
+      "phon": "mEYbIY"
+    },
+    {
+      "rctx": "R",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "mIHsTXER"
+    },
+    {
+      "rctx": "RS",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "mIHsIXz"
+    },
+    {
+      "rctx": "S",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "mIHz"
+    },
+    {
+      "rctx": "ORE",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "/mAOr\\"
+    },
+    {
+      "rctx": "OST",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "/mOWst\\"
+    },
+    {
+      "rctx": "UCH",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "/mAHtSH\\"
+    },
+    {
+      "rctx": "Y",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "/mAY\\"
+    },
+    {
+      "rctx": "ACHIN",
+      "lctx": "",
+      "bctx": "",
+      "phon": "mAXSHIYn"
+    },
+    {
+      "rctx": "ACI",
+      "lctx": "",
+      "bctx": "",
+      "phon": "mAEkIX"
+    },
+    {
+      "rctx": "ACRO",
+      "lctx": "",
+      "bctx": "",
+      "phon": "mAEkrOW"
+    },
+    {
+      "rctx": "",
+      "lctx": "M",
+      "bctx": "",
+      "phon": ""
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "",
+      "phon": "m"
+    }
+  ],
+  "N": [
+    {
+      "rctx": "G",
+      "lctx": "E",
+      "bctx": "+",
+      "phon": "ndZH"
+    },
+    {
+      "rctx": "G",
+      "lctx": "",
+      "bctx": "R",
+      "phon": "NGg"
+    },
+    {
+      "rctx": "G",
+      "lctx": "IS",
+      "bctx": "#",
+      "phon": "NG"
+    },
+    {
+      "rctx": "G",
+      "lctx": "",
+      "bctx": "#",
+      "phon": "NGg"
+    },
+    {
+      "rctx": "G",
+      "lctx": "",
+      "bctx": "L%",
+      "phon": "NGg"
+    },
+    {
+      "rctx": "G",
+      "lctx": "",
+      "bctx": "TH",
+      "phon": "NGk"
+    },
+    {
+      "rctx": "G",
+      "lctx": "",
+      "bctx": "",
+      "phon": "NG"
+    },
+    {
+      "rctx": "C",
+      "lctx": "",
+      "bctx": "L%",
+      "phon": "NGk"
+    },
+    {
+      "rctx": "COL",
+      "lctx": "IL",
+      "bctx": "N",
+      "phon": "NGkAX"
+    },
+    {
+      "rctx": "C",
+      "lctx": "",
+      "bctx": "T",
+      "phon": "NGk"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "KN",
+      "phon": "n"
+    },
+    {
+      "rctx": "K",
+      "lctx": "",
+      "bctx": "",
+      "phon": "NGk"
+    },
+    {
+      "rctx": "OW",
+      "lctx": " ",
+      "bctx": "!",
+      "phon": "/nAW\\"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "GR",
+      "phon": "nIY"
+    },
+    {
+      "rctx": "INTH",
+      "lctx": "",
+      "bctx": "",
+      "phon": "nAYnTH"
+    },
+    {
+      "rctx": "INE",
+      "lctx": "",
+      "bctx": "T",
+      "phon": "nAYn"
+    },
+    {
+      "rctx": "OBO",
+      "lctx": "",
+      "bctx": "D+",
+      "phon": "nOWbAX"
+    },
+    {
+      "rctx": "",
+      "lctx": "N",
+      "bctx": "",
+      "phon": ""
+    },
+    {
+      "rctx": "A",
+      "lctx": "T",
+      "bctx": "MES",
+      "phon": "nAX"
+    },
+    {
+      "rctx": "A",
+      "lctx": "T",
+      "bctx": "M",
+      "phon": "nAA"
+    },
+    {
+      "rctx": "A",
+      "lctx": " ",
+      "bctx": "TIVE",
+      "phon": "nEY"
+    },
+    {
+      "rctx": "EVER",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "/nEHvER\\"
+    },
+    {
+      "rctx": "EW",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "/nUW\\"
+    },
+    {
+      "rctx": "EWSP",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "nUWzp"
+    },
+    {
+      "rctx": "EWS",
+      "lctx": " ",
+      "bctx": "^",
+      "phon": "nUWz"
+    },
+    {
+      "rctx": "O",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "/nOW\\"
+    },
+    {
+      "rctx": "OT",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "/nAAt\\"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "",
+      "phon": "n"
+    }
+  ],
+  "O": [
+    {
+      "rctx": "F",
+      "lctx": "",
+      "bctx": " ",
+      "phon": "\\AXv/"
+    },
+    {
+      "rctx": "ROUGH",
+      "lctx": "",
+      "bctx": "",
+      "phon": "EROW"
+    },
+    {
+      "rctx": "R",
+      "lctx": ":#",
+      "bctx": "!",
+      "phon": "ER"
+    },
+    {
+      "rctx": "R",
+      "lctx": "FFE",
+      "bctx": "T",
+      "phon": "ER"
+    },
+    {
+      "rctx": "R",
+      "lctx": "E",
+      "bctx": "+",
+      "phon": "AXr"
+    },
+    {
+      "rctx": "RI",
+      "lctx": "",
+      "bctx": "GINA",
+      "phon": "AXrIH"
+    },
+    {
+      "rctx": "R",
+      "lctx": "PRO",
+      "bctx": "",
+      "phon": "AXr"
+    },
+    {
+      "rctx": "R",
+      "lctx": "*#",
+      "bctx": "AR-",
+      "phon": "AXr"
+    },
+    {
+      "rctx": "R",
+      "lctx": "MEM",
+      "bctx": "",
+      "phon": "ER"
+    },
+    {
+      "rctx": "R",
+      "lctx": "TTA ",
+      "bctx": "",
+      "phon": "ER"
+    },
+    {
+      "rctx": "R",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "\\AOr/"
+    },
+    {
+      "rctx": "R",
+      "lctx": "TS",
+      "bctx": "IC",
+      "phon": "AOr"
+    },
+    {
+      "rctx": "R",
+      "lctx": "TS",
+      "bctx": "#",
+      "phon": "OWr"
+    },
+    {
+      "rctx": "R",
+      "lctx": "",
+      "bctx": "",
+      "phon": "AOr"
+    },
+    {
+      "rctx": "NE",
+      "lctx": "Y",
+      "bctx": "",
+      "phon": "wAHn"
+    },
+    {
+      "rctx": "NE",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "/wAHn\\"
+    },
+    {
+      "rctx": "W",
+      "lctx": "NK",
+      "bctx": "N",
+      "phon": "OW"
+    },
+    {
+      "rctx": "W",
+      "lctx": "NK",
+      "bctx": "L",
+      "phon": "AA"
+    },
+    {
+      "rctx": "W",
+      "lctx": "HS",
+      "bctx": "",
+      "phon": "OW"
+    },
+    {
+      "rctx": "W",
+      "lctx": "^",
+      "bctx": "N",
+      "phon": "AW"
+    },
+    {
+      "rctx": "W",
+      "lctx": "RG",
+      "bctx": "L",
+      "phon": "AW"
+    },
+    {
+      "rctx": "W",
+      "lctx": "LLA ",
+      "bctx": "",
+      "phon": "AW"
+    },
+    {
+      "rctx": "W",
+      "lctx": "L ",
+      "bctx": "",
+      "phon": "OW"
+    },
+    {
+      "rctx": "W",
+      "lctx": "",
+      "bctx": "ER",
+      "phon": "AW"
+    },
+    {
+      "rctx": "W",
+      "lctx": "",
+      "bctx": "D",
+      "phon": "AW"
+    },
+    {
+      "rctx": "W",
+      "lctx": "C",
+      "bctx": "",
+      "phon": "AW"
+    },
+    {
+      "rctx": "W",
+      "lctx": "",
+      "bctx": "",
+      "phon": "OW"
+    },
+    {
+      "rctx": "VER",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "/OWv\\ER"
+    },
+    {
+      "rctx": "",
+      "lctx": "RP",
+      "bctx": "VIDEN",
+      "phon": "AA"
+    },
+    {
+      "rctx": "",
+      "lctx": "RP",
+      "bctx": "VID",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "RP",
+      "bctx": "VIS",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "RP",
+      "bctx": "VO",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "RP",
+      "bctx": "V",
+      "phon": "UW"
+    },
+    {
+      "rctx": "",
+      "lctx": "J",
+      "bctx": "V",
+      "phon": "OW"
+    },
+    {
+      "rctx": "",
+      "lctx": "N",
+      "bctx": "VEL",
+      "phon": "AA"
+    },
+    {
+      "rctx": "",
+      "lctx": "N",
+      "bctx": "V",
+      "phon": "OW"
+    },
+    {
+      "rctx": "",
+      "lctx": "R",
+      "bctx": "V",
+      "phon": "OW"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "V",
+      "phon": "AH"
+    },
+    {
+      "rctx": "NE",
+      "lctx": "G",
+      "bctx": "",
+      "phon": "AAn"
+    },
+    {
+      "rctx": "NE",
+      "lctx": "N",
+      "bctx": "",
+      "phon": "AHn"
+    },
+    {
+      "rctx": "",
+      "lctx": "I",
+      "bctx": "N%",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#*",
+      "bctx": "D+",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "B",
+      "bctx": "D-",
+      "phon": "AA"
+    },
+    {
+      "rctx": "",
+      "lctx": "L ",
+      "bctx": "S%",
+      "phon": "UW"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "^%",
+      "phon": "OW"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "^EN",
+      "phon": "OW"
+    },
+    {
+      "rctx": "",
+      "lctx": "S",
+      "bctx": "CIE",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "^I#",
+      "phon": "OW"
+    },
+    {
+      "rctx": "L",
+      "lctx": "",
+      "bctx": "D",
+      "phon": "OWl"
+    },
+    {
+      "rctx": "UGHT",
+      "lctx": "",
+      "bctx": "",
+      "phon": "AOt"
+    },
+    {
+      "rctx": "UGH",
+      "lctx": "",
+      "bctx": "",
+      "phon": "AHf"
+    },
+    {
+      "rctx": "U",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "/AW\\"
+    },
+    {
+      "rctx": "U",
+      "lctx": "^",
+      "bctx": "S#",
+      "phon": "AW"
+    },
+    {
+      "rctx": "US",
+      "lctx": "",
+      "bctx": "",
+      "phon": "AXs"
+    },
+    {
+      "rctx": "UR",
+      "lctx": "",
+      "bctx": "",
+      "phon": "OWr"
+    },
+    {
+      "rctx": "ULD",
+      "lctx": "",
+      "bctx": "",
+      "phon": "\\UHd/"
+    },
+    {
+      "rctx": "U",
+      "lctx": "^",
+      "bctx": "^L",
+      "phon": "AH"
+    },
+    {
+      "rctx": "UP",
+      "lctx": "",
+      "bctx": "",
+      "phon": "UWp"
+    },
+    {
+      "rctx": "UI",
+      "lctx": "L",
+      "bctx": "S#",
+      "phon": "UWIY"
+    },
+    {
+      "rctx": "UIS",
+      "lctx": "L",
+      "bctx": "",
+      "phon": "UWIXs"
+    },
+    {
+      "rctx": "U",
+      "lctx": "S",
+      "bctx": "L",
+      "phon": "OW"
+    },
+    {
+      "rctx": "U",
+      "lctx": "S",
+      "bctx": "THER",
+      "phon": "AH"
+    },
+    {
+      "rctx": "U",
+      "lctx": "T",
+      "bctx": "CH",
+      "phon": "AH"
+    },
+    {
+      "rctx": "U",
+      "lctx": "",
+      "bctx": "",
+      "phon": "AW"
+    },
+    {
+      "rctx": "Y",
+      "lctx": "",
+      "bctx": "",
+      "phon": "OY"
+    },
+    {
+      "rctx": "ING",
+      "lctx": "",
+      "bctx": "",
+      "phon": "OWIXNG"
+    },
+    {
+      "rctx": "I",
+      "lctx": "",
+      "bctx": "",
+      "phon": "OY"
+    },
+    {
+      "rctx": "OR",
+      "lctx": "P",
+      "bctx": "",
+      "phon": "UHr"
+    },
+    {
+      "rctx": "OR",
+      "lctx": "",
+      "bctx": "",
+      "phon": "AOr"
+    },
+    {
+      "rctx": "OK",
+      "lctx": "",
+      "bctx": "",
+      "phon": "UHk"
+    },
+    {
+      "rctx": "OD",
+      "lctx": "F",
+      "bctx": "",
+      "phon": "UWd"
+    },
+    {
+      "rctx": "OD",
+      "lctx": "L",
+      "bctx": "",
+      "phon": "AHd"
+    },
+    {
+      "rctx": "OD",
+      "lctx": "",
+      "bctx": "",
+      "phon": "UHd"
+    },
+    {
+      "rctx": "O",
+      "lctx": "F",
+      "bctx": "T",
+      "phon": "UH"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "",
+      "phon": "UW"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "E",
+      "phon": "OW"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": " ",
+      "phon": "OW"
+    },
+    {
+      "rctx": "AR",
+      "lctx": "",
+      "bctx": "",
+      "phon": "AOr"
+    },
+    {
+      "rctx": "A",
+      "lctx": "RB",
+      "bctx": "D",
+      "phon": "AA"
+    },
+    {
+      "rctx": "A",
+      "lctx": "",
+      "bctx": "",
+      "phon": "OW"
+    },
+    {
+      "rctx": "NLY",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "/OWn\\lIY"
+    },
+    {
+      "rctx": "NCE",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "/wAHns\\"
+    },
+    {
+      "rctx": "N'T",
+      "lctx": "",
+      "bctx": "",
+      "phon": "/OWnt\\"
+    },
+    {
+      "rctx": "",
+      "lctx": "C",
+      "bctx": "N",
+      "phon": "AX"
+    },
+    {
+      "rctx": "NG",
+      "lctx": "MA",
+      "bctx": "",
+      "phon": "AHNG"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "NG",
+      "phon": "AO"
+    },
+    {
+      "rctx": "",
+      "lctx": "S ",
+      "bctx": "N!",
+      "phon": "AH"
+    },
+    {
+      "rctx": "",
+      "lctx": "W ",
+      "bctx": "N ",
+      "phon": "AH"
+    },
+    {
+      "rctx": "",
+      "lctx": "* ",
+      "bctx": "N!",
+      "phon": "AA"
+    },
+    {
+      "rctx": "",
+      "lctx": "* ",
+      "bctx": "NAL",
+      "phon": "AA"
+    },
+    {
+      "rctx": "",
+      "lctx": "* ",
+      "bctx": "N^A!",
+      "phon": "AA"
+    },
+    {
+      "rctx": "",
+      "lctx": "B ",
+      "bctx": "N",
+      "phon": "AA"
+    },
+    {
+      "rctx": "",
+      "lctx": "* ",
+      "bctx": "N",
+      "phon": "AH"
+    },
+    {
+      "rctx": "N",
+      "lctx": "I",
+      "bctx": "",
+      "phon": "AXn"
+    },
+    {
+      "rctx": "N",
+      "lctx": ":#",
+      "bctx": "!",
+      "phon": "AXn"
+    },
+    {
+      "rctx": "",
+      "lctx": "MI",
+      "bctx": "N#",
+      "phon": "OW"
+    },
+    {
+      "rctx": "N",
+      "lctx": "^#",
+      "bctx": "",
+      "phon": "AXn"
+    },
+    {
+      "rctx": "NNE",
+      "lctx": "",
+      "bctx": "L",
+      "phon": "AXnEH"
+    },
+    {
+      "rctx": "ST",
+      "lctx": "L",
+      "bctx": "",
+      "phon": "AAst"
+    },
+    {
+      "rctx": "ST",
+      "lctx": "C",
+      "bctx": "",
+      "phon": "AAst"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "ST ",
+      "phon": "OW"
+    },
+    {
+      "rctx": "FFI",
+      "lctx": "",
+      "bctx": "CI",
+      "phon": "AX/fIH\\"
+    },
+    {
+      "rctx": "F",
+      "lctx": "",
+      "bctx": "^",
+      "phon": "AOf"
+    },
+    {
+      "rctx": "THING",
+      "lctx": "",
+      "bctx": "",
+      "phon": "AHTHIXNG"
+    },
+    {
+      "rctx": "THER",
+      "lctx": "",
+      "bctx": "",
+      "phon": "/AHDHER\\"
+    },
+    {
+      "rctx": "SS",
+      "lctx": "RG",
+      "bctx": "",
+      "phon": "OWs"
+    },
+    {
+      "rctx": "SS",
+      "lctx": "",
+      "bctx": "%",
+      "phon": "AOs"
+    },
+    {
+      "rctx": "SS",
+      "lctx": "",
+      "bctx": "!",
+      "phon": "AOs"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "MA ",
+      "phon": "OW"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "MIC",
+      "phon": "AA"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#",
+      "bctx": "M",
+      "phon": "AX"
+    },
+    {
+      "rctx": "N",
+      "lctx": "*#",
+      "bctx": "AL",
+      "phon": "AXn"
+    },
+    {
+      "rctx": "TEL",
+      "lctx": "",
+      "bctx": "",
+      "phon": "OWtEHl"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "^AL",
+      "phon": "OW"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "^AN",
+      "phon": "OW"
+    },
+    {
+      "rctx": "",
+      "lctx": "I*#",
+      "bctx": "D!",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#",
+      "bctx": "D!",
+      "phon": "AX"
+    },
+    {
+      "rctx": "GNE",
+      "lctx": "",
+      "bctx": "",
+      "phon": "OWn"
+    },
+    {
+      "rctx": "BS",
+      "lctx": "",
+      "bctx": "ERVAT+",
+      "phon": "AAbz"
+    },
+    {
+      "rctx": "BS",
+      "lctx": "",
+      "bctx": "ERV",
+      "phon": "AXbz"
+    },
+    {
+      "rctx": "BS",
+      "lctx": "",
+      "bctx": "O",
+      "phon": "AAbs"
+    },
+    {
+      "rctx": "BS",
+      "lctx": "",
+      "bctx": "T#",
+      "phon": "AAbs"
+    },
+    {
+      "rctx": "BV",
+      "lctx": "",
+      "bctx": "",
+      "phon": "AAbv"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "B",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "CCA",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "CCUR",
+      "phon": "AX"
+    },
+    {
+      "rctx": "PPOR",
+      "lctx": "",
+      "bctx": "",
+      "phon": "AApER"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "PPOSIT",
+      "phon": "AA"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "PIN",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "PP",
+      "phon": "AX"
+    },
+    {
+      "rctx": "H",
+      "lctx": "",
+      "bctx": " ",
+      "phon": "OW"
+    },
+    {
+      "rctx": "",
+      "lctx": "M*#",
+      "bctx": "S",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "RTNI",
+      "bctx": "",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "*UT+",
+      "phon": "AX"
+    },
+    {
+      "rctx": "LI",
+      "lctx": "P",
+      "bctx": "C%",
+      "phon": "AXlIY"
+    },
+    {
+      "rctx": "LOGIC",
+      "lctx": "",
+      "bctx": "",
+      "phon": "AXlAAdZHIXk"
+    },
+    {
+      "rctx": "LO",
+      "lctx": "",
+      "bctx": "G+",
+      "phon": "AAlAX"
+    },
+    {
+      "rctx": "SO",
+      "lctx": "",
+      "bctx": "PHIC",
+      "phon": "AXsAA"
+    },
+    {
+      "rctx": "SO",
+      "lctx": "",
+      "bctx": "PH",
+      "phon": "AAsAX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "^AT+",
+      "phon": "OW"
+    },
+    {
+      "rctx": "",
+      "lctx": "N",
+      "bctx": "TI",
+      "phon": "OW"
+    },
+    {
+      "rctx": "THES",
+      "lctx": "LC",
+      "bctx": "",
+      "phon": "OWDHz"
+    },
+    {
+      "rctx": "TH",
+      "lctx": "LC",
+      "bctx": "+",
+      "phon": "OWDH"
+    },
+    {
+      "rctx": "N",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "\\AAn/"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "L-",
+      "phon": "OW"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "",
+      "phon": "AA"
+    }
+  ],
+  "P": [
+    {
+      "rctx": "HI",
+      "lctx": "",
+      "bctx": "LO",
+      "phon": "fIX"
+    },
+    {
+      "rctx": "HILA",
+      "lctx": " ",
+      "bctx": "D",
+      "phon": "fIHlAX"
+    },
+    {
+      "rctx": "H",
+      "lctx": "",
+      "bctx": "",
+      "phon": "f"
+    },
+    {
+      "rctx": "EOP",
+      "lctx": "",
+      "bctx": "",
+      "phon": "pIYp"
+    },
+    {
+      "rctx": "OW",
+      "lctx": "",
+      "bctx": "",
+      "phon": "pAW"
+    },
+    {
+      "rctx": "UT",
+      "lctx": "",
+      "bctx": "!",
+      "phon": "pUHt"
+    },
+    {
+      "rctx": "UTT",
+      "lctx": "",
+      "bctx": "IN",
+      "phon": "pUHDX"
+    },
+    {
+      "rctx": "AR",
+      "lctx": "",
+      "bctx": "TIC#",
+      "phon": "pER"
+    },
+    {
+      "rctx": "EA",
+      "lctx": "ORUE",
+      "bctx": "N",
+      "phon": "pIYAX"
+    },
+    {
+      "rctx": "ERIPH",
+      "lctx": "",
+      "bctx": "",
+      "phon": "pERIHf"
+    },
+    {
+      "rctx": "OE",
+      "lctx": "",
+      "bctx": "*",
+      "phon": "pOWIX"
+    },
+    {
+      "rctx": "OLITI",
+      "lctx": "",
+      "bctx": "CIAN",
+      "phon": "pAAlIXtIH"
+    },
+    {
+      "rctx": "OLI",
+      "lctx": "",
+      "bctx": "TIC#",
+      "phon": "pAXlIH"
+    },
+    {
+      "rctx": "OLITI",
+      "lctx": "",
+      "bctx": "C",
+      "phon": "pAAlIXtIH"
+    },
+    {
+      "rctx": "OR",
+      "lctx": ":#^ ",
+      "bctx": "T",
+      "phon": "pOWr"
+    },
+    {
+      "rctx": "OR",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "pOWr"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "SITIV+",
+      "phon": "pAA"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": "SIT+",
+      "phon": "pAX"
+    },
+    {
+      "rctx": "OTE",
+      "lctx": "",
+      "bctx": "NTIAL",
+      "phon": "pAXtEH"
+    },
+    {
+      "rctx": "RE",
+      "lctx": "",
+      "bctx": "SENT%",
+      "phon": "prIX"
+    },
+    {
+      "rctx": "RE",
+      "lctx": "",
+      "bctx": "SEN",
+      "phon": "prEH"
+    },
+    {
+      "rctx": "RE",
+      "lctx": " ",
+      "bctx": "T",
+      "phon": "prIH"
+    },
+    {
+      "rctx": "RO",
+      "lctx": "",
+      "bctx": "CESS",
+      "phon": "prAA"
+    },
+    {
+      "rctx": "RO",
+      "lctx": "",
+      "bctx": "CESS%",
+      "phon": "prAA"
+    },
+    {
+      "rctx": "RO",
+      "lctx": "",
+      "bctx": "CE",
+      "phon": "prAX"
+    },
+    {
+      "rctx": "RO",
+      "lctx": "",
+      "bctx": "DUCT+",
+      "phon": "prAX"
+    },
+    {
+      "rctx": "RO",
+      "lctx": "",
+      "bctx": "DUC+",
+      "phon": "prAX"
+    },
+    {
+      "rctx": "RO",
+      "lctx": "",
+      "bctx": "FIT",
+      "phon": "prAA"
+    },
+    {
+      "rctx": "RO",
+      "lctx": "",
+      "bctx": "F",
+      "phon": "prAX"
+    },
+    {
+      "rctx": "ROGRAM",
+      "lctx": "",
+      "bctx": "",
+      "phon": "prOWgrAEm"
+    },
+    {
+      "rctx": "RO",
+      "lctx": "",
+      "bctx": "PER",
+      "phon": "prAA"
+    },
+    {
+      "rctx": "RO",
+      "lctx": "",
+      "bctx": "PR",
+      "phon": "prOW"
+    },
+    {
+      "rctx": "RO",
+      "lctx": "",
+      "bctx": "P",
+      "phon": "prAX"
+    },
+    {
+      "rctx": "ROT",
+      "lctx": "",
+      "bctx": "EC",
+      "phon": "prAXt"
+    },
+    {
+      "rctx": "ROTON",
+      "lctx": "",
+      "bctx": "",
+      "phon": "prOWtAAn"
+    },
+    {
+      "rctx": "ROTO",
+      "lctx": "",
+      "bctx": "",
+      "phon": "prOWDXAX"
+    },
+    {
+      "rctx": "T",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "t"
+    },
+    {
+      "rctx": "N",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "n"
+    },
+    {
+      "rctx": "I",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "pAY"
+    },
+    {
+      "rctx": "OS",
+      "lctx": "RUP",
+      "bctx": "E",
+      "phon": "pAXs"
+    },
+    {
+      "rctx": "",
+      "lctx": "S",
+      "bctx": "#",
+      "phon": "PX"
+    },
+    {
+      "rctx": "",
+      "lctx": "S",
+      "bctx": "^#",
+      "phon": "PX"
+    },
+    {
+      "rctx": "",
+      "lctx": "X",
+      "bctx": "#",
+      "phon": "PX"
+    },
+    {
+      "rctx": "",
+      "lctx": "X",
+      "bctx": "^#",
+      "phon": "PX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "P",
+      "phon": ""
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "",
+      "phon": "p"
+    }
+  ],
+  "Q": [
+    {
+      "rctx": "UAR",
+      "lctx": "S",
+      "bctx": "",
+      "phon": "kwEHr"
+    },
+    {
+      "rctx": "UAR",
+      "lctx": "",
+      "bctx": "",
+      "phon": "/kwAOr\\"
+    },
+    {
+      "rctx": "UAL",
+      "lctx": "",
+      "bctx": "",
+      "phon": "kwAAl"
+    },
+    {
+      "rctx": "U",
+      "lctx": "",
+      "bctx": "",
+      "phon": "kw"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "",
+      "phon": "k"
+    }
+  ],
+  "R": [
+    {
+      "rctx": "OL",
+      "lctx": "",
+      "bctx": "",
+      "phon": "rOWl"
+    },
+    {
+      "rctx": "EA",
+      "lctx": "",
+      "bctx": "GAN",
+      "phon": "rEY"
+    },
+    {
+      "rctx": "ECOG",
+      "lctx": "",
+      "bctx": "",
+      "phon": "rEHkIXg"
+    },
+    {
+      "rctx": "ECORD",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "rEHkERd"
+    },
+    {
+      "rctx": "ECE",
+      "lctx": "",
+      "bctx": "NT",
+      "phon": "rIYs"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "COM",
+      "phon": "rEH"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "CONC",
+      "phon": "rEH"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "CON",
+      "phon": "rIY"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "C#",
+      "phon": "rIX"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "FER#",
+      "phon": "rEH"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "^L",
+      "phon": "rIX"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "GIO",
+      "phon": "rIY"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "GI",
+      "phon": "rEH"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "GU",
+      "phon": "rEH"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "LATIV",
+      "phon": "rEH"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "PARATIO",
+      "phon": "rEH"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "P#R%",
+      "phon": "rIX"
+    },
+    {
+      "rctx": "EPRESE",
+      "lctx": "",
+      "bctx": "",
+      "phon": "rEHprIXzEH"
+    },
+    {
+      "rctx": "ESI",
+      "lctx": "",
+      "bctx": "DEN",
+      "phon": "rEHzIX"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "^OLUT",
+      "phon": "rEH"
+    },
+    {
+      "rctx": "ESUL",
+      "lctx": "",
+      "bctx": "T",
+      "phon": "rIXzAHl"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "SPI",
+      "phon": "rEH"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "SP",
+      "phon": "rIX"
+    },
+    {
+      "rctx": "E",
+      "lctx": " ",
+      "bctx": "STO",
+      "phon": "rIX"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "STR",
+      "phon": "rIX"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "VIO",
+      "phon": "rIY"
+    },
+    {
+      "rctx": "E",
+      "lctx": "*",
+      "bctx": "!",
+      "phon": "ER"
+    },
+    {
+      "rctx": "E",
+      "lctx": "#",
+      "bctx": "!",
+      "phon": "r"
+    },
+    {
+      "rctx": "E",
+      "lctx": "P ",
+      "bctx": "^#",
+      "phon": "rIX"
+    },
+    {
+      "rctx": "E",
+      "lctx": " ",
+      "bctx": "^#",
+      "phon": "rIX"
+    },
+    {
+      "rctx": "",
+      "lctx": "R",
+      "bctx": "",
+      "phon": ""
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "",
+      "phon": "r"
+    }
+  ],
+  "S": [
+    {
+      "rctx": "H",
+      "lctx": "S",
+      "bctx": "",
+      "phon": "sh"
+    },
+    {
+      "rctx": "HI",
+      "lctx": "",
+      "bctx": "#",
+      "phon": "SH"
+    },
+    {
+      "rctx": "HAL",
+      "lctx": "",
+      "bctx": "^",
+      "phon": "/SHAEl\\"
+    },
+    {
+      "rctx": "HOU",
+      "lctx": "",
+      "bctx": "LDER",
+      "phon": "SHOW"
+    },
+    {
+      "rctx": "H",
+      "lctx": "",
+      "bctx": "",
+      "phon": "SH"
+    },
+    {
+      "rctx": "ION",
+      "lctx": "R",
+      "bctx": "",
+      "phon": "ZHAXn"
+    },
+    {
+      "rctx": "ION",
+      "lctx": "#",
+      "bctx": "",
+      "phon": "ZHAXn"
+    },
+    {
+      "rctx": "OMETIME",
+      "lctx": "",
+      "bctx": "",
+      "phon": "sAHmtAYm"
+    },
+    {
+      "rctx": "OMEONE",
+      "lctx": "",
+      "bctx": "",
+      "phon": "/sAHm\\wAHn"
+    },
+    {
+      "rctx": "OME",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "/sAHm\\"
+    },
+    {
+      "rctx": "OME",
+      "lctx": "",
+      "bctx": "",
+      "phon": "\\sAHm/"
+    },
+    {
+      "rctx": "UR",
+      "lctx": "#",
+      "bctx": "#",
+      "phon": "ZHER"
+    },
+    {
+      "rctx": "UR",
+      "lctx": "",
+      "bctx": "#",
+      "phon": "SHER"
+    },
+    {
+      "rctx": "U",
+      "lctx": "#",
+      "bctx": "#",
+      "phon": "ZHUH"
+    },
+    {
+      "rctx": "SU",
+      "lctx": "#",
+      "bctx": "#",
+      "phon": "SHyUW"
+    },
+    {
+      "rctx": "SIA",
+      "lctx": "",
+      "bctx": "",
+      "phon": "SHAX"
+    },
+    {
+      "rctx": "",
+      "lctx": "AELP",
+      "bctx": "",
+      "phon": "z"
+    },
+    {
+      "rctx": "",
+      "lctx": "AESID",
+      "bctx": "+",
+      "phon": "z"
+    },
+    {
+      "rctx": "",
+      "lctx": "AE",
+      "bctx": "*BL",
+      "phon": "z"
+    },
+    {
+      "rctx": "",
+      "lctx": "AE^",
+      "bctx": "+",
+      "phon": "s"
+    },
+    {
+      "rctx": "",
+      "lctx": "A",
+      "bctx": "E",
+      "phon": "s"
+    },
+    {
+      "rctx": "ED",
+      "lctx": "#",
+      "bctx": " ",
+      "phon": "zd"
+    },
+    {
+      "rctx": "I",
+      "lctx": "#",
+      "bctx": "S ",
+      "phon": "sIX"
+    },
+    {
+      "rctx": "E",
+      "lctx": "UO",
+      "bctx": " ",
+      "phon": "s"
+    },
+    {
+      "rctx": "EARCH",
+      "lctx": "",
+      "bctx": "",
+      "phon": "sERtSH"
+    },
+    {
+      "rctx": "",
+      "lctx": "YM",
+      "bctx": "ELF",
+      "phon": "s"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "ET",
+      "phon": "s"
+    },
+    {
+      "rctx": "",
+      "lctx": "#",
+      "bctx": "IZ",
+      "phon": "s"
+    },
+    {
+      "rctx": "",
+      "lctx": "EB",
+      "bctx": "#",
+      "phon": "s"
+    },
+    {
+      "rctx": "",
+      "lctx": "A",
+      "bctx": "ID",
+      "phon": "s"
+    },
+    {
+      "rctx": "",
+      "lctx": "OLC",
+      "bctx": "ELY",
+      "phon": "s"
+    },
+    {
+      "rctx": "",
+      "lctx": "OLC",
+      "bctx": "ER",
+      "phon": "s"
+    },
+    {
+      "rctx": "",
+      "lctx": "U",
+      "bctx": "EFUL",
+      "phon": "s"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "OUR",
+      "phon": "s"
+    },
+    {
+      "rctx": "",
+      "lctx": "OO^ ",
+      "bctx": "%",
+      "phon": "s"
+    },
+    {
+      "rctx": "",
+      "lctx": "I",
+      "bctx": "ON!",
+      "phon": "s"
+    },
+    {
+      "rctx": "",
+      "lctx": "ICR",
+      "bctx": "%",
+      "phon": "z"
+    },
+    {
+      "rctx": "",
+      "lctx": "IC",
+      "bctx": "%",
+      "phon": "s"
+    },
+    {
+      "rctx": "I",
+      "lctx": "A ",
+      "bctx": "AT",
+      "phon": "ZHIY"
+    },
+    {
+      "rctx": "I",
+      "lctx": "A ",
+      "bctx": "A",
+      "phon": "ZH"
+    },
+    {
+      "rctx": "",
+      "lctx": "#",
+      "bctx": "#",
+      "phon": "z"
+    },
+    {
+      "rctx": "AID",
+      "lctx": "",
+      "bctx": "",
+      "phon": "sEHd"
+    },
+    {
+      "rctx": "AYS",
+      "lctx": "",
+      "bctx": "",
+      "phon": "sEHz"
+    },
+    {
+      "rctx": "ION",
+      "lctx": "^",
+      "bctx": "",
+      "phon": "SHAXn"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "S",
+      "phon": ""
+    },
+    {
+      "rctx": "",
+      "lctx": ".",
+      "bctx": " ",
+      "phon": "z"
+    },
+    {
+      "rctx": "",
+      "lctx": "'.",
+      "bctx": " ",
+      "phon": "z"
+    },
+    {
+      "rctx": "",
+      "lctx": "E.:#",
+      "bctx": " ",
+      "phon": "z"
+    },
+    {
+      "rctx": "",
+      "lctx": "'E.:#",
+      "bctx": " ",
+      "phon": "z"
+    },
+    {
+      "rctx": "",
+      "lctx": "U+",
+      "bctx": "",
+      "phon": "s"
+    },
+    {
+      "rctx": "",
+      "lctx": "EUQ#",
+      "bctx": " ",
+      "phon": "s"
+    },
+    {
+      "rctx": "",
+      "lctx": "##*#",
+      "bctx": " ",
+      "phon": "z"
+    },
+    {
+      "rctx": "",
+      "lctx": "#*#",
+      "bctx": " ",
+      "phon": "s"
+    },
+    {
+      "rctx": "",
+      "lctx": "U",
+      "bctx": " ",
+      "phon": "s"
+    },
+    {
+      "rctx": "",
+      "lctx": "#: ",
+      "bctx": " ",
+      "phon": "z"
+    },
+    {
+      "rctx": "",
+      "lctx": "#^",
+      "bctx": "!",
+      "phon": "z"
+    },
+    {
+      "rctx": "",
+      "lctx": "'#",
+      "bctx": " ",
+      "phon": "z"
+    },
+    {
+      "rctx": "CH",
+      "lctx": " ",
+      "bctx": "OT",
+      "phon": "SH"
+    },
+    {
+      "rctx": "CH",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "sk"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "C+",
+      "phon": ""
+    },
+    {
+      "rctx": "M",
+      "lctx": "#",
+      "bctx": "",
+      "phon": "zm"
+    },
+    {
+      "rctx": "N",
+      "lctx": "#",
+      "bctx": "!",
+      "phon": "zn"
+    },
+    {
+      "rctx": "AFET",
+      "lctx": "",
+      "bctx": "",
+      "phon": "sEYft"
+    },
+    {
+      "rctx": "ATUR",
+      "lctx": "",
+      "bctx": "",
+      "phon": "sAEDXER"
+    },
+    {
+      "rctx": "ECOND",
+      "lctx": "",
+      "bctx": "",
+      "phon": "/sEHk\\AXnd"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "CRETA",
+      "phon": "sEH"
+    },
+    {
+      "rctx": "ECRE",
+      "lctx": "",
+      "bctx": "^",
+      "phon": "/sIYk\\rIX"
+    },
+    {
+      "rctx": "ECU",
+      "lctx": "",
+      "bctx": "R",
+      "phon": "sIXkyUH"
+    },
+    {
+      "rctx": "EVEN",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "/sEHv\\IXn"
+    },
+    {
+      "rctx": "I",
+      "lctx": "",
+      "bctx": "GNIFIC",
+      "phon": "sIX"
+    },
+    {
+      "rctx": "INCE",
+      "lctx": "",
+      "bctx": "",
+      "phon": "\\sIHns/"
+    },
+    {
+      "rctx": "OVE",
+      "lctx": "",
+      "bctx": "",
+      "phon": "sAAv"
+    },
+    {
+      "rctx": "OVIE",
+      "lctx": "",
+      "bctx": "T",
+      "phon": "sOWvyIX"
+    },
+    {
+      "rctx": "PECI",
+      "lctx": "",
+      "bctx": "FICAT",
+      "phon": "sPXEHsIX"
+    },
+    {
+      "rctx": "PECI",
+      "lctx": "",
+      "bctx": "FIC",
+      "phon": "sPXIXsIH"
+    },
+    {
+      "rctx": "T",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "strIYt"
+    },
+    {
+      "rctx": "TOMACH",
+      "lctx": "",
+      "bctx": "",
+      "phon": "sTXAHmIXk"
+    },
+    {
+      "rctx": "U",
+      "lctx": "",
+      "bctx": "BSTANC",
+      "phon": "sAH"
+    },
+    {
+      "rctx": "U",
+      "lctx": "",
+      "bctx": "BSTANT",
+      "phon": "sAX"
+    },
+    {
+      "rctx": "U",
+      "lctx": "",
+      "bctx": "CC",
+      "phon": "sAX"
+    },
+    {
+      "rctx": "UFFI",
+      "lctx": "",
+      "bctx": "CI",
+      "phon": "sAXfIH"
+    },
+    {
+      "rctx": "U",
+      "lctx": "",
+      "bctx": "PPER",
+      "phon": "sAH"
+    },
+    {
+      "rctx": "U",
+      "lctx": "",
+      "bctx": "PPLE",
+      "phon": "sAH"
+    },
+    {
+      "rctx": "U",
+      "lctx": "",
+      "bctx": "PP",
+      "phon": "sAX"
+    },
+    {
+      "rctx": "U",
+      "lctx": "",
+      "bctx": "PREM",
+      "phon": "sAX"
+    },
+    {
+      "rctx": "",
+      "lctx": "UH",
+      "bctx": "B",
+      "phon": "z"
+    },
+    {
+      "rctx": "Z",
+      "lctx": "",
+      "bctx": "",
+      "phon": "s"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "",
+      "phon": "s"
+    }
+  ],
+  "T": [
+    {
+      "rctx": "HE",
+      "lctx": " ",
+      "bctx": " #",
+      "phon": "\\DHIY/"
+    },
+    {
+      "rctx": "HE",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "\\DHAX/"
+    },
+    {
+      "rctx": "HE",
+      "lctx": "",
+      "bctx": "LESS ",
+      "phon": "DHAX"
+    },
+    {
+      "rctx": "",
+      "lctx": "#",
+      "bctx": "O!",
+      "phon": "t"
+    },
+    {
+      "rctx": "OO",
+      "lctx": "",
+      "bctx": " ",
+      "phon": "/tUW\\"
+    },
+    {
+      "rctx": "O",
+      "lctx": "",
+      "bctx": " ",
+      "phon": "\\tUW/"
+    },
+    {
+      "rctx": "OWARD",
+      "lctx": "",
+      "bctx": "",
+      "phon": "twAOrd"
+    },
+    {
+      "rctx": "ODAY",
+      "lctx": "",
+      "bctx": "",
+      "phon": "tAX/dEY\\"
+    },
+    {
+      "rctx": "OMORROW",
+      "lctx": "",
+      "bctx": "",
+      "phon": "tAX/mAOr\\OW"
+    },
+    {
+      "rctx": "OGETHER",
+      "lctx": "",
+      "bctx": "",
+      "phon": "tAX/gEHDH\\ER"
+    },
+    {
+      "rctx": "HAT",
+      "lctx": "",
+      "bctx": "!",
+      "phon": "\\DHAEt/"
+    },
+    {
+      "rctx": "HIS",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "/DHIHs\\"
+    },
+    {
+      "rctx": "HEY",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "/DHEY\\"
+    },
+    {
+      "rctx": "HERE",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "/DHEHr\\"
+    },
+    {
+      "rctx": "HER",
+      "lctx": "S",
+      "bctx": "",
+      "phon": "TXER"
+    },
+    {
+      "rctx": "HER",
+      "lctx": "AC",
+      "bctx": "",
+      "phon": "THER"
+    },
+    {
+      "rctx": "HER",
+      "lctx": "AK",
+      "bctx": "",
+      "phon": "THER"
+    },
+    {
+      "rctx": "HER",
+      "lctx": "",
+      "bctx": "",
+      "phon": "DHER"
+    },
+    {
+      "rctx": "HEIR",
+      "lctx": "",
+      "bctx": "",
+      "phon": "/DHEHr\\"
+    },
+    {
+      "rctx": "HAN",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "\\DHAEn/"
+    },
+    {
+      "rctx": "HEM",
+      "lctx": " ",
+      "bctx": "!",
+      "phon": "\\DHEHm/"
+    },
+    {
+      "rctx": "HEM",
+      "lctx": " ",
+      "bctx": "S",
+      "phon": "\\DHEHm/"
+    },
+    {
+      "rctx": "HESE",
+      "lctx": "",
+      "bctx": " ",
+      "phon": "/DHIYz\\"
+    },
+    {
+      "rctx": "HEN",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "\\DHEHn/"
+    },
+    {
+      "rctx": "HROUGH",
+      "lctx": "",
+      "bctx": "",
+      "phon": "THrUW"
+    },
+    {
+      "rctx": "HOSE",
+      "lctx": "",
+      "bctx": "",
+      "phon": "DHOWz"
+    },
+    {
+      "rctx": "HOUGH",
+      "lctx": "",
+      "bctx": " ",
+      "phon": "DHOW"
+    },
+    {
+      "rctx": "HUS",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "DHAHs"
+    },
+    {
+      "rctx": "H",
+      "lctx": "IW",
+      "bctx": "#",
+      "phon": "DH"
+    },
+    {
+      "rctx": "H",
+      "lctx": "OOMS",
+      "bctx": "",
+      "phon": "DH"
+    },
+    {
+      "rctx": "HOMAS",
+      "lctx": "",
+      "bctx": "",
+      "phon": "tAAmAXs"
+    },
+    {
+      "rctx": "HURS",
+      "lctx": "",
+      "bctx": "",
+      "phon": "THERz"
+    },
+    {
+      "rctx": "H",
+      "lctx": "",
+      "bctx": "",
+      "phon": "TH"
+    },
+    {
+      "rctx": "I",
+      "lctx": "S",
+      "bctx": "#N",
+      "phon": "tSH"
+    },
+    {
+      "rctx": "I",
+      "lctx": "",
+      "bctx": "O",
+      "phon": "SH"
+    },
+    {
+      "rctx": "I",
+      "lctx": "",
+      "bctx": "A",
+      "phon": "SH"
+    },
+    {
+      "rctx": "IEN",
+      "lctx": "",
+      "bctx": "",
+      "phon": "SHIXn"
+    },
+    {
+      "rctx": "UR",
+      "lctx": "",
+      "bctx": "#",
+      "phon": "tSHER"
+    },
+    {
+      "rctx": "U",
+      "lctx": "S ",
+      "bctx": "A",
+      "phon": "TXUW"
+    },
+    {
+      "rctx": "U",
+      "lctx": "",
+      "bctx": "A",
+      "phon": "tSHUH"
+    },
+    {
+      "rctx": "WO",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "/tUW\\"
+    },
+    {
+      "rctx": "YPE",
+      "lctx": "",
+      "bctx": "",
+      "phon": "tAYp"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "CH",
+      "phon": ""
+    },
+    {
+      "rctx": "",
+      "lctx": "FO",
+      "bctx": "EN",
+      "phon": ""
+    },
+    {
+      "rctx": "AN",
+      "lctx": "R",
+      "bctx": "",
+      "phon": "tn"
+    },
+    {
+      "rctx": "EN",
+      "lctx": "T#*",
+      "bctx": "",
+      "phon": "tn"
+    },
+    {
+      "rctx": "UES",
+      "lctx": "",
+      "bctx": "",
+      "phon": "tUWz"
+    },
+    {
+      "rctx": "ELE",
+      "lctx": "",
+      "bctx": "",
+      "phon": "tEHlIX"
+    },
+    {
+      "rctx": "I",
+      "lctx": "R",
+      "bctx": "CU",
+      "phon": "tIH"
+    },
+    {
+      "rctx": "AIN",
+      "lctx": "R#*",
+      "bctx": "",
+      "phon": "tIXn"
+    },
+    {
+      "rctx": "",
+      "lctx": "S",
+      "bctx": "E!",
+      "phon": "t"
+    },
+    {
+      "rctx": "",
+      "lctx": "S",
+      "bctx": "#",
+      "phon": "TX"
+    },
+    {
+      "rctx": "",
+      "lctx": "S",
+      "bctx": "^#",
+      "phon": "TX"
+    },
+    {
+      "rctx": "",
+      "lctx": "X",
+      "bctx": "#",
+      "phon": "TX"
+    },
+    {
+      "rctx": "",
+      "lctx": "X",
+      "bctx": "^#",
+      "phon": "TX"
+    },
+    {
+      "rctx": "",
+      "lctx": "+",
+      "bctx": "AR+",
+      "phon": "t"
+    },
+    {
+      "rctx": "US",
+      "lctx": "#",
+      "bctx": " ",
+      "phon": "DXAXs"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "U",
+      "phon": "t"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "E!",
+      "phon": "t"
+    },
+    {
+      "rctx": "",
+      "lctx": "N",
+      "bctx": "L%",
+      "phon": "t"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "L%",
+      "phon": "DX"
+    },
+    {
+      "rctx": "T",
+      "lctx": "",
+      "bctx": "L%",
+      "phon": "DX"
+    },
+    {
+      "rctx": "T",
+      "lctx": "",
+      "bctx": "EE",
+      "phon": "DX"
+    },
+    {
+      "rctx": "T",
+      "lctx": "",
+      "bctx": "E!",
+      "phon": "t"
+    },
+    {
+      "rctx": "T",
+      "lctx": "",
+      "bctx": "%",
+      "phon": "DX"
+    },
+    {
+      "rctx": "T",
+      "lctx": "",
+      "bctx": "-",
+      "phon": "DX"
+    },
+    {
+      "rctx": "T",
+      "lctx": "",
+      "bctx": "ER",
+      "phon": "DX"
+    },
+    {
+      "rctx": "T",
+      "lctx": "",
+      "bctx": "ING",
+      "phon": "DX"
+    },
+    {
+      "rctx": "",
+      "lctx": "#",
+      "bctx": "#TION",
+      "phon": "t"
+    },
+    {
+      "rctx": "I",
+      "lctx": "#",
+      "bctx": "N ",
+      "phon": "t"
+    },
+    {
+      "rctx": "",
+      "lctx": "#*",
+      "bctx": "#",
+      "phon": "DX"
+    },
+    {
+      "rctx": "",
+      "lctx": "HG#",
+      "bctx": "#",
+      "phon": "DX"
+    },
+    {
+      "rctx": "",
+      "lctx": "R#",
+      "bctx": "+",
+      "phon": "DX"
+    },
+    {
+      "rctx": "IS",
+      "lctx": "#",
+      "bctx": " ",
+      "phon": "DXIXs"
+    },
+    {
+      "rctx": "TEN",
+      "lctx": "",
+      "bctx": " ",
+      "phon": "tn"
+    },
+    {
+      "rctx": "",
+      "lctx": "S",
+      "bctx": "L+",
+      "phon": ""
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "T",
+      "phon": ""
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "",
+      "phon": "t"
+    }
+  ],
+  "U": [
+    {
+      "rctx": "N",
+      "lctx": " ",
+      "bctx": "I",
+      "phon": "yUWn"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "NLESS",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "NTIL",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "N",
+      "phon": "AH"
+    },
+    {
+      "rctx": "PON",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "\\AXpAOn/"
+    },
+    {
+      "rctx": "R",
+      "lctx": "^#*",
+      "bctx": "%",
+      "phon": "yER"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#",
+      "bctx": "R#^+",
+      "phon": "yAX"
+    },
+    {
+      "rctx": "R",
+      "lctx": "@",
+      "bctx": "#",
+      "phon": "UHr"
+    },
+    {
+      "rctx": "R",
+      "lctx": "",
+      "bctx": "#",
+      "phon": "yUHr"
+    },
+    {
+      "rctx": "R",
+      "lctx": "S",
+      "bctx": "PR",
+      "phon": "AX"
+    },
+    {
+      "rctx": "R",
+      "lctx": "",
+      "bctx": "",
+      "phon": "ER"
+    },
+    {
+      "rctx": "",
+      "lctx": "R",
+      "bctx": "TH",
+      "phon": "UW"
+    },
+    {
+      "rctx": "CLE",
+      "lctx": "N",
+      "bctx": "",
+      "phon": "UWklIY"
+    },
+    {
+      "rctx": "",
+      "lctx": "CRIC",
+      "bctx": "MF",
+      "phon": "AH"
+    },
+    {
+      "rctx": "",
+      "lctx": "CRIC",
+      "bctx": "M",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": ":#",
+      "bctx": "M!",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "^ ",
+      "phon": "AH"
+    },
+    {
+      "rctx": "LL",
+      "lctx": ":#",
+      "bctx": "Y",
+      "phon": "AXl"
+    },
+    {
+      "rctx": "LL",
+      "lctx": "^",
+      "bctx": "",
+      "phon": "UHl"
+    },
+    {
+      "rctx": "L",
+      "lctx": "C#F",
+      "bctx": "^",
+      "phon": "AXl"
+    },
+    {
+      "rctx": "MN",
+      "lctx": "",
+      "bctx": "!",
+      "phon": "AXm"
+    },
+    {
+      "rctx": "GGES",
+      "lctx": "S",
+      "bctx": "",
+      "phon": "AXdZHEHs"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#",
+      "bctx": "* ",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "P",
+      "bctx": "SH",
+      "phon": "UH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "^^",
+      "phon": "AH"
+    },
+    {
+      "rctx": "IL",
+      "lctx": "",
+      "bctx": "",
+      "phon": "IHl"
+    },
+    {
+      "rctx": "Y",
+      "lctx": "",
+      "bctx": "",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "G ",
+      "bctx": "#",
+      "phon": ""
+    },
+    {
+      "rctx": "",
+      "lctx": "G",
+      "bctx": "%",
+      "phon": ""
+    },
+    {
+      "rctx": "",
+      "lctx": "G",
+      "bctx": "#",
+      "phon": "w"
+    },
+    {
+      "rctx": "",
+      "lctx": "NIM",
+      "bctx": "TE",
+      "phon": "IX"
+    },
+    {
+      "rctx": "",
+      "lctx": "N",
+      "bctx": "OUS",
+      "phon": "yUH"
+    },
+    {
+      "rctx": "",
+      "lctx": "@",
+      "bctx": "OUS",
+      "phon": "UH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "OUS",
+      "phon": "yUH"
+    },
+    {
+      "rctx": "",
+      "lctx": "N",
+      "bctx": "ING",
+      "phon": "yUH"
+    },
+    {
+      "rctx": "",
+      "lctx": "@",
+      "bctx": "ING",
+      "phon": "UH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "ING",
+      "phon": "yUH"
+    },
+    {
+      "rctx": "",
+      "lctx": "N",
+      "bctx": "ARY",
+      "phon": "yUH"
+    },
+    {
+      "rctx": "",
+      "lctx": "@",
+      "bctx": "ARY",
+      "phon": "UH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "ARY",
+      "phon": "yUH"
+    },
+    {
+      "rctx": "",
+      "lctx": "NAM",
+      "bctx": "*#*",
+      "phon": "yAX"
+    },
+    {
+      "rctx": "",
+      "lctx": "N#",
+      "bctx": "",
+      "phon": "yUW"
+    },
+    {
+      "rctx": "D",
+      "lctx": "TS",
+      "bctx": "-",
+      "phon": "AHd"
+    },
+    {
+      "rctx": "A",
+      "lctx": "LAV",
+      "bctx": "B",
+      "phon": "yAX"
+    },
+    {
+      "rctx": "",
+      "lctx": "LAV",
+      "bctx": "",
+      "phon": "yUW"
+    },
+    {
+      "rctx": "",
+      "lctx": "LOV",
+      "bctx": "ME",
+      "phon": "yUW"
+    },
+    {
+      "rctx": "",
+      "lctx": "@",
+      "bctx": "LA^",
+      "phon": "UH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "LA^",
+      "phon": "yAX"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#",
+      "bctx": "LA",
+      "phon": "yAX"
+    },
+    {
+      "rctx": "",
+      "lctx": "N",
+      "bctx": "AL",
+      "phon": "yUH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "AL",
+      "phon": "UH"
+    },
+    {
+      "rctx": "",
+      "lctx": "GR",
+      "bctx": "ME",
+      "phon": "yAX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "TIV",
+      "phon": "yAX"
+    },
+    {
+      "rctx": "I",
+      "lctx": "S",
+      "bctx": "T",
+      "phon": "UW"
+    },
+    {
+      "rctx": "",
+      "lctx": "S",
+      "bctx": "PERB",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "S",
+      "bctx": "PERFL",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "S",
+      "bctx": "PERIO",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "S",
+      "bctx": "PERLA",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "@",
+      "bctx": "",
+      "phon": "UW"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "",
+      "phon": "yUW"
+    }
+  ],
+  "V": [
+    {
+      "rctx": "IEW",
+      "lctx": "",
+      "bctx": "",
+      "phon": "vyUW"
+    },
+    {
+      "rctx": "A",
+      "lctx": "",
+      "bctx": "CA",
+      "phon": "vEY"
+    },
+    {
+      "rctx": "E",
+      "lctx": "",
+      "bctx": "HIC",
+      "phon": "vIY"
+    },
+    {
+      "rctx": "ER",
+      "lctx": "OG",
+      "bctx": "NOR",
+      "phon": "vAX"
+    },
+    {
+      "rctx": "ERN",
+      "lctx": "OG",
+      "bctx": "MENT",
+      "phon": "vER"
+    },
+    {
+      "rctx": "ERY",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "/vEHr[IY\\"
+    },
+    {
+      "rctx": "IOUS",
+      "lctx": "",
+      "bctx": "",
+      "phon": "vIYIXs"
+    },
+    {
+      "rctx": "ICTO",
+      "lctx": "",
+      "bctx": "RY",
+      "phon": "vIHktAX"
+    },
+    {
+      "rctx": "IE",
+      "lctx": "",
+      "bctx": "T",
+      "phon": "vIYIX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "V",
+      "phon": ""
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "",
+      "phon": "v"
+    }
+  ],
+  "W": [
+    {
+      "rctx": "ERE",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "\\wER/"
+    },
+    {
+      "rctx": "AS",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "\\wAXz/"
+    },
+    {
+      "rctx": "ASN'T",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "\\wAHznt/"
+    },
+    {
+      "rctx": "A",
+      "lctx": "",
+      "bctx": "S",
+      "phon": "wAA"
+    },
+    {
+      "rctx": "A",
+      "lctx": "",
+      "bctx": "T",
+      "phon": "wAA"
+    },
+    {
+      "rctx": "EA",
+      "lctx": "",
+      "bctx": "PO",
+      "phon": "wEH"
+    },
+    {
+      "rctx": "HER",
+      "lctx": "",
+      "bctx": "E",
+      "phon": "hwEHr"
+    },
+    {
+      "rctx": "HATEVER",
+      "lctx": "",
+      "bctx": "",
+      "phon": "hwAXDXEHvER"
+    },
+    {
+      "rctx": "HAT",
+      "lctx": "",
+      "bctx": "",
+      "phon": "\\hwAHt/"
+    },
+    {
+      "rctx": "HOL",
+      "lctx": "",
+      "bctx": "",
+      "phon": "hOWl"
+    },
+    {
+      "rctx": "HO",
+      "lctx": "",
+      "bctx": "",
+      "phon": "\\hUW/"
+    },
+    {
+      "rctx": "HICH",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "\\hwIXtSH/"
+    },
+    {
+      "rctx": "H",
+      "lctx": "",
+      "bctx": "",
+      "phon": "hw"
+    },
+    {
+      "rctx": "AR",
+      "lctx": "A",
+      "bctx": "D",
+      "phon": "wAOr"
+    },
+    {
+      "rctx": "AR",
+      "lctx": ":#",
+      "bctx": "D",
+      "phon": "wER"
+    },
+    {
+      "rctx": "AR",
+      "lctx": "",
+      "bctx": "+",
+      "phon": "wEHr"
+    },
+    {
+      "rctx": "AR",
+      "lctx": "",
+      "bctx": "",
+      "phon": "wAOr"
+    },
+    {
+      "rctx": "ITH",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "\\wIXTH/"
+    },
+    {
+      "rctx": "ILL",
+      "lctx": " ",
+      "bctx": " ",
+      "phon": "\\wIXl/"
+    },
+    {
+      "rctx": "OR",
+      "lctx": "",
+      "bctx": "^",
+      "phon": "wER"
+    },
+    {
+      "rctx": "R",
+      "lctx": "",
+      "bctx": "",
+      "phon": "r"
+    },
+    {
+      "rctx": "OMAN",
+      "lctx": "",
+      "bctx": "",
+      "phon": "/wUHm\\AXn"
+    },
+    {
+      "rctx": "OMEN",
+      "lctx": "",
+      "bctx": "",
+      "phon": "/wIHm\\IXn"
+    },
+    {
+      "rctx": "",
+      "lctx": "SNA",
+      "bctx": "ER",
+      "phon": ""
+    },
+    {
+      "rctx": "EDNES",
+      "lctx": "",
+      "bctx": "",
+      "phon": "wEHnz"
+    },
+    {
+      "rctx": "AN",
+      "lctx": " ",
+      "bctx": "T",
+      "phon": "wAHn"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "",
+      "phon": "w"
+    }
+  ],
+  "X": [
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "X",
+      "phon": ""
+    },
+    {
+      "rctx": "C",
+      "lctx": "",
+      "bctx": "+",
+      "phon": "ks"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "#",
+      "phon": "z"
+    },
+    {
+      "rctx": "AS",
+      "lctx": "ET",
+      "bctx": "",
+      "phon": "ksAXz"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "UA",
+      "phon": "kSH"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "",
+      "phon": "ks"
+    }
+  ],
+  "Y": [
+    {
+      "rctx": "OUNG",
+      "lctx": "",
+      "bctx": "",
+      "phon": "/yAHNG\\"
+    },
+    {
+      "rctx": "OUR",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "/yUHr\\"
+    },
+    {
+      "rctx": "OU'RE",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "/yUWr\\"
+    },
+    {
+      "rctx": "OU",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "/yUW\\"
+    },
+    {
+      "rctx": "ES",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "/yEHs\\"
+    },
+    {
+      "rctx": "",
+      "lctx": " ",
+      "bctx": "",
+      "phon": "y"
+    },
+    {
+      "rctx": "",
+      "lctx": "LPMIS",
+      "bctx": "",
+      "phon": "IY"
+    },
+    {
+      "rctx": "",
+      "lctx": "LP",
+      "bctx": "",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "F:I*#",
+      "bctx": "",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "^ED ",
+      "bctx": "",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#",
+      "bctx": " ",
+      "phon": "IY"
+    },
+    {
+      "rctx": "",
+      "lctx": "*#",
+      "bctx": "I",
+      "phon": "IY"
+    },
+    {
+      "rctx": "",
+      "lctx": ": ",
+      "bctx": "!",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": ": ",
+      "bctx": "#",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": ": ",
+      "bctx": "^+:#",
+      "phon": "IH"
+    },
+    {
+      "rctx": "",
+      "lctx": ": ",
+      "bctx": "^#",
+      "phon": "AY"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "SIS",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "S:#",
+      "bctx": "L",
+      "phon": "AX"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "",
+      "phon": "IH"
+    }
+  ],
+  "Z": [
+    {
+      "rctx": "Z",
+      "lctx": "",
+      "bctx": "A",
+      "phon": "ts"
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "Z",
+      "phon": ""
+    },
+    {
+      "rctx": "",
+      "lctx": "",
+      "bctx": "",
+      "phon": "z"
+    }
+  ]
+}

@@ -37,7 +37,7 @@ services:
       OLLAMA_MODEL: ${OLLAMA_MODEL:-qwen3:4b-instruct}
       LLM_TEMPERATURE: ${LLM_TEMPERATURE:-0.45}
       LLM_NUM_PREDICT: ${LLM_NUM_PREDICT:-120}
-      TTS_BACKEND: ${TTS_BACKEND:-scp079_native}
+      TTS_BACKEND: ${TTS_BACKEND:-scp079_godot}
       PIPER_BIN: /usr/local/bin/piper
       PIPER_MODEL: /opt/piper/en_US-ryan-medium.onnx
       PIPER_LENGTH_SCALE: "1.08"
