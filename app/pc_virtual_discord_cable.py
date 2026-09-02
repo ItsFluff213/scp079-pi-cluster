@@ -8,6 +8,7 @@ is recommended so you can hear Discord while the script hears the same audio.
 from __future__ import annotations
 
 import argparse
+from contextlib import ExitStack
 import io
 import json
 import os
@@ -172,10 +173,11 @@ def record_utterance(
     print("listening...", flush=True)
     monitor_stream = None
     loopback = resolve_loopback(loopback_device) if loopback_device is not None else None
-    stream_context = loopback.recorder(samplerate=sample_rate, channels=1, blocksize=block_size) if loopback else sd.InputStream(
-        samplerate=sample_rate, channels=1, dtype="int16", blocksize=block_size, device=input_device
-    )
-    with stream_context as stream:
+    with ExitStack() as stack:
+        desktop_stream = stack.enter_context(loopback.recorder(samplerate=sample_rate, channels=1, blocksize=block_size)) if loopback else None
+        mic_stream = stack.enter_context(sd.InputStream(
+            samplerate=sample_rate, channels=1, dtype="int16", blocksize=block_size, device=input_device
+        )) if (input_device is not None or not loopback) else None
         try:
             if monitor_device is not None:
                 monitor_stream = sd.OutputStream(
@@ -188,13 +190,20 @@ def record_utterance(
                 monitor_stream.start()
 
             for _ in range(max_blocks):
-                block = stream.record(numframes=block_size) if loopback else stream.read(block_size)[0]
-                mono = np.asarray(block[:, 0] if block.ndim > 1 else block, dtype=np.float32)
-                if loopback:
-                    mono = np.clip(mono, -1.0, 1.0)
-                    mono = (mono * 32767.0).astype(np.int16)
+                if desktop_stream is not None:
+                    block = desktop_stream.record(numframes=block_size)
+                    desktop = np.asarray(block[:, 0] if block.ndim > 1 else block, dtype=np.float32)
+                    desktop = np.clip(desktop, -1.0, 1.0)
+                    desktop = (desktop * 32767.0).astype(np.int16)
                 else:
-                    mono = mono.astype(np.int16, copy=False)
+                    desktop = np.zeros(block_size, dtype=np.int16)
+                if mic_stream is not None:
+                    mic_block = mic_stream.read(block_size)[0]
+                    mic = np.asarray(mic_block[:, 0], dtype=np.int16)
+                else:
+                    mic = np.zeros(block_size, dtype=np.int16)
+                # Mix mic + desktop while avoiding int16 overflow.
+                mono = np.clip(desktop.astype(np.int32) + mic.astype(np.int32), -32768, 32767).astype(np.int16)
                 if monitor_stream is not None:
                     monitor_stream.write(np.column_stack((mono, mono)))
                 rms = float(np.sqrt(np.mean((mono.astype(np.float32) / 32768.0) ** 2)))
