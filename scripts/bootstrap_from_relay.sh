@@ -105,6 +105,10 @@ install_remote_node() {
 
   ssh -t "${SSH_OPTS[@]}" "${user}@${host}" "
     set -e
+    if ! command -v git >/dev/null 2>&1; then
+      sudo apt-get update
+      sudo apt-get install -y git
+    fi
     cd '${REMOTE_TMP}'
     git checkout '${branch}'
     sudo bash '${install_script}'
