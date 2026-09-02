@@ -556,6 +556,14 @@ ssh -i ~/.ssh/scp079_cluster admin@logic \
   "if grep -q '^TTS_BACKEND=' /opt/scp079/.env; then sudo sed -i 's|^TTS_BACKEND=.*|TTS_BACKEND=scp079_godot|' /opt/scp079/.env; else echo TTS_BACKEND=scp079_godot | sudo tee -a /opt/scp079/.env >/dev/null; fi; sudo systemctl restart scp079-voice-core.service && curl -s http://logic:7860/health"
 ```
 
+Lokaler Sprachtest auf `logic` (ohne Ollama):
+
+```bash
+/opt/scp079/.venv/bin/python /opt/scp079/app/scp079_godot_tts.py \
+  --text "Input denied. You are an organic life form." \
+  --output /tmp/scp079-test.wav
+```
+
 Vom PC testen:
 
 ```powershell

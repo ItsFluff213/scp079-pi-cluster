@@ -13,7 +13,7 @@ cp -r app assets env prompts requirements-voice-core.txt /opt/scp079/
 if [[ "$INSTALL_PIPER" == "1" ]]; then
   bash scripts/install_piper_voice.sh
 else
-  echo "Skipping Piper download; default TTS_BACKEND=scp079_native needs no voice model."
+  echo "Skipping Piper download; default TTS_BACKEND=scp079_godot needs no voice model."
   echo "Set INSTALL_PIPER=1 before running this installer if you want Piper fallback."
 fi
 python3 -m venv /opt/scp079/.venv
